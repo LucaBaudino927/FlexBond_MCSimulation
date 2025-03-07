@@ -1,0 +1,2 @@
+# For loop to change the number of coloumns from 10 to 100 with step of 10
+#/control/loop scandet.mac cols 10 100 10
