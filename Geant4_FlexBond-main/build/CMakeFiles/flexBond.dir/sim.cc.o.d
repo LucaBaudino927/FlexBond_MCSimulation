@@ -1,5 +1,5 @@
 CMakeFiles/flexBond.dir/sim.cc.o: \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/sim.cc \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/sim.cc \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -682,7 +682,7 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4MaterialCutsCouple.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ProductionCuts.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4MCCIndexConversionTable.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/construction.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/construction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolume.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Box.hh \
@@ -706,7 +706,7 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.icc \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/detector.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/detector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4CollectionNameVector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VReadOutGeometry.hh \
@@ -773,7 +773,7 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/physics.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/physics.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VModularPhysicsList.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4EmStandardPhysics.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4OpticalPhysics.hh \
@@ -784,21 +784,21 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VRestDiscreteProcess.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleChangeForDecay.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4DecayProcessType.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/action.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/action.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserActionInitialization.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/event.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/event.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserEventAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/run.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/run.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/stepping.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/stepping.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserSteppingAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Step.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Gamma.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Electron.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/construction.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/generator.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/construction.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/generator.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleGun.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPrimaryGenerator.hh \

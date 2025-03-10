@@ -35,7 +35,7 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
 
     private:
     
-        //virtual void ConstructSDandField();
+        virtual void ConstructSDandField();
         void DefineMaterials();
         G4double CuTck,AlTck,SiTck,KaTck,PlaneDistance;
         G4int nCols,nRows,nPlanes;

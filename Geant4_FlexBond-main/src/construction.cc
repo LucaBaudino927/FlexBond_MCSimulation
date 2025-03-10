@@ -297,8 +297,8 @@
 
 // ######## Construction of Sensitive Detector 
 
-    /*void MyDetectorConstruction::ConstructSDandField(){
+    void MyDetectorConstruction::ConstructSDandField(){
         MySensitiveDetector* sensDet = new MySensitiveDetector("SensitiveDetector");//detector.hh
         if(logicDetector != NULL)
             logicDetector->SetSensitiveDetector(sensDet);
-    }*/
+    }

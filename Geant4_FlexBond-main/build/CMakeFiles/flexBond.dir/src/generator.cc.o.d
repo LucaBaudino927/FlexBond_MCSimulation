@@ -1,7 +1,7 @@
 CMakeFiles/flexBond.dir/src/generator.cc.o: \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/src/generator.cc \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/generator.cc \
  /usr/include/stdc-predef.h \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/generator.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/generator.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleGun.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \

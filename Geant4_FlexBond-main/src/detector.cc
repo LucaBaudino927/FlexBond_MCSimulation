@@ -6,17 +6,17 @@
     {
         quEff = new G4PhysicsOrderedFreeVector();
         std::ifstream datafile;
-        datafile.open("eff.dat");
-        while(1)//until the datafile is open
+        datafile.open("pmt_efficiency.dat");
+        G4cout << "Reading PMT quantum efficiency vs wavelength data" << std::endl;
+        while(!datafile.eof())//until the datafile is open
         {
             G4double wlen, queff;
             datafile >> wlen >> queff;
-            if(datafile.eof())
-                break;
-            G4cout << wlen << " " << queff << std::endl;
+            G4cout << "wavelength: " << wlen << " ; quantum efficiency: " << queff << std::endl;
             quEff->InsertValues(wlen, queff/100.);
         }
         datafile.close();
+        G4cout << "PMT quantum efficiency data read. " << quEff->GetVectorLength() << " QE data are stored" << std::endl;
         //quEff->SetSpline(false);//To use linear interpolation instead of Spline.
     }
 
@@ -66,7 +66,7 @@
 
         // ####### Hard-coded MC sampling for the efficiency
 
-            if(G4UniformRand()<quEff->Value(wlen)){//random between 0,1. Di fatto fa un sampling montecarlo. Se sta sotto al qe della singola wlen, e' stato rivelato, se sta sopra no. E' come associare la qe alla singola wlen.
+            if(G4UniformRand() < quEff->Value(wlen)){//random between 0,1. Di fatto fa un sampling montecarlo. Se sta sotto al qe della singola wlen, e' stato rivelato, se sta sopra no. E' come associare la qe alla singola wlen.
                 man->FillNtupleIColumn(1,0,evt);
                 man->FillNtupleDColumn(1,1,posDetector[0]);
                 man->FillNtupleDColumn(1,2,posDetector[1]);

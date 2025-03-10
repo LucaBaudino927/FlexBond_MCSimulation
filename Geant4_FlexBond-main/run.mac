@@ -1,7 +1,0 @@
-# Number of threads for Multi Trading. Maximum is 8 cpu. 
-/run/numberOfThreads 1
-/run/initialize
-#/gun/momentumAmp 1 MeV
-#/gun/position 0 0 -5 cm
-#/gun/particle p #To change starting particle 
-/run/beamOn 10

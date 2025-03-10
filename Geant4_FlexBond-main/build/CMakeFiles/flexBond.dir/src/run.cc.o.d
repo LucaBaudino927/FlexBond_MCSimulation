@@ -1,7 +1,7 @@
 CMakeFiles/flexBond.dir/src/run.cc.o: \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/src/run.cc \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/run.cc \
  /usr/include/stdc-predef.h \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/run.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/run.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Types.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GlobalConfig.hh \

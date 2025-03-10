@@ -1,7 +1,7 @@
 CMakeFiles/flexBond.dir/src/construction.cc.o: \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/src/construction.cc \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/construction.cc \
  /usr/include/stdc-predef.h \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/construction.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/construction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
  /usr/include/c++/11/iostream \
@@ -637,7 +637,7 @@ CMakeFiles/flexBond.dir/src/construction.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.icc \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/detector.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/detector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4CollectionNameVector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VReadOutGeometry.hh \

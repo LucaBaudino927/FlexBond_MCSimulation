@@ -8,13 +8,13 @@
 /vis/verbose errors
 /vis/drawVolume
 /vis/viewer/set/viewpointVector 1 1 1
-#/vis/scene/add/trajectories smooth
-#/vis/viewer/set/style wireframe
-#/vis/viewer/set/auxiliaryEdge true
+/vis/scene/add/trajectories smooth
+/vis/viewer/set/style wireframe
+/vis/viewer/set/auxiliaryEdge true
 #/vis/viewer/set/lineSegmentsPerCircle 100
-#/vis/scene/add/axes
-#/vis/scene/add/eventID
-#/vis/scene/endOfEventAction accumulate
+/vis/scene/add/axes
+/vis/scene/add/eventID
+/vis/scene/endOfEventAction accumulate
 
 #/vis/ogl/set/displayListLimit 5000000
 
