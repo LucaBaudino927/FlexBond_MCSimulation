@@ -1,5 +1,5 @@
-#ifndef STEPPING_HH
-#define STEPPING_HH
+#ifndef MY_STEPPING_ACTION_HH
+#define MY_STEPPING_ACTION_HH
 
 #include "G4UserSteppingAction.hh"
 #include "G4Step.hh"
@@ -7,8 +7,8 @@
 #include "G4Electron.hh"
 
 //User defined
-#include "construction.hh"
-#include "event.hh"
+#include "MyDetectorConstruction.hh"
+#include "MyEventAction.hh"
 
 class MySteppingAction : public G4UserSteppingAction
 {
@@ -19,7 +19,7 @@ public:
     virtual void UserSteppingAction(const G4Step*);
     
 private:
-    MyEventAction *fEventAction;//cosntructor of event.hh
+    MyEventAction *fEventAction;
 };
 
 #endif

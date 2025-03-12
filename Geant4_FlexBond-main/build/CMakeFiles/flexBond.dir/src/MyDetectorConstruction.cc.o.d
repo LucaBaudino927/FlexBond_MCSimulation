@@ -1,6 +1,10 @@
-CMakeFiles/flexBond.dir/sim.cc.o: \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/sim.cc \
- /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
+CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyDetectorConstruction.cc \
+ /usr/include/stdc-predef.h \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyDetectorConstruction.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
+ /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -263,7 +267,6 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubEvent.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Track.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/trkdefs.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolume.hh \
  /usr/include/c++/11/memory \
@@ -612,79 +615,6 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIbatch.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIExecutive.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUIshell.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4MTRunManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4MTBarrier.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4RNGHelper.hh \
- /usr/include/c++/11/queue /usr/include/c++/11/deque \
- /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
- /usr/include/c++/11/bits/stl_queue.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/QGSP_BERT.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VModularPhysicsList.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPhysicsConstructor.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsListHelper.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsListOrderingParameter.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreadLocalSingleton.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Cache.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4CacheDetails.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Backtrace.hh \
- /usr/include/c++/11/cxxabi.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h \
- /usr/include/execinfo.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h /usr/include/c++/11/cfenv \
- /usr/include/c++/11/fenv.h /usr/include/fenv.h \
- /usr/include/x86_64-linux-gnu/bits/fenv.h /usr/include/c++/11/csignal \
- /usr/include/signal.h \
- /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
- /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
- /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
- /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
- /usr/include/x86_64-linux-gnu/bits/sigaction.h \
- /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
- /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
- /usr/include/x86_64-linux-gnu/sys/ucontext.h \
- /usr/include/x86_64-linux-gnu/bits/sigstack.h \
- /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
- /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
- /usr/include/x86_64-linux-gnu/bits/sigthread.h \
- /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
- /usr/include/c++/11/regex /usr/include/c++/11/bitset \
- /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
- /usr/include/c++/11/stack /usr/include/c++/11/bits/stl_stack.h \
- /usr/include/c++/11/bits/regex_constants.h \
- /usr/include/c++/11/bits/regex_error.h \
- /usr/include/c++/11/bits/regex_automaton.h \
- /usr/include/c++/11/bits/regex_automaton.tcc \
- /usr/include/c++/11/bits/regex_scanner.h \
- /usr/include/c++/11/bits/regex_scanner.tcc \
- /usr/include/c++/11/bits/regex_compiler.h \
- /usr/include/c++/11/bits/regex_compiler.tcc \
- /usr/include/c++/11/bits/regex.h /usr/include/c++/11/bits/regex.tcc \
- /usr/include/c++/11/bits/regex_executor.h \
- /usr/include/c++/11/bits/regex_executor.tcc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUPLSplitter.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserPhysicsList.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ProductionCutsTable.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4MaterialCutsCouple.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ProductionCuts.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4MCCIndexConversionTable.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/FTFP_BERT.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyDetectorConstruction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolume.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Box.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4PVPlacement.hh \
@@ -714,6 +644,13 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VNotifier.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolumeStore.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SolidStore.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4MTRunManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4MTBarrier.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4RNGHelper.hh \
+ /usr/include/c++/11/queue /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_queue.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4TouchableHistory.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
@@ -781,26 +718,4 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyActionInitialization.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserActionInitialization.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyEventAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserEventAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyRunAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySteppingAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserSteppingAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Step.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Gamma.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Electron.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyDetectorConstruction.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyPrimaryGenerator.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleGun.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPrimaryGenerator.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleTable.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4IonTable.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Ions.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Geantino.hh
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh

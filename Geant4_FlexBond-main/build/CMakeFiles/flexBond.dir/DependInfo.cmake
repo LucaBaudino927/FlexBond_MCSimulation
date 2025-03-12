@@ -9,14 +9,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/sim.cc" "CMakeFiles/flexBond.dir/sim.cc.o" "gcc" "CMakeFiles/flexBond.dir/sim.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/action.cc" "CMakeFiles/flexBond.dir/src/action.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/action.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/construction.cc" "CMakeFiles/flexBond.dir/src/construction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/construction.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/detector.cc" "CMakeFiles/flexBond.dir/src/detector.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/detector.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/event.cc" "CMakeFiles/flexBond.dir/src/event.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/event.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/generator.cc" "CMakeFiles/flexBond.dir/src/generator.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/generator.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/physics.cc" "CMakeFiles/flexBond.dir/src/physics.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/physics.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/run.cc" "CMakeFiles/flexBond.dir/src/run.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/run.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/stepping.cc" "CMakeFiles/flexBond.dir/src/stepping.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/stepping.cc.o.d"
+  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyActionInitialization.cc" "CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o.d"
+  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyDetectorConstruction.cc" "CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o.d"
+  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyEventAction.cc" "CMakeFiles/flexBond.dir/src/MyEventAction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyEventAction.cc.o.d"
+  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyPrimaryGenerator.cc" "CMakeFiles/flexBond.dir/src/MyPrimaryGenerator.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyPrimaryGenerator.cc.o.d"
+  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyRunAction.cc" "CMakeFiles/flexBond.dir/src/MyRunAction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyRunAction.cc.o.d"
+  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySensitiveDetector.cc" "CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o.d"
+  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySteppingAction.cc" "CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o.d"
   )
 
 # Targets to which this target links.

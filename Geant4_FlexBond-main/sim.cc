@@ -6,13 +6,13 @@
 #include "G4UIExecutive.hh"
 #include "G4MTRunManager.hh"
 #include "QGSP_BERT.hh"//for hadronic processes
+#include "FTFP_BERT.hh"
 
 // User defined
-#include "construction.hh"
-#include "physics.hh"
-#include "action.hh"
+#include "MyDetectorConstruction.hh"
+#include "MyActionInitialization.hh"
 
-//main take directly argc and argv from the command line -> ./sim ciccio.mac -> argc = 2, argv = {./sim, ciccio.mac}. argv[1]=ciccio.mac. Note: char** argv = char* argv[]
+//main take directly argc and argv from the command line -> ./sim ciccio.mac -> argc = 2, argv = {./sim, ciccio.mac}. argv[1]=ciccio.mac
 int main(int argc, char** argv){
 
     	// ######## runManager initialization. 
@@ -26,11 +26,13 @@ int main(int argc, char** argv){
     	// ######## This is the real simulation architecture construction 
 
         //First: construction -> creates detectors 
-        runManager->SetUserInitialization(new MyDetectorConstruction);//construction.hh
+        runManager->SetUserInitialization(new MyDetectorConstruction);
         //Second: physics
-        runManager->SetUserInitialization(new MyPhysicsList);//physics.hh
+        G4VModularPhysicsList *physicsList = new FTFP_BERT();
+	physicsList->SetVerboseLevel(1);
+	runManager->SetUserInitialization(physicsList);
         //Third: action -> 1. generator, 2. run, 3. event, 4. stepping 
-        runManager->SetUserInitialization(new MyActionInitialization);//action.hh
+        runManager->SetUserInitialization(new MyActionInitialization);
 
         //Only for cosmic showers in the atmosphere. It takes into account hadronic decays. 
         //G4VModularPhysicsList *physics = new QGSP_BERT();
@@ -51,6 +53,9 @@ int main(int argc, char** argv){
 
         if(ui){//no argument after ./sim
             UImanager->ApplyCommand("/control/execute vis.mac");
+            if (ui->IsGUI()) {
+      		UImanager->ApplyCommand("/control/execute gui.mac");
+    	    }
             ui->SessionStart();
         }else{//a file is called after ./sim, e.g. ./sim ciccio.mac
             G4String command = "/control/execute ";

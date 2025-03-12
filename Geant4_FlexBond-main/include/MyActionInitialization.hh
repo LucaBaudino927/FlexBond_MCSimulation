@@ -1,14 +1,14 @@
-#ifndef ACTION_HH
-#define ACTION_HH
+#ifndef MY_ACTION_INITIALIZATION_HH
+#define MY_ACTION_INITIALIZATION_HH
 
 #include "G4VUserActionInitialization.hh"
 #include "G4AnalysisManager.hh"
 
 //User defined
-#include "event.hh"
-#include "stepping.hh"
-#include "generator.hh"
-#include "run.hh"
+#include "MyEventAction.hh"
+#include "MySteppingAction.hh"
+#include "MyPrimaryGenerator.hh"
+#include "MyRunAction.hh"
 
 class MyActionInitialization : public G4VUserActionInitialization
 {
