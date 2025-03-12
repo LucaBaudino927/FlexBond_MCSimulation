@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luca/geant4_workdir/Geant4_FlexBond-main
+CMAKE_SOURCE_DIR = /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luca/geant4_workdir/Geant4_FlexBond-main/build
+CMAKE_BINARY_DIR = /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build
 
 # Utility rule file for Geant4_FlexBond-main.
 
@@ -81,6 +81,6 @@ CMakeFiles/Geant4_FlexBond-main.dir/clean:
 .PHONY : CMakeFiles/Geant4_FlexBond-main.dir/clean
 
 CMakeFiles/Geant4_FlexBond-main.dir/depend:
-	cd /home/luca/geant4_workdir/Geant4_FlexBond-main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luca/geant4_workdir/Geant4_FlexBond-main /home/luca/geant4_workdir/Geant4_FlexBond-main /home/luca/geant4_workdir/Geant4_FlexBond-main/build /home/luca/geant4_workdir/Geant4_FlexBond-main/build /home/luca/geant4_workdir/Geant4_FlexBond-main/build/CMakeFiles/Geant4_FlexBond-main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles/Geant4_FlexBond-main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Geant4_FlexBond-main.dir/depend
 

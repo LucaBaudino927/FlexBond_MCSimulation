@@ -1,7 +1,7 @@
 CMakeFiles/flexBond.dir/src/action.cc.o: \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/src/action.cc \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/action.cc \
  /usr/include/stdc-predef.h \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/action.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/action.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserActionInitialization.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.hh \
@@ -327,7 +327,7 @@ CMakeFiles/flexBond.dir/src/action.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.icc \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/event.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/event.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserEventAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/evtdefs.hh \
@@ -344,10 +344,10 @@ CMakeFiles/flexBond.dir/src/action.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4TrajectoryContainer.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTrajectory.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserEventInformation.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/run.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/run.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/stepping.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/stepping.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserSteppingAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Step.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPhysicalVolume.hh \
@@ -444,7 +444,7 @@ CMakeFiles/flexBond.dir/src/action.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Step.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Gamma.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Electron.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/construction.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/construction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
@@ -711,14 +711,14 @@ CMakeFiles/flexBond.dir/src/action.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.icc \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/detector.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/detector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4CollectionNameVector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VReadOutGeometry.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SensitiveVolumeList.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSDFilter.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/generator.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/generator.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleGun.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPrimaryGenerator.hh \

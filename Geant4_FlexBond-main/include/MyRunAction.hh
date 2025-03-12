@@ -1,5 +1,5 @@
-#ifndef RUN_HH
-#define RUN_HH
+#ifndef MY_RUN_ACTION_HH
+#define MY_RUN_ACTION_HH
 
 #include "G4UserRunAction.hh"
 #include "G4AnalysisManager.hh"//al posto di g4root.hh

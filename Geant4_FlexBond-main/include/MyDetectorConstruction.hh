@@ -1,5 +1,5 @@
-#ifndef CONSTRUCTION_HH
-#define CONSTRUCTION_HH
+#ifndef MY_DETECTOR_CONSTRUCTION_HH
+#define MY_DETECTOR_CONSTRUCTION_HH
 #include "G4SystemOfUnits.hh"
 #include <iostream>
 #include "G4RunManager.hh"
@@ -16,9 +16,15 @@
 #include "G4Tubs.hh"
 #include "G4OpticalSurface.hh"
 #include "G4LogicalSkinSurface.hh"
+#include "G4GeometryManager.hh"
+#include "G4PhysicalVolumeStore.hh"
+#include "G4LogicalVolumeStore.hh"
+#include "G4SolidStore.hh"
+#include "G4MTRunManager.hh"
+#include "G4TouchableHistory.hh"
 
 //User definted
-#include "detector.hh" 
+#include "MySensitiveDetector.hh" 
 
 class MyDetectorConstruction : public G4VUserDetectorConstruction
 {
@@ -35,7 +41,7 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
 
     private:
     
-        //virtual void ConstructSDandField();
+        virtual void ConstructSDandField();
         void DefineMaterials();
         G4double CuTck,AlTck,SiTck,KaTck,PlaneDistance;
         G4int nCols,nRows,nPlanes;
@@ -49,6 +55,9 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         G4LogicalVolume *fScoringVolume;
         G4Material *SiO2, *H2O, *Aerogel, *worldMat, *NaI, *Air[10], *Kapton,*Si, *Al, *Cu;
         G4Element *C, *Na, *I,*N,*O;
+        G4bool materialsDefined = false;
+        G4bool reinitialize = false;
+        MySensitiveDetector* sensDet;
 
 };
 

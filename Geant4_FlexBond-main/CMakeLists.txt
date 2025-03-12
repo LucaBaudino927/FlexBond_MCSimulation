@@ -45,10 +45,12 @@ target_link_libraries(flexBond ${Geant4_LIBRARIES})
 set(EXAMPLEB1_SCRIPTS
   Geant4_FlexBond-main.in
   Geant4_FlexBond-main.out
-  run.mac
+  run1.mac
+  run2.mac
   det.mac
   vis.mac
   scandet.mac
+  gui.mac
   )
 
 foreach(_script ${TEST_SCRIPTS})

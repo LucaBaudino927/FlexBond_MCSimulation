@@ -1,7 +1,7 @@
 CMakeFiles/flexBond.dir/src/physics.cc.o: \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/src/physics.cc \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/physics.cc \
  /usr/include/stdc-predef.h \
- /home/luca/geant4_workdir/Geant4_FlexBond-main/include/physics.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/physics.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VModularPhysicsList.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPhysicsConstructor.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleTable.hh \
