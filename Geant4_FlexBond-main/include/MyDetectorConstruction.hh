@@ -21,10 +21,14 @@
 #include "G4LogicalVolumeStore.hh"
 #include "G4SolidStore.hh"
 #include "G4MTRunManager.hh"
-#include "G4TouchableHistory.hh"
 
 //User definted
-#include "MySensitiveDetector.hh" 
+#include "MySensitiveDetector.hh"
+#include "Glue.hh"
+#include "Alpide.hh"
+#include "Kapton.hh"
+#include "Copper.hh"
+
 
 class MyDetectorConstruction : public G4VUserDetectorConstruction
 {
@@ -38,23 +42,24 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         void ConstructScintillator();
         void ConstructTOF();
         void ConstructAtmosphere();
+        void ConstructMapsFoil();
 
     private:
     
         virtual void ConstructSDandField();
         void DefineMaterials();
-        G4double CuTck,AlTck,SiTck,KaTck,PlaneDistance;
+        G4double AlTck,SiTck,KaTck,PlaneDistance;
         G4int nCols,nRows,nPlanes;
         G4double xWorld, yWorld, zWorld;
-        G4bool isCherenkov, isScintillator,isTOF,isAtmosphere;
-        G4Box *solidWorld, *solidRadiator,*solidRadiator2,*solidDetector,*solidScintillator,*solidAtmosphere;
-        G4LogicalVolume  *logicWorld, *logicRadiator,*logicRadiator2,*logicDetector,*logicScintillator,*logicAtmosphere[10];
-        G4VPhysicalVolume  *physWorld, *physRadiator,*physRadiator2,*physDetector,*physScintillator,*physAtmosphere[10];
+        G4bool isCherenkov, isScintillator, isTOF, isAtmosphere, isMapsFoil;
+        G4Box *solidWorld, *solidRadiator, *solidRadiator2, *solidDetector, *solidScintillator, *solidAtmosphere;
+        G4LogicalVolume  *logicWorld, *logicRadiator, *logicRadiator2, *logicDetector, *logicScintillator, *logicAtmosphere[10];
+        G4VPhysicalVolume  *physWorld, *physRadiator, *physRadiator2, *physDetector, *physScintillator, *physAtmosphere[10];
         G4OpticalSurface *mirrorSurface;
         G4GenericMessenger *fMessenger;
         G4LogicalVolume *fScoringVolume;
-        G4Material *SiO2, *H2O, *Aerogel, *worldMat, *NaI, *Air[10], *Kapton,*Si, *Al, *Cu;
-        G4Element *C, *Na, *I,*N,*O;
+        G4Material *SiO2, *H2O, *Aerogel, *worldMat, *NaI, *Air[10], *KaptonMaterial, *Si, *Al, *epoxyGlue;
+        G4Element *C, *Na, *I, *N, *O, *H;
         G4bool materialsDefined = false;
         G4bool reinitialize = false;
         MySensitiveDetector* sensDet;

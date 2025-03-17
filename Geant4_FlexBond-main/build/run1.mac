@@ -10,6 +10,7 @@
 /detector/scintillator false
 /detector/tof false
 /detector/atmosphere false
+/detector/mapsFoil false
 
 # Initialize kernel
 /run/initialize

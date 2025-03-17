@@ -8,9 +8,9 @@
 #
 /detector/cherenkov false
 /detector/scintillator false
-/detector/tof true
+/detector/tof false
 /detector/atmosphere false
-/detector/mapsFoil false
+/detector/mapsFoil true
 
 # Initialize kernel
 /run/initialize
@@ -37,8 +37,8 @@
 /vis/scene/endOfEventAction accumulate
 #/vis/ogl/set/displayListLimit 5000000
 #If you want to add a scale in the viewer
-/vis/scene/add/scale 5 cm
+/vis/scene/add/scale 30 mm
 #############################################################
 
-/run/beamOn 100
+/run/beamOn 1000
 

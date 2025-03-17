@@ -211,6 +211,102 @@ sim.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/sim.cc.s
 .PHONY : sim.cc.s
 
+src/Alpide.o: src/Alpide.cc.o
+.PHONY : src/Alpide.o
+
+# target to build an object file
+src/Alpide.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Alpide.cc.o
+.PHONY : src/Alpide.cc.o
+
+src/Alpide.i: src/Alpide.cc.i
+.PHONY : src/Alpide.i
+
+# target to preprocess a source file
+src/Alpide.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Alpide.cc.i
+.PHONY : src/Alpide.cc.i
+
+src/Alpide.s: src/Alpide.cc.s
+.PHONY : src/Alpide.s
+
+# target to generate assembly for a file
+src/Alpide.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Alpide.cc.s
+.PHONY : src/Alpide.cc.s
+
+src/Copper.o: src/Copper.cc.o
+.PHONY : src/Copper.o
+
+# target to build an object file
+src/Copper.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Copper.cc.o
+.PHONY : src/Copper.cc.o
+
+src/Copper.i: src/Copper.cc.i
+.PHONY : src/Copper.i
+
+# target to preprocess a source file
+src/Copper.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Copper.cc.i
+.PHONY : src/Copper.cc.i
+
+src/Copper.s: src/Copper.cc.s
+.PHONY : src/Copper.s
+
+# target to generate assembly for a file
+src/Copper.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Copper.cc.s
+.PHONY : src/Copper.cc.s
+
+src/Glue.o: src/Glue.cc.o
+.PHONY : src/Glue.o
+
+# target to build an object file
+src/Glue.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Glue.cc.o
+.PHONY : src/Glue.cc.o
+
+src/Glue.i: src/Glue.cc.i
+.PHONY : src/Glue.i
+
+# target to preprocess a source file
+src/Glue.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Glue.cc.i
+.PHONY : src/Glue.cc.i
+
+src/Glue.s: src/Glue.cc.s
+.PHONY : src/Glue.s
+
+# target to generate assembly for a file
+src/Glue.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Glue.cc.s
+.PHONY : src/Glue.cc.s
+
+src/Kapton.o: src/Kapton.cc.o
+.PHONY : src/Kapton.o
+
+# target to build an object file
+src/Kapton.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Kapton.cc.o
+.PHONY : src/Kapton.cc.o
+
+src/Kapton.i: src/Kapton.cc.i
+.PHONY : src/Kapton.i
+
+# target to preprocess a source file
+src/Kapton.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Kapton.cc.i
+.PHONY : src/Kapton.cc.i
+
+src/Kapton.s: src/Kapton.cc.s
+.PHONY : src/Kapton.s
+
+# target to generate assembly for a file
+src/Kapton.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Kapton.cc.s
+.PHONY : src/Kapton.cc.s
+
 src/MyActionInitialization.o: src/MyActionInitialization.cc.o
 .PHONY : src/MyActionInitialization.o
 
@@ -396,6 +492,18 @@ help:
 	@echo "... sim.o"
 	@echo "... sim.i"
 	@echo "... sim.s"
+	@echo "... src/Alpide.o"
+	@echo "... src/Alpide.i"
+	@echo "... src/Alpide.s"
+	@echo "... src/Copper.o"
+	@echo "... src/Copper.i"
+	@echo "... src/Copper.s"
+	@echo "... src/Glue.o"
+	@echo "... src/Glue.i"
+	@echo "... src/Glue.s"
+	@echo "... src/Kapton.o"
+	@echo "... src/Kapton.i"
+	@echo "... src/Kapton.s"
 	@echo "... src/MyActionInitialization.o"
 	@echo "... src/MyActionInitialization.i"
 	@echo "... src/MyActionInitialization.s"

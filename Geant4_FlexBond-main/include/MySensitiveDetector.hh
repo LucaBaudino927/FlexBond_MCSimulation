@@ -13,8 +13,13 @@ public:
     ~MySensitiveDetector();
     
 private:
+    //G4HCofThisEvent: hits container that contains hits collections
+    //virtual void Initialize(G4HCofThisEvent* HitsContainer);
+    //virtual void EndOfEvent(G4HCofThisEvent* HitsContainer);
     virtual G4bool ProcessHits(G4Step *, G4TouchableHistory *);
+    
     G4PhysicsOrderedFreeVector *quEff;
+    
 };
 
 #endif

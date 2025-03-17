@@ -651,7 +651,6 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
  /usr/include/c++/11/bits/stl_queue.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TouchableHistory.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4CollectionNameVector.hh \
@@ -718,4 +717,16 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Glue.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Material.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Alpide.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubtractionSolid.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4DisplacedSolid.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VBooleanProcessor.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSolid.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Kapton.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Copper.hh

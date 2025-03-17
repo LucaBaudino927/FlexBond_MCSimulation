@@ -39,8 +39,31 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
 	G4ThreeVector posDetector = physVol->GetTranslation();
 	
 	G4cout << "Detector position: " << posDetector << G4endl;
+	
+	// ######## Time
+	G4double time = preStepPoint->GetGlobalTime();//local esiste anche global. Dipende da quando e' stata creata la particella. 
+	// ####### Wlen from the momentum
+	G4ThreeVector momPhoton = preStepPoint->GetMomentum();
+	G4double wlen = (1.239841939*keV)/momPhoton.mag();//nm, value.mag() e' il valore assoluto.
+	// ######## Data storing into Tree
+	G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID(); 
+	G4AnalysisManager* man = G4AnalysisManager::Instance();
+	man->FillNtupleIColumn(0,0,evt);
+	man->FillNtupleDColumn(0,1,posPhoton[0]);
+	man->FillNtupleDColumn(0,2,posPhoton[1]);
+	man->FillNtupleDColumn(0,3,posPhoton[2]);//mm
+	man->FillNtupleDColumn(0,4,wlen);//nm
+	man->FillNtupleDColumn(0,5,time);//ns
+	man->AddNtupleRow(0);
+	
+	man->FillNtupleIColumn(1,0,evt);
+	man->FillNtupleDColumn(1,1,posDetector[0]);
+	man->FillNtupleDColumn(1,2,posDetector[1]);
+	man->FillNtupleDColumn(1,3,posDetector[2]);
+	man->AddNtupleRow(1);
 
-	// ######## Photons
+	//Meccanismo per simulare fotomoltiplicatore: non mi interessa
+	/*// ######## Photons
         if(track->GetParticleDefinition()->GetParticleName().compare("gamma") == 0){
         	// ######## Time
 		G4double time = preStepPoint->GetGlobalTime();//local esiste anche global. Dipende da quando e' stata creata la particella. 
@@ -74,7 +97,7 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
                 G4cout << "Detector position: " << posDetector << G4endl;
                 G4cout << "Photon Position = " << posPhoton << G4endl;
                 G4cout<< "Copy number = "<< copyNo << G4endl;
-	#endif
+	#endif*/
 
         return true;
     

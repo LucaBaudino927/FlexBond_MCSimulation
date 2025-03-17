@@ -4,13 +4,14 @@
 MyDetectorConstruction::MyDetectorConstruction(){
 
         // ######## User Defined Messages
-	fMessenger = new G4GenericMessenger(this, "/detector/", "Detector Construction");//non mi funziona sulla interfaccia grafica...
+	fMessenger = new G4GenericMessenger(this, "/detector/", "Detector Construction");
 	fMessenger->DeclareProperty("nCols", nCols, "N cols");
 	fMessenger->DeclareProperty("nRows", nRows, "N rows");
 	fMessenger->DeclareProperty("cherenkov", isCherenkov, "Construct Cherenkov detector");
 	fMessenger->DeclareProperty("scintillator", isScintillator, "Construct Scintillator");
 	fMessenger->DeclareProperty("tof", isTOF, "Construct Time Of Flight");
 	fMessenger->DeclareProperty("atmosphere", isAtmosphere, "Construct Atmosphere");
+	fMessenger->DeclareProperty("mapsFoil", isMapsFoil, "Construct Maps Foil");
         
         // ######## Void function of this class definted in the next rows. Material properties definition.
 	if(!materialsDefined){
@@ -19,10 +20,11 @@ MyDetectorConstruction::MyDetectorConstruction(){
 	}
 
         // ######## Boolean for User Message option definitions
-	isCherenkov = true;
+	isCherenkov = false;
 	isScintillator = false;// Set particle momentum = 0 in generator.cc and particle = "geantino"
 	isTOF= false;
 	isAtmosphere = false;
+	isMapsFoil = true;
 
         // ######## World dimension definition
 	if(isAtmosphere){
@@ -30,9 +32,9 @@ MyDetectorConstruction::MyDetectorConstruction(){
 		yWorld = 40.*km;
 		zWorld = 20.*km;
 	}else{
-		xWorld = 10.*cm;// x2 is the real distance. The arrow in the visualization is insted x0.5
-		yWorld = 10.*cm;
-		zWorld = 10.*cm;
+		xWorld = 5.*cm;// x2 is the real distance. The arrow in the visualization is insted x0.5
+		yWorld = 5.*cm;
+		zWorld = 5.*cm;
 	}
 
 }
@@ -40,9 +42,58 @@ MyDetectorConstruction::MyDetectorConstruction(){
 // ######## Destructor
 MyDetectorConstruction::~MyDetectorConstruction(){}
 
+// ######## Actual construction of the detector based on the boolean selections 
+G4VPhysicalVolume* MyDetectorConstruction::Construct(){
+        
+        //per eliminare la geometria e reinizializzarla da zero
+        if(reinitialize){
+		G4GeometryManager::GetInstance()->OpenGeometry();
+		//G4PhysicalVolumeStore::GetInstance()->Clean();
+		//G4LogicalVolumeStore::GetInstance()->Clean();
+		//G4SolidStore::GetInstance()->Clean();
+	}
+
+	//inizializzare geometria
+        solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld);
+        logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicworld");
+        
+        //Deve essere incluso nel volume madre se faccio un volume dentro a un altro. 
+        //Posso anche fare operazioni booleane (false). Ultimo true check sugli overlap.
+        physWorld = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicWorld, "physWorld", 0, false, 0, true);
+
+        if(isCherenkov) 	{ ConstructCherenkov(); }
+        if(isScintillator) 	{ ConstructScintillator(); }
+        if(isTOF) 		{ ConstructTOF(); }
+        if(isAtmosphere) 	{ ConstructAtmosphere(); }
+        if(isMapsFoil) 		{ ConstructMapsFoil(); }
+        
+        //inserire qui meccanismo per modificare il sensitive detector per adattarlo alla nuova forma del setup quando si cambia run?
+        if(reinitialize){
+        	delete sensDet;
+        	ConstructSDandField();
+        	G4cout << "logicDetector is now associated to " << logicDetector->GetName() << std::endl;
+        	G4MTRunManager::GetRunManager()->GeometryHasBeenModified();
+        	G4GeometryManager::GetInstance()->CloseGeometry();
+        }
+        
+        reinitialize = true;
+        
+        return physWorld;//mother volume
+}
+
 // ######## Function to define material properties used in the simulation
 void MyDetectorConstruction::DefineMaterials(){
 
+	/************************************************************************
+	 *									*
+	 *	IMPORTANTE: 							*
+	 *	Se costruisco un G4Material lo cerco come "G4_XYZ"		*
+	 *	Se costruisco un G4Element lo cerco come "XYZ"			*
+	 *	G4Material* Cu = nist->FindOrBuildMaterial("G4_Cu");		*
+	 *	G4Element* C = nist->FindOrBuildElement("C");			*
+	 *									*
+	 ************************************************************************/
+	
         // ######## AIR
 	G4NistManager* nist = G4NistManager::Instance();
 	worldMat = nist->FindOrBuildMaterial("G4_Galactic");
@@ -51,13 +102,29 @@ void MyDetectorConstruction::DefineMaterials(){
 	Si = nist->FindOrBuildMaterial("G4_Si");
 
         // ######## Kapton
-	Kapton = nist->FindOrBuildMaterial("G4_KAPTON");
+	KaptonMaterial = nist->FindOrBuildMaterial("G4_KAPTON");
 
         // ######## Al
 	Al = nist->FindOrBuildMaterial("G4_Al");
-
-        // ######## Cu
-	Cu = nist->FindOrBuildMaterial("G4_Cu");
+	
+	// ####### C
+	C = nist->FindOrBuildElement("C");
+	
+	// ######## H
+	H = nist->FindOrBuildElement("H");
+	
+	// ######## N
+	N = nist->FindOrBuildElement("N");
+	
+	// ######## O
+	O = nist->FindOrBuildElement("O");
+	
+	// ####### Epoxy glue C8H20N2O
+	epoxyGlue = new G4Material("EpoxyGlue", 1.25 * CLHEP::g / CLHEP::cm3, 4);
+    	epoxyGlue->AddElement(C, 25.8064516*perCent);
+    	epoxyGlue->AddElement(H, 64.516129*perCent);
+    	epoxyGlue->AddElement(N, 6.4516129*perCent);
+    	epoxyGlue->AddElement(O, 3.2258065*perCent);
 
         // ######## SiO2 
 	SiO2 = new G4Material("SiO2",2.201*g/cm3,2);//2 components
@@ -68,9 +135,6 @@ void MyDetectorConstruction::DefineMaterials(){
 	H2O = new G4Material("H2O",1.000*g/cm3,2);//2 components
 	H2O->AddElement(nist->FindOrBuildElement("H"),2);//1 atomo di Si
 	H2O->AddElement(nist->FindOrBuildElement("O"),1);//2 atomo di ossigeno
-
-        // ####### C
-	C = nist->FindOrBuildElement("C");
 
         // ####### Aerogel 
 	Aerogel = new G4Material("Aerogel",0.200*g/cm3,3);
@@ -101,8 +165,8 @@ void MyDetectorConstruction::DefineMaterials(){
 	G4double kappa = (f+2)/f;
 	G4double T = 293.15;//Kelvin
 	G4double M = (0.3*aO+0.7*aN)/1000;//molar mass conversion. 70%N e 30%O
-	N= new G4Element("Nitrogen","N",7,aN);
-	O= new G4Element("Oxygen","O",8,aO);
+	N = new G4Element("Nitrogen","N",7,aN);
+	O = new G4Element("Oxygen","O",8,aO);
 
 	for(G4int i= 0;i<10;i++){
 		std::stringstream stri;
@@ -153,7 +217,7 @@ void MyDetectorConstruction::ConstructCherenkov(){
 
         // ######## PCB
 	solidRadiator = new G4Box("solidRadiator", 7.5*mm*2+1*cm, 15*mm*5+1*cm, KaTck/2);//spessore 75 um
-	logicRadiator = new G4LogicalVolume(solidRadiator, Kapton, "logicalRadiator");
+	logicRadiator = new G4LogicalVolume(solidRadiator, KaptonMaterial, "logicalRadiator");
 	fScoringVolume = logicRadiator;//Where the energy deposit is evaluated for each step of the event. 
 	solidRadiator2 = new G4Box("solidRadiator2", 7.5*mm*2+0.1*cm, 15*mm*5+0.1*cm, AlTck/2);//spessore 10 um
 	logicRadiator2 = new G4LogicalVolume(solidRadiator2, Al, "logicalRadiator2");
@@ -176,7 +240,7 @@ void MyDetectorConstruction::ConstructCherenkov(){
 	for(G4int k = 0; k < nPlanes; k++){
 		physRadiator = new G4PVPlacement(
 			0, 
-			G4ThreeVector(0.,0.,PlaneDistance*k), //piazzato a z = 0, occupa fino a z = 37.5 um
+			G4ThreeVector(0.,0.,PlaneDistance*k),
 			logicRadiator,
 			"physRadiator",
 			logicWorld,
@@ -185,7 +249,7 @@ void MyDetectorConstruction::ConstructCherenkov(){
 			true);
 		physRadiator2 = new G4PVPlacement(
 			0,
-			G4ThreeVector(0.,0.,PlaneDistance*k+0.5*(KaTck+AlTck)), //piazzato a z = 85, occupa da z = 80 um a z = 90 um
+			G4ThreeVector(0.,0.,PlaneDistance*k+0.5*(KaTck+AlTck)),
 			logicRadiator2, 
 			"physRadiator2", 
 			logicWorld,
@@ -195,7 +259,7 @@ void MyDetectorConstruction::ConstructCherenkov(){
 		for(G4int i = 0; i < nRows; i++){
 			for(G4int j = 0; j < nCols; j++){
 				physDetector = new G4PVPlacement(
-					0,					//piazzato a z = 110, occupa da z = 85 um a z = 135 um
+					0,					
 					G4ThreeVector(-7.5*mm+(i*15)*mm,-60*mm+(j*30)*mm,PlaneDistance*k+(0.5*KaTck+AlTck+0.5*SiTck)),
 					logicDetector,
 					"physDetector",
@@ -268,42 +332,52 @@ void MyDetectorConstruction::ConstructScintillator(){
 
 }
 
-// ######## Actual construction of the detector based on the boolean selections 
-G4VPhysicalVolume* MyDetectorConstruction::Construct(){
-        
-        //per eliminare la geometria e reinizializzarla da zero
-        if(reinitialize){
-		G4GeometryManager::GetInstance()->OpenGeometry();
-		//G4PhysicalVolumeStore::GetInstance()->Clean();
-		//G4LogicalVolumeStore::GetInstance()->Clean();
-		//G4SolidStore::GetInstance()->Clean();
-	}
+// ######## Counstruct Maps detector surrounded by foils of glue and polyimide
+// TODO: tutte le dimensioni qui saranno da parametrizzare!!!
+void MyDetectorConstruction::ConstructMapsFoil(){
 
-	//inizializzare geometria
-        solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld);
-        logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicworld");
-        
-        //Deve essere incluso nel volume madre se faccio un volume dentro a un altro. 
-        //Posso anche fare operazioni booleane (false). Ultimo true check sugli overlap.
-        physWorld = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicWorld, "physWorld", 0, false, 0, true);
-
-        if(isCherenkov) 	{ ConstructCherenkov(); }
-        if(isScintillator) 	{ ConstructScintillator(); }
-        if(isTOF) 		{ ConstructTOF(); }
-        if(isAtmosphere) 	{ ConstructAtmosphere(); }
-        
-        //inserire qui meccanismo per modificare il sensitive detector per adattarlo alla nuova forma del setup quando si cambia run?
-        if(reinitialize){
-        	delete sensDet;
-        	ConstructSDandField();
-        	G4cout << "logicDetector is now associated to " << logicDetector->GetName() << std::endl;
-        	G4MTRunManager::GetRunManager()->GeometryHasBeenModified();
-        	G4GeometryManager::GetInstance()->CloseGeometry();
-        }
-        
-        reinitialize = true;
-        
-        return physWorld;//mother volume
+	G4double alpideX = 30.*mm;
+	G4double alpideY = 15.*mm;
+	G4double alpideThickness = 50.*um;
+	G4double glueThickness = 25.*um;
+	G4double kaptonThickness = 50.*um;
+	G4double copperThickness = 5.*um;
+	/**/
+	G4double totalThickness = alpideThickness + glueThickness*2 + kaptonThickness*2 + copperThickness*2;
+	//costruisco il logicalDetector che sarà la parte sensibile del layer e il logicVolume nel quale inserirò gli altri layer
+	solidDetector = new G4Box("solidDetector", alpideX*0.5, alpideY*0.5, totalThickness*0.5);
+	logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicDetector");
+	
+	//*
+	//valutare se inserire le righe seguenti in un unica classe MapsFoil
+	//*
+	
+	//costruisco i vari layer
+	Alpide *alpide = new Alpide(alpideX, alpideY, alpideThickness, 150.*um);
+	Glue *lowerGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
+	Glue *upperGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
+	Kapton *lowerKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
+	Kapton *upperKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
+	Copper *copperLayer = new Copper(alpideX, alpideY, copperThickness);
+	//*
+	//*
+	//*
+	
+	//piazzo i layer rispetto alla posizione del logicDetector
+	//metodi che contengono G4VPhysicalVolume *xyz = new G4PVPlacement(nullptr, {x, y, z}, logicXYZ, "physXYZ", logicDetector, false, 1, true);
+	alpide->ConstructAlpideLayerPV(0.*um, 0.*um, 0.*um, logicDetector);
+	lowerGlue->ConstructLowerGlueLayerPV(0.*um, 0.*um, 0 - alpideThickness*0.5 - glueThickness*0.5, logicDetector);
+	upperGlue->ConstructUpperGlueLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness*0.5, logicDetector, alpide);
+	lowerKapton->ConstructLowerKaptonLayerPV(0.*um, 0.*um, 0 - alpideThickness*0.5 - glueThickness - kaptonThickness*0.5, logicDetector);
+	upperKapton->ConstructUpperKaptonLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness + kaptonThickness*0.5, logicDetector, alpide);
+	copperLayer->ConstructCopperLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness + kaptonThickness + copperThickness*0.5, logicDetector);
+	//*
+	//*
+	//*
+	
+	//posiziono il logicDetector (con tutti i suoi componenti attaccati nel logicWorld
+	physDetector = new G4PVPlacement(0, {0., 0., 0.}, logicDetector, "physDetector", logicWorld, false, 0, true);
+	
 }
 
 // ######## Construction of Sensitive Detector 
