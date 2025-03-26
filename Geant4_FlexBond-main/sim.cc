@@ -25,7 +25,7 @@ int main(int argc, char** argv){
 
     	// ######## This is the real simulation architecture construction 
 
-        //First: construction -> creates detectors 
+        //First: construction -> creates detectors
         runManager->SetUserInitialization(new MyDetectorConstruction);
         //Second: physics
         G4VModularPhysicsList *physicsList = new FTFP_BERT();

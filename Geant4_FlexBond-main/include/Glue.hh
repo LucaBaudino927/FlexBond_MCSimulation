@@ -12,6 +12,7 @@
 #include "G4SystemOfUnits.hh"
 #include "G4SubtractionSolid.hh"
 #include "G4VSolid.hh"
+#include "MapsFoilDetectorList.hh"
 
 //Notice that in this system:
 //Thickness refers to the Z coordinate

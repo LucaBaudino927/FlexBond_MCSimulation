@@ -21,6 +21,7 @@ void Copper::ConstructCopperLayerPV(G4double xInWorld, G4double yInWorld, G4doub
 
     G4Box* solidCopper = new G4Box("solidCopper", GetCopperXDimension()*0.5, GetCopperYDimension()*0.5, GetCopperThickness()*0.5);
     G4LogicalVolume* logicCopper = new G4LogicalVolume(solidCopper, GetCopperMaterial(), "logicCopper");
+    MapsFoilDetectorList::AddToLogicalDetectorList(logicCopper);
     G4VisAttributes* red = new G4VisAttributes(G4Colour::Red());
     red->SetVisibility(true);
     logicCopper->SetVisAttributes(red);

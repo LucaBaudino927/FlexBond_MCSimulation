@@ -5,13 +5,24 @@ MyDetectorConstruction::MyDetectorConstruction(){
 
         // ######## User Defined Messages
 	fMessenger = new G4GenericMessenger(this, "/detector/", "Detector Construction");
-	fMessenger->DeclareProperty("nCols", nCols, "N cols");
-	fMessenger->DeclareProperty("nRows", nRows, "N rows");
+	//fMessenger->DeclareProperty("nCols", nCols, "N cols");
+	//fMessenger->DeclareProperty("nRows", nRows, "N rows");
 	fMessenger->DeclareProperty("cherenkov", isCherenkov, "Construct Cherenkov detector");
 	fMessenger->DeclareProperty("scintillator", isScintillator, "Construct Scintillator");
 	fMessenger->DeclareProperty("tof", isTOF, "Construct Time Of Flight");
 	fMessenger->DeclareProperty("atmosphere", isAtmosphere, "Construct Atmosphere");
-	fMessenger->DeclareProperty("mapsFoil", isMapsFoil, "Construct Maps Foil");
+	fMessenger->DeclareProperty("mapsFoil",  		isMapsFoil, 			"Construct Maps Foil");
+	fMessenger->DeclareProperty("constructEpoxyGlueLayer", 	constructEpoxyGlueLayer, 	"Use Epoxy Glue Layers");
+	fMessenger->DeclareProperty("constructKaptonLayer",    	constructKaptonLayer, 		"Use Kapton Layers");
+	fMessenger->DeclareProperty("constructCopperLayer", 	constructCopperLayer, 		"Use Copper Layer");
+	fMessenger->DeclareProperty("constructSolderBalls", 	constructSolderBalls, 		"Use Solder Balls");
+	fMessenger->DeclareProperty("alpideXDimension", 	alpideXFromMessenger, 		"Alpide X-Dimension");
+	fMessenger->DeclareProperty("alpideYDimension", 	alpideYFromMessenger, 		"Alpide Y-Dimension");
+	fMessenger->DeclareProperty("alpideThickness",  	alpideThicknessFromMessenger, 	"Alpide Z-Thickness");
+	fMessenger->DeclareProperty("alpidePadRadius",  	alpidePadRadiusFromMessenger, 	"Alpide Pad Radius");
+	fMessenger->DeclareProperty("glueThickness", 		glueThicknessFromMessenger, 	"Glue Thickness");
+	fMessenger->DeclareProperty("kaptonThickness", 		kaptonThicknessFromMessenger, 	"Kapton Thickness");
+	fMessenger->DeclareProperty("copperThickness", 		copperThicknessFromMessenger, 	"Copper Thickness");
         
         // ######## Void function of this class definted in the next rows. Material properties definition.
 	if(!materialsDefined){
@@ -36,7 +47,14 @@ MyDetectorConstruction::MyDetectorConstruction(){
 		yWorld = 5.*cm;
 		zWorld = 5.*cm;
 	}
-
+	
+	if(isMapsFoil){
+		constructEpoxyGlueLayer = true;
+		constructKaptonLayer = true;
+		constructCopperLayer = true;
+		constructSolderBalls = true;
+	}
+	
 }
 
 // ######## Destructor
@@ -44,6 +62,12 @@ MyDetectorConstruction::~MyDetectorConstruction(){}
 
 // ######## Actual construction of the detector based on the boolean selections 
 G4VPhysicalVolume* MyDetectorConstruction::Construct(){
+        
+        G4cout << "------------------------MyDetectorConstruction::Construct()---------------" << G4endl;
+        G4cout << "------------------------G4bool reinitialize: " << reinitialize << "--------------" << G4endl;
+        /*if(isMapsFoil){
+        	SD = nullptr;
+        }*/
         
         //per eliminare la geometria e reinizializzarla da zero
         if(reinitialize){
@@ -56,6 +80,9 @@ G4VPhysicalVolume* MyDetectorConstruction::Construct(){
 	//inizializzare geometria
         solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld);
         logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicworld");
+        G4VisAttributes* white = new G4VisAttributes(G4Colour::White());
+    	white->SetVisibility(true);
+    	logicWorld->SetVisAttributes(white);
         
         //Deve essere incluso nel volume madre se faccio un volume dentro a un altro. 
         //Posso anche fare operazioni booleane (false). Ultimo true check sugli overlap.
@@ -67,11 +94,8 @@ G4VPhysicalVolume* MyDetectorConstruction::Construct(){
         if(isAtmosphere) 	{ ConstructAtmosphere(); }
         if(isMapsFoil) 		{ ConstructMapsFoil(); }
         
-        //inserire qui meccanismo per modificare il sensitive detector per adattarlo alla nuova forma del setup quando si cambia run?
         if(reinitialize){
-        	delete sensDet;
-        	ConstructSDandField();
-        	G4cout << "logicDetector is now associated to " << logicDetector->GetName() << std::endl;
+        	DeleteOldSensitiveDetectors();
         	G4MTRunManager::GetRunManager()->GeometryHasBeenModified();
         	G4GeometryManager::GetInstance()->CloseGeometry();
         }
@@ -336,57 +360,108 @@ void MyDetectorConstruction::ConstructScintillator(){
 // TODO: tutte le dimensioni qui saranno da parametrizzare!!!
 void MyDetectorConstruction::ConstructMapsFoil(){
 
-	G4double alpideX = 30.*mm;
-	G4double alpideY = 15.*mm;
-	G4double alpideThickness = 50.*um;
-	G4double glueThickness = 25.*um;
-	G4double kaptonThickness = 50.*um;
-	G4double copperThickness = 5.*um;
+	MapsFoilDetectorList::ClearLogicalDetectorList();
+
+	G4double alpideX 	 =	(alpideXFromMessenger != 0.) 		? alpideXFromMessenger*mm 	  : 30.*mm;
+	G4double alpideY 	 = 	(alpideYFromMessenger != 0.) 		? alpideYFromMessenger*mm 	  : 15.*mm;
+	G4double alpideThickness = 	(alpideThicknessFromMessenger != 0.) 	? alpideThicknessFromMessenger*um : 50.*um;
+	G4double alpidePadRadius = 	(alpidePadRadiusFromMessenger != 0.) 	? alpidePadRadiusFromMessenger*um : 150.*um;
+	G4double glueThickness 	 = 	(glueThicknessFromMessenger != 0.) 	? glueThicknessFromMessenger*um   : 25.*um;
+	G4double kaptonThickness = 	(kaptonThicknessFromMessenger != 0.) 	? kaptonThicknessFromMessenger*um : 50.*um;
+	G4double copperThickness = 	(copperThicknessFromMessenger != 0.) 	? copperThicknessFromMessenger*um : 5.*um;
 	/**/
-	G4double totalThickness = alpideThickness + glueThickness*2 + kaptonThickness*2 + copperThickness*2;
+	
+	G4double totalThickness = alpideThickness + ((constructEpoxyGlueLayer) 	? glueThickness*2   : 0.) 
+						  + ((constructKaptonLayer) 	? kaptonThickness*2 : 0.)
+						  + ((constructCopperLayer) 	? copperThickness*2 : 0.)
+						  + ((constructSolderBalls) 	? alpidePadRadius*4 : 0.);						  
+						  
 	//costruisco il logicalDetector che sarà la parte sensibile del layer e il logicVolume nel quale inserirò gli altri layer
 	solidDetector = new G4Box("solidDetector", alpideX*0.5, alpideY*0.5, totalThickness*0.5);
 	logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicDetector");
 	
 	//*
-	//valutare se inserire le righe seguenti in un unica classe MapsFoil
+	//usare G4AssemblyVolume?
 	//*
 	
-	//costruisco i vari layer
-	Alpide *alpide = new Alpide(alpideX, alpideY, alpideThickness, 150.*um);
-	Glue *lowerGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
-	Glue *upperGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
-	Kapton *lowerKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
-	Kapton *upperKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
-	Copper *copperLayer = new Copper(alpideX, alpideY, copperThickness);
-	//*
-	//*
-	//*
-	
-	//piazzo i layer rispetto alla posizione del logicDetector
+	//costruisco i vari layer e li piazzo rispetto alla posizione del logicDetector
 	//metodi che contengono G4VPhysicalVolume *xyz = new G4PVPlacement(nullptr, {x, y, z}, logicXYZ, "physXYZ", logicDetector, false, 1, true);
+	Alpide *alpide = new Alpide(alpideX, alpideY, alpideThickness, alpidePadRadius);
 	alpide->ConstructAlpideLayerPV(0.*um, 0.*um, 0.*um, logicDetector);
-	lowerGlue->ConstructLowerGlueLayerPV(0.*um, 0.*um, 0 - alpideThickness*0.5 - glueThickness*0.5, logicDetector);
-	upperGlue->ConstructUpperGlueLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness*0.5, logicDetector, alpide);
-	lowerKapton->ConstructLowerKaptonLayerPV(0.*um, 0.*um, 0 - alpideThickness*0.5 - glueThickness - kaptonThickness*0.5, logicDetector);
-	upperKapton->ConstructUpperKaptonLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness + kaptonThickness*0.5, logicDetector, alpide);
-	copperLayer->ConstructCopperLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness + kaptonThickness + copperThickness*0.5, logicDetector);
+	if(constructEpoxyGlueLayer) {
+		Glue *lowerGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
+		lowerGlue->ConstructLowerGlueLayerPV(0.*um, 0.*um, 0 - alpideThickness*0.5 - glueThickness*0.5, logicDetector);
+		Glue *upperGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
+		upperGlue->ConstructUpperGlueLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness*0.5, logicDetector, alpide);
+	}
+	if(constructKaptonLayer) {
+		Kapton *lowerKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
+		lowerKapton->ConstructLowerKaptonLayerPV(0.*um, 0.*um, 0 - alpideThickness*0.5 - glueThickness - kaptonThickness*0.5, logicDetector);
+		Kapton *upperKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
+		upperKapton->ConstructUpperKaptonLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness + kaptonThickness*0.5, logicDetector, alpide);
+	}
+	if(constructCopperLayer) {
+		Copper *copperLayer = new Copper(alpideX, alpideY, copperThickness);
+		copperLayer->ConstructCopperLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness + kaptonThickness + copperThickness*0.5, logicDetector);
+	}
+	if(constructSolderBalls) {
+		SolderBall *solderBalls = new SolderBall(alpide);
+		solderBalls->ConstructSolderBallLayerPV(alpideThickness*0.5 + glueThickness + kaptonThickness + copperThickness + alpidePadRadius, logicDetector);
+	}
 	//*
 	//*
 	//*
+
 	
-	//posiziono il logicDetector (con tutti i suoi componenti attaccati nel logicWorld
+	//posiziono il logicDetector (con tutti i suoi componenti attaccati) nel logicWorld
 	physDetector = new G4PVPlacement(0, {0., 0., 0.}, logicDetector, "physDetector", logicWorld, false, 0, true);
 	
 }
 
 // ######## Construction of Sensitive Detector 
 void MyDetectorConstruction::ConstructSDandField(){
-        sensDet = new MySensitiveDetector("SensitiveDetector");
-        if(logicDetector != NULL){
-		logicDetector->SetSensitiveDetector(sensDet);
-        }
+        
+        //v1 funziona con tutti i layer costruiti e tutti i layer sensibili ma ad esclusione di uno tra upperGlue e pad1
+        //inoltre non posso attivare pad1 e pad2 sensitive insieme
+        //quindi direi che avere una sola istanza di MySensitiveDetector per tutti layer non risolve.
+        //Problemi:
+        // pad1 e pad2 sensitive contemporaneamente
+        // pad1 (o pad2) e upperGlue sensitive contemporaneamente
+        
+        // sensitive detectors -----------------------------------------------------
+        G4cout << "-------------Number of logical detector: " << MapsFoilDetectorList::GetLogicalDetectorList().size() << "--------------" << G4endl;
+	auto sdManager = G4SDManager::GetSDMpointer();
+	G4String SDname;
+	for(int i = 0; i < MapsFoilDetectorList::GetLogicalDetectorList().size(); i++){
+		auto sensLayer = new MySensitiveDetector(SDname = MapsFoilDetectorList::GetLogicalDetectorList()[i]->GetName());
+		sdManager->AddNewDetector(sensLayer);
+		MapsFoilDetectorList::GetLogicalDetectorList()[i]->SetSensitiveDetector(sensLayer);
+	}
+	
+	//TODO
+	/*
+	programma prossima settimana:
+	-aumentare istogrammi e salvare l'energia depositata PER OGNI LAYER!
+	-rendere configurabile TUTTO! pure le costanti che ho messo in MyEventAction
+	-risolvere problemi con i pad (chiedere a Mario?)
+	-inserire nuovo layer con solder balls
+	-creare il detector usando G4AssemblyDetector?
+	-risolvere problema sull'istogramma dei tempi delle hit*/
+	
+}	
+
+void MyDetectorConstruction::DeleteOldSensitiveDetectors(){
+	auto sdManager = G4SDManager::GetSDMpointer();
+	G4SDStructure* structure = sdManager->GetTreeTop();
+	G4String SDname;
+	for(int i = 0; i < MapsFoilDetectorList::GetLogicalDetectorList().size(); i++){
+		auto SDobject = structure->GetSD(MapsFoilDetectorList::GetLogicalDetectorList()[i]->GetName());
+		G4cout << "Deleting SD with name: " << MapsFoilDetectorList::GetLogicalDetectorList()[i]->GetName() << G4endl;
+		//non funziona
+		delete SDobject;
+	}
 }
+
 
 
 

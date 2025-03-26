@@ -11,6 +11,7 @@
 #include "Alpide.hh"
 #include "G4Tubs.hh"
 #include "G4SystemOfUnits.hh"
+#include "MapsFoilDetectorList.hh"
 
 //Notice that in this system:
 //Thickness refers to the Z coordinate

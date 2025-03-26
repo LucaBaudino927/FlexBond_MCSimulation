@@ -1,6 +1,6 @@
 #include "MyActionInitialization.hh"
 
-MyActionInitialization::MyActionInitialization(){}
+MyActionInitialization::MyActionInitialization() {}
 
 MyActionInitialization::~MyActionInitialization(){}
 

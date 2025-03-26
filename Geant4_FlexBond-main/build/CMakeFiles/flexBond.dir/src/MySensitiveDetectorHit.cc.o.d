@@ -1,8 +1,9 @@
-CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyRunAction.cc \
+CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.o: \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySensitiveDetectorHit.cc \
  /usr/include/stdc-predef.h \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyRunAction.hh \
- /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetectorHit.hh \
+ /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
+ /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -33,18 +34,30 @@ CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: \
  /usr/include/c++/11/ext/new_allocator.h /usr/include/c++/11/new \
  /usr/include/c++/11/bits/exception.h \
  /usr/include/c++/11/bits/memoryfwd.h \
- /usr/include/c++/11/bits/stl_construct.h \
- /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_function.h \
+ /usr/include/c++/11/backward/binders.h \
  /usr/include/c++/11/ext/alloc_traits.h \
  /usr/include/c++/11/bits/alloc_traits.h \
+ /usr/include/c++/11/bits/stl_construct.h \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/initializer_list \
+ /usr/include/c++/11/tuple /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/array \
+ /usr/include/c++/11/bits/range_access.h \
+ /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h \
+ /usr/include/c++/11/bits/stl_multimap.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/vector \
+ /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/initializer_list \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/functional_hash.h \
  /usr/include/c++/11/bits/hash_bytes.h \
- /usr/include/c++/11/bits/range_access.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VHit.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Types.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GlobalConfig.hh \
  /usr/include/c++/11/complex /usr/include/c++/11/cmath \
@@ -146,8 +159,6 @@ CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: \
  /usr/include/c++/11/bits/locale_classes.h /usr/include/c++/11/string \
  /usr/include/c++/11/bits/ostream_insert.h \
  /usr/include/c++/11/bits/cxxabi_forced.h \
- /usr/include/c++/11/bits/stl_function.h \
- /usr/include/c++/11/backward/binders.h \
  /usr/include/c++/11/bits/basic_string.h /usr/include/c++/11/string_view \
  /usr/include/c++/11/bits/string_view.tcc \
  /usr/include/c++/11/ext/string_conversions.h /usr/include/c++/11/cstdlib \
@@ -181,34 +192,19 @@ CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/tls.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsAnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VAnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManagerState.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisVerbose.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
  /usr/include/c++/11/iostream /usr/include/c++/11/algorithm \
- /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
- /usr/include/c++/11/functional /usr/include/c++/11/tuple \
- /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
- /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/bits/refwrap.h \
  /usr/include/c++/11/bits/std_function.h \
- /usr/include/c++/11/unordered_map \
- /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/node_handle.h \
  /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4String.hh \
  /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
@@ -234,13 +230,38 @@ CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: \
  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
  /usr/include/c++/11/bits/locale_conv.h \
  /usr/include/c++/11/bits/unique_ptr.h \
- /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/map \
- /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
- /usr/include/c++/11/bits/stl_multimap.h /usr/include/c++/11/mutex \
+ /usr/include/c++/11/bits/quoted_string.h /usr/include/c++/11/mutex \
  /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
  /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Allocator.hh \
+ /usr/include/c++/11/cstddef \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AllocatorPool.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4RotationMatrix.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Utility/defs.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/Rotation.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationInterfaces.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/LorentzVector.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/LorentzVector.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/AxisAngle.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/AxisAngle.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationInterfaces.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationX.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationX.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationY.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationY.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationZ.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationZ.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/Rotation.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THitsCollection.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Allocator.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VHitsCollection.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Threading.hh \
  /usr/include/c++/11/condition_variable \
  /usr/include/c++/11/bits/shared_ptr.h \
@@ -252,81 +273,49 @@ CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: \
  /usr/include/c++/11/bits/atomic_futex.h \
  /usr/include/c++/11/bits/std_thread.h /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/this_thread_sleep.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisUtilities.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDef.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TypeKey.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttValue.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolume.hh \
  /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
  /usr/include/c++/11/bits/shared_ptr_atomic.h \
  /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/c++/11/fstream \
- /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTBaseHnManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4HnInformation.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4BinScheme.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Fcn.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VAnalysisManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4HnManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4BaseAnalysisManager.hh \
- /usr/include/c++/11/set /usr/include/c++/11/bits/stl_set.h \
- /usr/include/c++/11/bits/stl_multiset.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4NtupleBookingManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/ntuple_booking \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/cids \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/cid \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/typedefs \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/forit \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4NtupleBookingManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VNtupleManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VFileManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4BaseFileManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTHnFileManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH1ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnManager.icc \
+ /usr/include/c++/11/pstl/glue_memory_defs.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Region.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GeomSplitter.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/geomwdefs.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AutoLock.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnMessenger.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UImessenger.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIdirectory.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Threading.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Region.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPhysicalVolume.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/geomdefs.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4RotationMatrix.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPhysicalVolume.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolume.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Colour.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Transform3D.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Geometry/Transform3D.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Geometry/Transform3D.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Geometry/Point3D.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Geometry/BasicVector3D.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Geometry/Vector3D.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Geometry/Normal3D.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommand.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ApplicationState.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/ThreeVector.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Utility/defs.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/ThreeVector.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIparameter.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnToolsManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnMessenger.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tokenizer.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH2ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH3ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TP1ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TP2ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h1d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h1 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b1 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/base_histo \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/histo_data \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/axes \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/axis \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/eqT \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h2d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h2 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b2 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h3d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h3 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b3 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p1d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p1 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/profile_data \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p2d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p2 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsAnalysisManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UnitsTable.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UnitsTable.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VVisManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Transform3D.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/graphics_reps_defs.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Colour.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Color.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDefStore.hh

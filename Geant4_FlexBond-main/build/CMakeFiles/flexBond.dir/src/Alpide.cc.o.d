@@ -348,4 +348,5 @@ CMakeFiles/flexBond.dir/src/Alpide.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Exp.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MapsFoilDetectorList.hh

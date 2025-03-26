@@ -26,7 +26,9 @@ void Alpide::ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4doub
 {
 
     G4Box* solidAlpide = new G4Box("solidAlpide", GetAlpideXDimension()*0.5, GetAlpideYDimension()*0.5, GetAlpideThickness()*0.5);
+    //G4LogicalVolume* logicAlpide = new G4LogicalVolume(solidAlpide, GetAlpideMaterial(), "logicAlpide", 0, new MySensitiveDetector("sensAlpide"), 0, true);
     G4LogicalVolume* logicAlpide = new G4LogicalVolume(solidAlpide, GetAlpideMaterial(), "logicAlpide");
+    MapsFoilDetectorList::AddToLogicalDetectorList(logicAlpide);
     G4VisAttributes* yellow = new G4VisAttributes(G4Colour::Yellow());
     yellow->SetVisibility(true);
     logicAlpide->SetVisAttributes(yellow);
@@ -56,14 +58,22 @@ void Alpide::ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4doub
 	G4cout << "Pad2 Z center: " << (pad2Center)/um << " um" << G4endl;
 	G4cout << "Pad2 Z goes from: " << (pad2Center - GetPadThickness2()*0.5)/um << " um to " << (pad2Center + GetPadThickness2()*0.5)/um << " um" << G4endl;
 	
-    	G4Tubs* solidPad1 = new G4Tubs("solidPad1_"+i, 0., GetPadRadius(), GetPadThickness1()*0.5, 0., 360.*degree);
-    	G4LogicalVolume* logicPad1 = new G4LogicalVolume(solidPad1, GetPadMaterial1(), "logicPad1_"+i);
-    	new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), pad1Center}, logicPad1, "physPad1_"+i, worldLog, false, 1, true);
+    	G4Tubs* solidPad1 = new G4Tubs("solidPad1_"+std::to_string(i), 0., GetPadRadius(), GetPadThickness1()*0.5, 0., 360.*degree);
+    	G4LogicalVolume* logicPad1 = new G4LogicalVolume(solidPad1, GetPadMaterial1(), "logicPad1_"+std::to_string(i));
+    	G4VisAttributes* grey = new G4VisAttributes(G4Colour::Grey());
+    	grey->SetVisibility(true);
+    	logicPad1->SetVisAttributes(grey);
+    	//MapsFoilDetectorList::AddToLogicalDetectorList(logicPad1);
+    	new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), pad1Center}, logicPad1, "physPad1_"+std::to_string(i), worldLog, false, 1, true);
     	
-    	//da mettere pad2
-    	G4Tubs* solidPad2 = new G4Tubs("solidPad2_"+i, 0., GetPadRadius(), GetPadThickness2()*0.5, 0., 360.*degree);
-    	G4LogicalVolume* logicPad2 = new G4LogicalVolume(solidPad2, GetPadMaterial2(), "logicPad2_"+i);
-    	new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), pad2Center}, logicPad2, "physPad2_"+i, worldLog, false, 1, true);
+    	G4Tubs* solidPad2 = new G4Tubs("solidPad2_"+std::to_string(i), 0., GetPadRadius(), GetPadThickness2()*0.5, 0., 360.*degree);
+    	G4LogicalVolume* logicPad2 = new G4LogicalVolume(solidPad2, GetPadMaterial2(), "logicPad2_"+std::to_string(i));
+    	G4VisAttributes* yellow = new G4VisAttributes(G4Colour::Yellow());
+    	yellow->SetVisibility(true);
+    	logicPad2->SetVisAttributes(yellow);
+    	//MapsFoilDetectorList::AddToLogicalDetectorList(logicPad2);
+    	new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), pad2Center}, logicPad2, "physPad2_"+std::to_string(i), worldLog, false, 1, true);
+    	
     }
 
 }

@@ -20,8 +20,9 @@ Kapton::~Kapton(){};
 void Kapton::ConstructLowerKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume *worldLog)
 {
 
-    G4Box* solidKapton = new G4Box("solidKapton", GetKaptonXDimension()*0.5, GetKaptonYDimension()*0.5, GetKaptonThickness()*0.5);
-    G4LogicalVolume* logicKapton = new G4LogicalVolume(solidKapton, GetKaptonMaterial(), "logicKapton");
+    G4Box* solidKapton = new G4Box("solidLowerKapton", GetKaptonXDimension()*0.5, GetKaptonYDimension()*0.5, GetKaptonThickness()*0.5);
+    G4LogicalVolume* logicKapton = new G4LogicalVolume(solidKapton, GetKaptonMaterial(), "logicLowerKapton", 0);
+    MapsFoilDetectorList::AddToLogicalDetectorList(logicKapton);
     G4VisAttributes* brown = new G4VisAttributes(G4Colour::Brown());
     brown->SetVisibility(true);
     logicKapton->SetVisAttributes(brown);
@@ -42,8 +43,9 @@ void Kapton::ConstructLowerKaptonLayerPV(G4double xInWorld, G4double yInWorld, G
 void Kapton::ConstructUpperKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume *worldLog, Alpide* alpide)
 {
 
-    G4Box* solidKapton = new G4Box("solidKapton", GetKaptonXDimension()*0.5, GetKaptonYDimension()*0.5, GetKaptonThickness()*0.5);
-    G4LogicalVolume* logicKapton = new G4LogicalVolume(solidKapton, GetKaptonMaterial(), "logicKapton");
+    G4Box* solidKapton = new G4Box("solidUpperKapton", GetKaptonXDimension()*0.5, GetKaptonYDimension()*0.5, GetKaptonThickness()*0.5);
+    G4LogicalVolume* logicKapton = new G4LogicalVolume(solidKapton, GetKaptonMaterial(), "logicUpperKapton", 0);
+    MapsFoilDetectorList::AddToLogicalDetectorList(logicKapton);
     G4VisAttributes* brown = new G4VisAttributes(G4Colour::Brown());
     brown->SetVisibility(true);
     logicKapton->SetVisAttributes(brown);
@@ -52,8 +54,11 @@ void Kapton::ConstructUpperKaptonLayerPV(G4double xInWorld, G4double yInWorld, G
     for(int i = 0; i < alpide->GetNOfPads(); i++){
     	std::vector<G4ThreeVector> padPositions = alpide->GetPadCoordinates();
     	G4Tubs* solidHole = new G4Tubs("solidHole" + i, 0., alpide->GetPadRadius(), GetKaptonThickness()*0.5, 0., 360.*degree);
-    	G4LogicalVolume* logicHole = new G4LogicalVolume(solidHole, GetHoleMaterial(), "logicKapton");
-    	new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), padPositions[i].z()}, logicHole, "physKapton", logicKapton, false, 1, true);
+    	G4LogicalVolume* logicHole = new G4LogicalVolume(solidHole, GetHoleMaterial(), "logicHole");
+    	G4VisAttributes* blue = new G4VisAttributes(G4Colour::Blue());
+    	blue->SetVisibility(true);
+    	logicHole->SetVisAttributes(blue);
+    	new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), padPositions[i].z()}, logicHole, "physKaptonHole", logicKapton, false, 1, true);
     }
     
     //placement of the layer logical volume into its mother frame

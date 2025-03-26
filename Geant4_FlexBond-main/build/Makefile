@@ -307,6 +307,30 @@ src/Kapton.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Kapton.cc.s
 .PHONY : src/Kapton.cc.s
 
+src/MapsFoilDetectorList.o: src/MapsFoilDetectorList.cc.o
+.PHONY : src/MapsFoilDetectorList.o
+
+# target to build an object file
+src/MapsFoilDetectorList.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MapsFoilDetectorList.cc.o
+.PHONY : src/MapsFoilDetectorList.cc.o
+
+src/MapsFoilDetectorList.i: src/MapsFoilDetectorList.cc.i
+.PHONY : src/MapsFoilDetectorList.i
+
+# target to preprocess a source file
+src/MapsFoilDetectorList.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MapsFoilDetectorList.cc.i
+.PHONY : src/MapsFoilDetectorList.cc.i
+
+src/MapsFoilDetectorList.s: src/MapsFoilDetectorList.cc.s
+.PHONY : src/MapsFoilDetectorList.s
+
+# target to generate assembly for a file
+src/MapsFoilDetectorList.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MapsFoilDetectorList.cc.s
+.PHONY : src/MapsFoilDetectorList.cc.s
+
 src/MyActionInitialization.o: src/MyActionInitialization.cc.o
 .PHONY : src/MyActionInitialization.o
 
@@ -451,6 +475,30 @@ src/MySensitiveDetector.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.s
 .PHONY : src/MySensitiveDetector.cc.s
 
+src/MySensitiveDetectorHit.o: src/MySensitiveDetectorHit.cc.o
+.PHONY : src/MySensitiveDetectorHit.o
+
+# target to build an object file
+src/MySensitiveDetectorHit.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.o
+.PHONY : src/MySensitiveDetectorHit.cc.o
+
+src/MySensitiveDetectorHit.i: src/MySensitiveDetectorHit.cc.i
+.PHONY : src/MySensitiveDetectorHit.i
+
+# target to preprocess a source file
+src/MySensitiveDetectorHit.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.i
+.PHONY : src/MySensitiveDetectorHit.cc.i
+
+src/MySensitiveDetectorHit.s: src/MySensitiveDetectorHit.cc.s
+.PHONY : src/MySensitiveDetectorHit.s
+
+# target to generate assembly for a file
+src/MySensitiveDetectorHit.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.s
+.PHONY : src/MySensitiveDetectorHit.cc.s
+
 src/MySteppingAction.o: src/MySteppingAction.cc.o
 .PHONY : src/MySteppingAction.o
 
@@ -474,6 +522,30 @@ src/MySteppingAction.s: src/MySteppingAction.cc.s
 src/MySteppingAction.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySteppingAction.cc.s
 .PHONY : src/MySteppingAction.cc.s
+
+src/SolderBall.o: src/SolderBall.cc.o
+.PHONY : src/SolderBall.o
+
+# target to build an object file
+src/SolderBall.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/SolderBall.cc.o
+.PHONY : src/SolderBall.cc.o
+
+src/SolderBall.i: src/SolderBall.cc.i
+.PHONY : src/SolderBall.i
+
+# target to preprocess a source file
+src/SolderBall.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/SolderBall.cc.i
+.PHONY : src/SolderBall.cc.i
+
+src/SolderBall.s: src/SolderBall.cc.s
+.PHONY : src/SolderBall.s
+
+# target to generate assembly for a file
+src/SolderBall.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/SolderBall.cc.s
+.PHONY : src/SolderBall.cc.s
 
 # Help Target
 help:
@@ -504,6 +576,9 @@ help:
 	@echo "... src/Kapton.o"
 	@echo "... src/Kapton.i"
 	@echo "... src/Kapton.s"
+	@echo "... src/MapsFoilDetectorList.o"
+	@echo "... src/MapsFoilDetectorList.i"
+	@echo "... src/MapsFoilDetectorList.s"
 	@echo "... src/MyActionInitialization.o"
 	@echo "... src/MyActionInitialization.i"
 	@echo "... src/MyActionInitialization.s"
@@ -522,9 +597,15 @@ help:
 	@echo "... src/MySensitiveDetector.o"
 	@echo "... src/MySensitiveDetector.i"
 	@echo "... src/MySensitiveDetector.s"
+	@echo "... src/MySensitiveDetectorHit.o"
+	@echo "... src/MySensitiveDetectorHit.i"
+	@echo "... src/MySensitiveDetectorHit.s"
 	@echo "... src/MySteppingAction.o"
 	@echo "... src/MySteppingAction.i"
 	@echo "... src/MySteppingAction.s"
+	@echo "... src/SolderBall.o"
+	@echo "... src/SolderBall.i"
+	@echo "... src/SolderBall.s"
 .PHONY : help
 
 

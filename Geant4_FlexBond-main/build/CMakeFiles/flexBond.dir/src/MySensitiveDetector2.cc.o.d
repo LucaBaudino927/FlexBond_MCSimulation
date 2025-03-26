@@ -1,7 +1,7 @@
-CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o: \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySensitiveDetector.cc \
+CMakeFiles/flexBond.dir/src/MySensitiveDetector2.cc.o: \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySensitiveDetector2.cc \
  /usr/include/stdc-predef.h \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector2.hh \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

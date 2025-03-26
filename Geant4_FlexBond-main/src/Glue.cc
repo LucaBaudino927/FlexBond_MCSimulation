@@ -35,10 +35,11 @@ void Glue::ConstructLowerGlueLayerPV(G4double xInWorld, G4double yInWorld, G4dou
     G4cout << "Lower xInWorld: " << xInWorld/cm << "cm" << G4endl;
     G4cout << "Lower yInWorld: " << yInWorld/cm << "cm" << G4endl;
     G4cout << "Lower zInWorld: " << zInWorld/CLHEP::um << " um" << G4endl;
-    G4cout << "Lower glue goes from: " << (zInWorld - GetGlueThickness())/um << " um to " << (zInWorld + GetGlueThickness())/um << " um" << G4endl;
+    G4cout << "Lower glue goes from: " << (zInWorld - GetGlueThickness()*0.5)/um << " um to " << (zInWorld + GetGlueThickness()*0.5)/um << " um" << G4endl;
 	
-    G4Box* solidGlue = new G4Box("solidGlue", GetGlueXDimension()*0.5, GetGlueYDimension()*0.5, GetGlueThickness()*0.5);
-    G4LogicalVolume* logicGlue = new G4LogicalVolume(solidGlue, GetGlueMaterial(), "logicGlue");
+    G4Box* solidGlue = new G4Box("solidLowerGlue", GetGlueXDimension()*0.5, GetGlueYDimension()*0.5, GetGlueThickness()*0.5);
+    G4LogicalVolume* logicGlue = new G4LogicalVolume(solidGlue, GetGlueMaterial(), "logicLowerGlue", 0);
+    MapsFoilDetectorList::AddToLogicalDetectorList(logicGlue);
     G4VisAttributes* green = new G4VisAttributes(G4Colour::Green());
     green->SetVisibility(true);
     logicGlue->SetVisAttributes(green);
@@ -53,39 +54,36 @@ void Glue::ConstructUpperGlueLayerPV(G4double xInWorld, G4double yInWorld, G4dou
 
     std::vector<G4ThreeVector> padPositions = alpide->GetPadCoordinates();
     
-    /*//G4cout << "Upper glue X: " << GetGlueXDimension()/cm << "cm" << G4endl;
+    //G4cout << "Upper glue X: " << GetGlueXDimension()/cm << "cm" << G4endl;
     //G4cout << "Upper glue Y: " << GetGlueYDimension()/cm << "cm" << G4endl;
     G4cout << "Upper glue Z thickness: " << GetGlueThickness()/CLHEP::um << " um" << G4endl;
     G4cout << "Upper xInWorld: " << xInWorld/cm << "cm" << G4endl;
     G4cout << "Upper yInWorld: " << yInWorld/cm << "cm" << G4endl;
     G4cout << "Upper zInWorld: " << zInWorld/CLHEP::um << " um" << G4endl;
-    G4cout << "Upper glue goes from: " << (zInWorld - GetGlueThickness()*0.5)/um << " um to " << (zInWorld + GetGlueThickness()*0.5)/um << " um" << G4endl;*/
+    G4cout << "Upper glue goes from: " << (zInWorld - GetGlueThickness()*0.5)/um << " um to " << (zInWorld + GetGlueThickness()*0.5)/um << " um" << G4endl;
 	
-    G4Box* solidGlueBox = new G4Box("solidGlueBox", GetGlueXDimension()*0.5, GetGlueYDimension()*0.5, GetGlueThickness()*0.5);
-    G4VSolid* solidGlue = solidGlueBox;
+    G4VSolid* solidGlue = new G4Box("solidGlue", GetGlueXDimension()*0.5, GetGlueYDimension()*0.5, GetGlueThickness()*0.5);
     for(int i = 0; i < alpide->GetNOfPads(); i++){
-    	G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(),(alpide->GetPadThickness1()+alpide->GetPadThickness2())*0.5, 0., 360.*degree);
-    	G4ThreeVector* translation = new G4ThreeVector(padPositions[i].x(), padPositions[i].y(), 
-    				  padPositions[i].z()+(alpide->GetAlpideThickness()+alpide->GetPadThickness1()+alpide->GetPadThickness2())*0.5);
-    	solidGlue = new G4SubtractionSolid("solidGlue", solidGlue, solidPadHole, 0, *translation);
-    	/*G4cout << "solidPadHole Z: " 
-    		<< padPositions[i].z()+(alpide->GetAlpideThickness()+alpide->GetPadThickness1()+alpide->GetPadThickness2())*0.5/um << " um" << G4endl;
+    
+    	G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(),GetGlueThickness()*0.5, 0., 360.*degree);
+    	G4ThreeVector* translation = new G4ThreeVector(padPositions[i].x(), padPositions[i].y(), padPositions[i].z());
+    	solidGlue = new G4SubtractionSolid("solidUpperGlue", solidGlue, solidPadHole, 0, *translation);
+    	
+    	//logs
+    	G4cout << "solidPadHole Z: " 
+    		<< padPositions[i].z()+(alpide->GetAlpideThickness()+GetGlueThickness())*0.5/um << " um" << G4endl;
     	G4cout << "solidPadHole goes from: " 
-    	<< (padPositions[i].z()+(alpide->GetAlpideThickness()+alpide->GetPadThickness1()+alpide->GetPadThickness2())*0.5 - (alpide->GetPadThickness1()+alpide->GetPadThickness2())*0.5)/um << " um to " 
-    	<< (padPositions[i].z()+(alpide->GetAlpideThickness()+alpide->GetPadThickness1()+alpide->GetPadThickness2())*0.5 + (alpide->GetPadThickness1()+alpide->GetPadThickness2())*0.5)/um << " um" << G4endl;
-    	G4cout << "solidGlue volume: " << solidGlue->GetCubicVolume() << G4endl;*/
+    	<< (padPositions[i].z()+(alpide->GetAlpideThickness()+GetGlueThickness())*0.5 - GetGlueThickness()*0.5)/um << " um to " 
+    	<< (padPositions[i].z()+(alpide->GetAlpideThickness()+GetGlueThickness())*0.5 + (GetGlueThickness())*0.5)/um << " um" << G4endl;
+    	G4cout << "solidGlue volume: " << solidGlue->GetCubicVolume() << G4endl;
+    	
     }
-    G4LogicalVolume* logicGlue = new G4LogicalVolume(solidGlue, GetGlueMaterial(), "logicGlue");
+    
+    G4LogicalVolume* logicGlue = new G4LogicalVolume(solidGlue, GetGlueMaterial(), "logicUpperGlue", 0);
+    MapsFoilDetectorList::AddToLogicalDetectorList(logicGlue);
     G4VisAttributes* green = new G4VisAttributes(G4Colour::Green());
     green->SetVisibility(true);
     logicGlue->SetVisAttributes(green);
-    
-    //holes
-    for(int i = 0; i < alpide->GetNOfPads(); i++){
-    	G4Tubs* solidHole = new G4Tubs("solidHole", 0., alpide->GetPadRadius(), GetGlueThickness()*0.5, 0., 360.*degree);
-    	G4LogicalVolume* logicHole = new G4LogicalVolume(solidHole, GetHoleMaterial(), "logicGlue");
-    	new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), padPositions[i].z()}, logicHole, "physGlue", logicGlue, false, 1, true);
-    }
     
     //placement of the layer logical volume into its mother frame
     new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicGlue, "physUpperGlue", worldLog, false, 1, true);

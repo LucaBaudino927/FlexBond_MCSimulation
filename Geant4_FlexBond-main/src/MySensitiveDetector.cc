@@ -1,8 +1,14 @@
 #include "MySensitiveDetector.hh"
 
-// ######## Quantum efficiency of the PMT from data eff.dat taken online 
 MySensitiveDetector::MySensitiveDetector(G4String name) : G4VSensitiveDetector(name) {
-        quEff = new G4PhysicsOrderedFreeVector();
+	
+	G4cout << "------------------------MySensitiveDetector::MySensitiveDetector()---------------" << G4endl;
+	G4cout << "-----------Creating an SD with name " << name << " and HitsCollection name MySensitiveDetectorColl -------------" << G4endl;
+	collectionName.insert("MySensitiveDetectorColl");	
+
+	//meccanismo per simulare sensitive detector come se fosse un PMT: per ora non mi interessa
+	// ######## Quantum efficiency of the PMT from data eff.dat taken online 
+        /*quEff = new G4PhysicsOrderedFreeVector();
         std::ifstream datafile;
         datafile.open("pmt_efficiency.dat");
         G4cout << "Reading PMT quantum efficiency vs wavelength data" << std::endl;
@@ -16,20 +22,71 @@ MySensitiveDetector::MySensitiveDetector(G4String name) : G4VSensitiveDetector(n
         datafile.close();
         G4cout << "PMT quantum efficiency data read. " << quEff->GetVectorLength() << " QE data are stored" << std::endl;
         //quEff->SetSpline(false);//To use linear interpolation instead of Spline.
+        */
 }
 
 // ######## Destructor
 MySensitiveDetector::~MySensitiveDetector(){}
 
+
+void MySensitiveDetector::Initialize(G4HCofThisEvent* hitsContainer){
+
+	G4cout << "------------------------MySensitiveDetector::Initialize()-----------------------" << G4endl;
+	fHitsCollection = new MySensitiveDetectorHitsCollection(SensitiveDetectorName, collectionName[0]);
+	if (fHCID < 0) {
+		G4cout << "------------Creating the HitsCollection: " << SensitiveDetectorName << "/" << collectionName[0] << "--------------" << G4endl;
+		fHCID = G4SDManager::GetSDMpointer()->GetCollectionID(fHitsCollection);
+	}
+	hitsContainer->AddHitsCollection(fHCID, fHitsCollection);
+  
+}
+
+void MySensitiveDetector::clear() { delete this; }
+
+
 // ######## Get informations from the sensistive detectors, MC truth and experimental-like simulation
 G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHist){
+	
+	/****************************************************************************************
+	 *	Cosa voglio misurare?								*
+	 *	-energia depositata per ogni layer						*
+	 *	-somma dell'energia depositata su tutti i layer (già fatto nel EventAction)	*
+	 *	-tempo										*
+	 *	-coordinate									*
+	 *	-tipo di particella?								*
+	 *	-momento della particella?							*
+	 ****************************************************************************************/
+	
+	
+	//G4cout<<"------------ProcessHit-------------"<<G4endl;
+	auto edep = aStep->GetTotalEnergyDeposit();
+  	if (edep == 0.) return true;
 
-        // ######## MC trouth
+	auto preStepPoint = aStep->GetPreStepPoint();
+	auto touchable = preStepPoint->GetTouchable();
+	auto copyNo = touchable->GetVolume()->GetCopyNo();
+	auto hitTime = preStepPoint->GetGlobalTime();
+
+	// Create a new hit and set it to the collection
+	auto hit = new MySensitiveDetectorHit(copyNo, hitTime);
+	auto physical = touchable->GetVolume();
+	hit->SetLogVolume(physical->GetLogicalVolume());
+	auto transform = touchable->GetHistory()->GetTopTransform();
+	transform.Invert();
+	hit->SetRot(transform.NetRotation());
+	hit->SetPos(transform.NetTranslation());
+	hit->SetEdep(edep);
+	fHitsCollection->insert(hit);
+	
+  
+  
+
+	
+	//-----------------------------------Precedente inserimento dei dati nelle ntuple: per ora non mi interessa
+	
+        /* // ######## MC trouth
 	G4Track* track = aStep->GetTrack();
-	// Comment for TOF the following line
-	//track->SetTrackStatus(fStopAndKill);//si ferma la traccia appena tocca il detector. Comment for TOF!
 	G4StepPoint *preStepPoint = aStep ->GetPreStepPoint();
-	G4StepPoint *postStepPoint = aStep ->GetPostStepPoint();
 	G4ThreeVector posPhoton = preStepPoint->GetPosition();
 
         // ######## Experimental-like simulation
@@ -42,6 +99,8 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
 	
 	// ######## Time
 	G4double time = preStepPoint->GetGlobalTime();//local esiste anche global. Dipende da quando e' stata creata la particella. 
+	
+	
 	// ####### Wlen from the momentum
 	G4ThreeVector momPhoton = preStepPoint->GetMomentum();
 	G4double wlen = (1.239841939*keV)/momPhoton.mag();//nm, value.mag() e' il valore assoluto.
@@ -61,9 +120,10 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
 	man->FillNtupleDColumn(1,2,posDetector[1]);
 	man->FillNtupleDColumn(1,3,posDetector[2]);
 	man->AddNtupleRow(1);
+	*/
 
 	//Meccanismo per simulare fotomoltiplicatore: non mi interessa
-	/*// ######## Photons
+	/* // ######## Photons
         if(track->GetParticleDefinition()->GetParticleName().compare("gamma") == 0){
         	// ######## Time
 		G4double time = preStepPoint->GetGlobalTime();//local esiste anche global. Dipende da quando e' stata creata la particella. 

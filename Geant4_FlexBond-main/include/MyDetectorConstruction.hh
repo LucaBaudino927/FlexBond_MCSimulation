@@ -21,6 +21,7 @@
 #include "G4LogicalVolumeStore.hh"
 #include "G4SolidStore.hh"
 #include "G4MTRunManager.hh"
+#include "G4SDManager.hh"
 
 //User definted
 #include "MySensitiveDetector.hh"
@@ -28,6 +29,7 @@
 #include "Alpide.hh"
 #include "Kapton.hh"
 #include "Copper.hh"
+#include "SolderBall.hh"
 
 
 class MyDetectorConstruction : public G4VUserDetectorConstruction
@@ -47,13 +49,14 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
     private:
     
         virtual void ConstructSDandField();
+        void DeleteOldSensitiveDetectors();
         void DefineMaterials();
+        
         G4double AlTck,SiTck,KaTck,PlaneDistance;
         G4int nCols,nRows,nPlanes;
         G4double xWorld, yWorld, zWorld;
-        G4bool isCherenkov, isScintillator, isTOF, isAtmosphere, isMapsFoil;
         G4Box *solidWorld, *solidRadiator, *solidRadiator2, *solidDetector, *solidScintillator, *solidAtmosphere;
-        G4LogicalVolume  *logicWorld, *logicRadiator, *logicRadiator2, *logicDetector, *logicScintillator, *logicAtmosphere[10];
+        G4LogicalVolume *logicWorld, *logicRadiator, *logicRadiator2, *logicDetector, *logicScintillator, *logicAtmosphere[10];
         G4VPhysicalVolume  *physWorld, *physRadiator, *physRadiator2, *physDetector, *physScintillator, *physAtmosphere[10];
         G4OpticalSurface *mirrorSurface;
         G4GenericMessenger *fMessenger;
@@ -62,7 +65,15 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         G4Element *C, *Na, *I, *N, *O, *H;
         G4bool materialsDefined = false;
         G4bool reinitialize = false;
-        MySensitiveDetector* sensDet;
+        
+        //flags to declare the detector
+        G4bool isCherenkov, isScintillator, isTOF, isAtmosphere, isMapsFoil;
+        //flags to declare the setup of the detector
+        G4bool constructEpoxyGlueLayer, constructKaptonLayer, constructCopperLayer, constructSolderBalls;
+        //flags to tune the setup: if they are specified in the macro -> use those values otherwise use default values
+        G4double alpideXFromMessenger, alpideYFromMessenger,  alpideThicknessFromMessenger, alpidePadRadiusFromMessenger, glueThicknessFromMessenger, 
+               kaptonThicknessFromMessenger, copperThicknessFromMessenger;
+               
 
 };
 

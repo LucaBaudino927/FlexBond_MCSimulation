@@ -9,6 +9,7 @@
 #include "G4LogicalVolume.hh"
 #include "G4NistManager.hh"
 #include "G4SystemOfUnits.hh"
+#include "MapsFoilDetectorList.hh"
 
 //Notice that in this system:
 //Thickness refers to the Z coordinate
