@@ -32,7 +32,7 @@
 class MySensitiveDetectorHit : public G4VHit
 {
   public:
-    MySensitiveDetectorHit(G4int id, G4double t);
+    MySensitiveDetectorHit(G4int id);
     MySensitiveDetectorHit(const MySensitiveDetectorHit& right) = default;
     ~MySensitiveDetectorHit() override = default;
 

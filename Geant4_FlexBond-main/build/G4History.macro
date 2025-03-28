@@ -56,865 +56,195 @@
 /run/beamOn 1
 /vis/scene/notifyHandlers scene-0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
 /control/execute run3.mac
 /run/reinitializeGeometry
 /vis/scene/notifyHandlers scene-0
@@ -967,1269 +297,325 @@
 /vis/scene/notifyHandlers scene-1
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
 /vis/set/touchable physWorld 0
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physAlpide 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad1_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physPad2_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperGlue 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physLowerKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physUpperKapton 1 physKaptonHole 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physCopper 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_0 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_1 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_2 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_3 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
-/vis/set/touchable physWorld 0 physDetector 0 physSolderBall_4 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicAlpide_pv_0 1
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad1_0_pv_1 2
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicPad2_0_pv_2 3
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerGlue_pv_3 4
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperGlue_pv_4 5
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicLowerKapton_pv_5 6
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicUpperKapton_pv_6 7
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicCopper_pv_7 8
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
+/vis/set/touchable physWorld 0 av_1_impr_1_logicSolderBall_0_pv_8 9
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0
 /vis/set/touchable physWorld 0

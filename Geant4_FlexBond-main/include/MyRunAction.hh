@@ -6,6 +6,7 @@
 #include "G4AnalysisManager.hh"
 #include "G4Run.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4Threading.hh"
 
 class MyRunAction : public G4UserRunAction
 {  
@@ -20,8 +21,6 @@ public:
         
         void AddToHistoNames(G4String name) { histoNames.push_back(name); }
 	G4String GetHistoNameByIndex(G4int index)  { return histoNames[index]; }
-        //void AddToHistoNames(G4String);
-        //G4String GetHistoNameByIndex(G4int);
         std::vector<G4String> GetHistoNames() { return histoNames; }
         
 private:

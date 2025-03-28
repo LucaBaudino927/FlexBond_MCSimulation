@@ -22,6 +22,7 @@
 #include "G4SolidStore.hh"
 #include "G4MTRunManager.hh"
 #include "G4SDManager.hh"
+#include "G4AssemblyVolume.hh"
 
 //User definted
 #include "MySensitiveDetector.hh"

@@ -72,6 +72,7 @@ G4VPhysicalVolume* MyDetectorConstruction::Construct(){
         //per eliminare la geometria e reinizializzarla da zero
         if(reinitialize){
 		G4GeometryManager::GetInstance()->OpenGeometry();
+		DeleteOldSensitiveDetectors();
 		//G4PhysicalVolumeStore::GetInstance()->Clean();
 		//G4LogicalVolumeStore::GetInstance()->Clean();
 		//G4SolidStore::GetInstance()->Clean();
@@ -95,7 +96,6 @@ G4VPhysicalVolume* MyDetectorConstruction::Construct(){
         if(isMapsFoil) 		{ ConstructMapsFoil(); }
         
         if(reinitialize){
-        	DeleteOldSensitiveDetectors();
         	G4MTRunManager::GetRunManager()->GeometryHasBeenModified();
         	G4GeometryManager::GetInstance()->CloseGeometry();
         }
@@ -377,44 +377,69 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 						  + ((constructSolderBalls) 	? alpidePadRadius*4 : 0.);						  
 						  
 	//costruisco il logicalDetector che sarà la parte sensibile del layer e il logicVolume nel quale inserirò gli altri layer
-	solidDetector = new G4Box("solidDetector", alpideX*0.5, alpideY*0.5, totalThickness*0.5);
-	logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicDetector");
+	//solidDetector = new G4Box("solidDetector", alpideX*0.5, alpideY*0.5, totalThickness*0.5);
+	//logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicDetector");
 	
 	//*
 	//usare G4AssemblyVolume?
 	//*
 	
+	// Define one layer as one assembly volume
+	G4AssemblyVolume* assemblyDetector = new G4AssemblyVolume();
+	
 	//costruisco i vari layer e li piazzo rispetto alla posizione del logicDetector
 	//metodi che contengono G4VPhysicalVolume *xyz = new G4PVPlacement(nullptr, {x, y, z}, logicXYZ, "physXYZ", logicDetector, false, 1, true);
+	G4double Z = 0.*um;
 	Alpide *alpide = new Alpide(alpideX, alpideY, alpideThickness, alpidePadRadius);
-	alpide->ConstructAlpideLayerPV(0.*um, 0.*um, 0.*um, logicDetector);
+	alpide->ConstructAlpideLayerPV(0.*um, 0.*um, Z, assemblyDetector);
 	if(constructEpoxyGlueLayer) {
 		Glue *lowerGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
-		lowerGlue->ConstructLowerGlueLayerPV(0.*um, 0.*um, 0 - alpideThickness*0.5 - glueThickness*0.5, logicDetector);
+		Z = 0 - alpideThickness*0.5 - glueThickness*0.5;
+		lowerGlue->ConstructLowerGlueLayerPV(0.*um, 0.*um, Z, assemblyDetector);
 		Glue *upperGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
-		upperGlue->ConstructUpperGlueLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness*0.5, logicDetector, alpide);
+		Z = 0 + alpideThickness*0.5 + glueThickness*0.5;
+		upperGlue->ConstructUpperGlueLayerPV(0.*um, 0.*um, Z, assemblyDetector, alpide);
 	}
 	if(constructKaptonLayer) {
 		Kapton *lowerKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
-		lowerKapton->ConstructLowerKaptonLayerPV(0.*um, 0.*um, 0 - alpideThickness*0.5 - glueThickness - kaptonThickness*0.5, logicDetector);
+		Z = 0 - alpideThickness*0.5 - ((constructEpoxyGlueLayer) ? glueThickness : 0.) - kaptonThickness*0.5;
+		lowerKapton->ConstructLowerKaptonLayerPV(0.*um, 0.*um, Z, assemblyDetector);
 		Kapton *upperKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
-		upperKapton->ConstructUpperKaptonLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness + kaptonThickness*0.5, logicDetector, alpide);
+		Z = 0 + alpideThickness*0.5 + ((constructEpoxyGlueLayer) ? glueThickness : 0.) + kaptonThickness*0.5;
+		upperKapton->ConstructUpperKaptonLayerPV(0.*um, 0.*um, Z, assemblyDetector, alpide);
 	}
 	if(constructCopperLayer) {
 		Copper *copperLayer = new Copper(alpideX, alpideY, copperThickness);
-		copperLayer->ConstructCopperLayerPV(0.*um, 0.*um, 0 + alpideThickness*0.5 + glueThickness + kaptonThickness + copperThickness*0.5, logicDetector);
+		Z = 0+alpideThickness*0.5+((constructEpoxyGlueLayer) ? glueThickness : 0.)+((constructKaptonLayer) ? kaptonThickness : 0.)+copperThickness*0.5;
+		copperLayer->ConstructCopperLayerPV(0.*um, 0.*um, Z, assemblyDetector);
 	}
 	if(constructSolderBalls) {
 		SolderBall *solderBalls = new SolderBall(alpide);
-		solderBalls->ConstructSolderBallLayerPV(alpideThickness*0.5 + glueThickness + kaptonThickness + copperThickness + alpidePadRadius, logicDetector);
+		Z = alpideThickness*0.5 + ((constructEpoxyGlueLayer) ? glueThickness : 0.)
+					+ ((constructKaptonLayer) ? kaptonThickness : 0.) 
+					+ ((constructCopperLayer) ? copperThickness : 0.) 
+					+ alpidePadRadius;
+		solderBalls->ConstructSolderBallLayerPV(Z, assemblyDetector);
 	}
 	//*
 	//*
 	//*
+	
+	// Inserisco l'assembly nel world logical volume
+	G4int NofLayer = 1;
+	for(unsigned int i = 0; i < NofLayer; i++) {
+		// Rotation of the assembly inside the world
+		G4RotationMatrix Rm;
+		// Translation of the assembly inside the world
+		G4double offset = 1.*cm;
+		G4ThreeVector Tm(0., 0., 0. + i*offset);
+		G4Transform3D Tr = G4Transform3D(Rm,Tm);
+		assemblyDetector->MakeImprint(logicWorld, Tr);
+	}
 
 	
 	//posiziono il logicDetector (con tutti i suoi componenti attaccati) nel logicWorld
-	physDetector = new G4PVPlacement(0, {0., 0., 0.}, logicDetector, "physDetector", logicWorld, false, 0, true);
+	//physDetector = new G4PVPlacement(0, {0., 0., 0.}, logicDetector, "physDetector", logicWorld, false, 0, true);
 	
 }
 
@@ -441,12 +466,13 @@ void MyDetectorConstruction::ConstructSDandField(){
 	//TODO
 	/*
 	programma prossima settimana:
-	-aumentare istogrammi e salvare l'energia depositata PER OGNI LAYER!
 	-rendere configurabile TUTTO! pure le costanti che ho messo in MyEventAction
 	-risolvere problemi con i pad (chiedere a Mario?)
-	-inserire nuovo layer con solder balls
 	-creare il detector usando G4AssemblyDetector?
-	-risolvere problema sull'istogramma dei tempi delle hit*/
+	-risolvere problema sull'istogramma dei tempi delle hit
+	
+	- per importare la geometria del flexbond dal file step leggere la guida per gli sviluppatori, paragrafo Tessellated Solids, G4TessellatedSolid
+	*/
 	
 }	
 
@@ -459,6 +485,7 @@ void MyDetectorConstruction::DeleteOldSensitiveDetectors(){
 		G4cout << "Deleting SD with name: " << MapsFoilDetectorList::GetLogicalDetectorList()[i]->GetName() << G4endl;
 		//non funziona
 		delete SDobject;
+		SDobject = 0;
 	}
 }
 

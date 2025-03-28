@@ -2,8 +2,8 @@
 
 MySensitiveDetector::MySensitiveDetector(G4String name) : G4VSensitiveDetector(name) {
 	
-	G4cout << "------------------------MySensitiveDetector::MySensitiveDetector()---------------" << G4endl;
-	G4cout << "-----------Creating an SD with name " << name << " and HitsCollection name MySensitiveDetectorColl -------------" << G4endl;
+	//G4cout << "------------------------MySensitiveDetector::MySensitiveDetector()---------------" << G4endl;
+	//G4cout << "-----------Creating an SD with name " << name << " and HitsCollection name MySensitiveDetectorColl -------------" << G4endl;
 	collectionName.insert("MySensitiveDetectorColl");	
 
 	//meccanismo per simulare sensitive detector come se fosse un PMT: per ora non mi interessa
@@ -31,7 +31,7 @@ MySensitiveDetector::~MySensitiveDetector(){}
 
 void MySensitiveDetector::Initialize(G4HCofThisEvent* hitsContainer){
 
-	G4cout << "------------------------MySensitiveDetector::Initialize()-----------------------" << G4endl;
+	//G4cout << "------------------------MySensitiveDetector::Initialize()-----------------------" << G4endl;
 	fHitsCollection = new MySensitiveDetectorHitsCollection(SensitiveDetectorName, collectionName[0]);
 	if (fHCID < 0) {
 		G4cout << "------------Creating the HitsCollection: " << SensitiveDetectorName << "/" << collectionName[0] << "--------------" << G4endl;
@@ -68,7 +68,7 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
 	auto hitTime = preStepPoint->GetGlobalTime();
 
 	// Create a new hit and set it to the collection
-	auto hit = new MySensitiveDetectorHit(copyNo, hitTime);
+	auto hit = new MySensitiveDetectorHit(copyNo);
 	auto physical = touchable->GetVolume();
 	hit->SetLogVolume(physical->GetLogicalVolume());
 	auto transform = touchable->GetHistory()->GetTopTransform();
@@ -76,6 +76,7 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
 	hit->SetRot(transform.NetRotation());
 	hit->SetPos(transform.NetTranslation());
 	hit->SetEdep(edep);
+	hit->SetTime(hitTime);
 	fHitsCollection->insert(hit);
 	
   

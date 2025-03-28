@@ -17,7 +17,7 @@ Kapton::Kapton(G4double x, G4double y, G4double kaptonThickness, G4Material* hol
 Kapton::~Kapton(){};
 
 //Construction and placement of single kapton layer physical volume, covering all the detection system
-void Kapton::ConstructLowerKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume *worldLog)
+void Kapton::ConstructLowerKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector)
 {
 
     G4Box* solidKapton = new G4Box("solidLowerKapton", GetKaptonXDimension()*0.5, GetKaptonYDimension()*0.5, GetKaptonThickness()*0.5);
@@ -27,8 +27,20 @@ void Kapton::ConstructLowerKaptonLayerPV(G4double xInWorld, G4double yInWorld, G
     brown->SetVisibility(true);
     logicKapton->SetVisAttributes(brown);
     
+    // Rotation and translation of a plate inside the assembly
+    G4RotationMatrix Ra;
+    G4ThreeVector Ta;
+    G4Transform3D Tr;
+
+    // Fill the assembly by the plates
+    Ta.setX(xInWorld); 
+    Ta.setY(yInWorld);
+    Ta.setZ(zInWorld);
+    Tr = G4Transform3D(Ra,Ta);
+    assemblyDetector->AddPlacedVolume(logicKapton, Tr);
+    
     //placement of the layer logical volume into its mother frame
-    new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicKapton, "physLowerKapton", worldLog, false, 1, true);
+    //new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicKapton, "physLowerKapton", worldLog, false, 1, true);
     
     	/*G4cout << "kapton half X: " << solidKapton->GetXHalfLength() << G4endl;
 	G4cout << "kapton half Y: " << solidKapton->GetYHalfLength() << G4endl;
@@ -40,18 +52,36 @@ void Kapton::ConstructLowerKaptonLayerPV(G4double xInWorld, G4double yInWorld, G
 }
 
 //Construction and placement of single kapton layer physical volume, covering all the detection system
-void Kapton::ConstructUpperKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume *worldLog, Alpide* alpide)
+void Kapton::ConstructUpperKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector, Alpide* alpide)
 {
 
-    G4Box* solidKapton = new G4Box("solidUpperKapton", GetKaptonXDimension()*0.5, GetKaptonYDimension()*0.5, GetKaptonThickness()*0.5);
+    std::vector<G4ThreeVector> padPositions = alpide->GetPadCoordinates();
+    G4VSolid* solidKapton = new G4Box("solidUpperKapton", GetKaptonXDimension()*0.5, GetKaptonYDimension()*0.5, GetKaptonThickness()*0.5);
+    for(int i = 0; i < alpide->GetNOfPads(); i++){
+    
+    	G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(), GetKaptonThickness()*0.5, 0., 360.*degree);
+    	G4ThreeVector* translation = new G4ThreeVector(padPositions[i].x(), padPositions[i].y(), padPositions[i].z());
+    	solidKapton = new G4SubtractionSolid("solidUpperGlue", solidKapton, solidPadHole, 0, *translation);
+    	
+    	G4cout << "solidPadHoleThickness: " << GetKaptonThickness()/um << " um" << G4endl;
+    	G4cout << "solidPadHole Z center: " << zInWorld/um << " um" << G4endl;
+    	G4cout << "solidPadHole Z goes from: "<<(zInWorld - GetKaptonThickness()*0.5)/um <<" um to "<< (zInWorld + GetKaptonThickness()*0.5)/um << " um" << G4endl;
+    	
+    }
+    
     G4LogicalVolume* logicKapton = new G4LogicalVolume(solidKapton, GetKaptonMaterial(), "logicUpperKapton", 0);
     MapsFoilDetectorList::AddToLogicalDetectorList(logicKapton);
     G4VisAttributes* brown = new G4VisAttributes(G4Colour::Brown());
     brown->SetVisibility(true);
     logicKapton->SetVisAttributes(brown);
     
+    G4cout << "solidUpperKaptonThickness: " << GetKaptonThickness()/um << " um" << G4endl;
+    G4cout << "solidUpperKapton Z center: " << zInWorld/um << " um" << G4endl;
+    G4cout << "solidUpperKapton Z goes from: "<<(zInWorld - GetKaptonThickness()*0.5)/um <<" um to "<< (zInWorld + GetKaptonThickness()*0.5)/um << " um" << G4endl;
+    
+    //TODO: sostituire anche qui con G4SubstractionSolid come fatto per la colla?
     //holes
-    for(int i = 0; i < alpide->GetNOfPads(); i++){
+    /*for(int i = 0; i < alpide->GetNOfPads(); i++){
     	std::vector<G4ThreeVector> padPositions = alpide->GetPadCoordinates();
     	G4Tubs* solidHole = new G4Tubs("solidHole" + i, 0., alpide->GetPadRadius(), GetKaptonThickness()*0.5, 0., 360.*degree);
     	G4LogicalVolume* logicHole = new G4LogicalVolume(solidHole, GetHoleMaterial(), "logicHole");
@@ -59,10 +89,22 @@ void Kapton::ConstructUpperKaptonLayerPV(G4double xInWorld, G4double yInWorld, G
     	blue->SetVisibility(true);
     	logicHole->SetVisAttributes(blue);
     	new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), padPositions[i].z()}, logicHole, "physKaptonHole", logicKapton, false, 1, true);
-    }
+    }*/
+    
+    // Rotation and translation of a plate inside the assembly
+    G4RotationMatrix Ra;
+    G4ThreeVector Ta;
+    G4Transform3D Tr;
+
+    // Fill the assembly by the plates
+    Ta.setX(xInWorld); 
+    Ta.setY(yInWorld);
+    Ta.setZ(zInWorld);
+    Tr = G4Transform3D(Ra,Ta);
+    assemblyDetector->AddPlacedVolume(logicKapton, Tr);
     
     //placement of the layer logical volume into its mother frame
-    new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicKapton, "physUpperKapton", worldLog, false, 1, true);
+    //new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicKapton, "physUpperKapton", worldLog, false, 1, true);
     
     	/*G4cout << "kapton half X: " << solidKapton->GetXHalfLength() << G4endl;
 	G4cout << "kapton half Y: " << solidKapton->GetYHalfLength() << G4endl;

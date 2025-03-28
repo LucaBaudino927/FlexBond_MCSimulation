@@ -16,7 +16,7 @@ SolderBall::SolderBall(Alpide* alpide, G4Material* material)
 SolderBall::~SolderBall(){};
 
 //Construction and placement of single solderBall layer physical volume, covering all the detection system
-void SolderBall::ConstructSolderBallLayerPV(G4double zInWorld, G4LogicalVolume *worldLog)
+void SolderBall::ConstructSolderBallLayerPV(G4double zInWorld, G4AssemblyVolume* assemblyDetector)
 {
 
     for(int i = 0; i < fAlpide->GetNOfPads(); i++){
@@ -27,10 +27,26 @@ void SolderBall::ConstructSolderBallLayerPV(G4double zInWorld, G4LogicalVolume *
 	G4VisAttributes* blue = new G4VisAttributes(G4Colour::Blue());
 	blue->SetVisibility(true);
 	logicSolderBall->SetVisAttributes(blue);
+	
+	G4cout << "solidSolderBall Radius: " << fAlpide->GetPadRadius()/um << " um" << G4endl;
+	G4cout << "solidSolderBall Z center: " << zInWorld/um << " um" << G4endl;
+	G4cout << "solidSolderBall Z goes from: " << (zInWorld - fAlpide->GetPadRadius())/um << " um to " 
+			<< (zInWorld + fAlpide->GetPadRadius())/um << " um" << G4endl;
 	G4cout<<"solidSolderBall_"<<std::to_string(i)<<" volume: "<<solidSolderBall->GetCubicVolume()<<G4endl;
     	
-    	std::vector<G4ThreeVector> ballPositions = fAlpide->GetPadCoordinates();	
-    	new G4PVPlacement(0,{ballPositions[i].x(), ballPositions[i].y(), zInWorld}, logicSolderBall, "physSolderBall_"+std::to_string(i), worldLog, false, 1, true);
+    	std::vector<G4ThreeVector> ballPositions = fAlpide->GetPadCoordinates();
+    	// Rotation and translation of a plate inside the assembly
+	G4RotationMatrix Ra;
+	G4ThreeVector Ta;
+	G4Transform3D Tr;
+
+	// Fill the assembly by the plates
+	Ta.setX(ballPositions[i].x()); 
+	Ta.setY(ballPositions[i].y());
+	Ta.setZ(zInWorld);
+	Tr = G4Transform3D(Ra,Ta);
+	assemblyDetector->AddPlacedVolume(logicSolderBall, Tr);
+    	//new G4PVPlacement(0,{ballPositions[i].x(), ballPositions[i].y(), zInWorld}, logicSolderBall, "physSolderBall_"+std::to_string(i), worldLog, false, 1, true);
     	
     }
 

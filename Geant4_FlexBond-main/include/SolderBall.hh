@@ -11,6 +11,7 @@
 #include "MapsFoilDetectorList.hh"
 #include "Alpide.hh"
 #include "G4Sphere.hh"
+#include "G4AssemblyVolume.hh"
 
 //Notice that in this system:
 //Thickness refers to the Z coordinate
@@ -25,7 +26,7 @@ public:
     G4Material* GetSolderBallMaterial() { return fSolderBall; }
     G4double GetSolderBallRadius()	{ return fSolderBallRadius; }
     Alpide* GetAlpide()			{ return fAlpide; }
-    void ConstructSolderBallLayerPV(G4double zInWorld, G4LogicalVolume* worldLog);
+    void ConstructSolderBallLayerPV(G4double zInWorld, G4AssemblyVolume* assemblyDetector);
     
     /*static G4VPhysicalVolume *ConstructSolderBallMatrixPhVolume(SolderBall *SolderBall, G4double xDimSolderBalldSolderBall,
                                                           G4double yDimSolderBalldSolderBall, G4int nOfColumn,

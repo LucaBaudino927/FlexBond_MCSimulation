@@ -2,7 +2,7 @@
 
 G4ThreadLocal G4Allocator<MySensitiveDetectorHit>* MySensitiveDetectorHitAllocator;
 
-MySensitiveDetectorHit::MySensitiveDetectorHit(G4int id, G4double time) : fId(id), fTime(time), fEdep(0.) {}
+MySensitiveDetectorHit::MySensitiveDetectorHit(G4int id) : fId(id), fTime(0.), fEdep(0.), fPos(0.), fLogVolume(0) {}
 
 G4bool MySensitiveDetectorHit::operator==(const MySensitiveDetectorHit& /*right*/) const
 {
@@ -64,6 +64,7 @@ std::vector<G4AttValue>* MySensitiveDetectorHit::CreateAttValues() const
 
 void MySensitiveDetectorHit::Print()
 {
-	G4cout<<"MySensitiveDetector["<<fLogVolume->GetName() << "]-> time: " << fTime / ns << " ns; Pos: " << fPos << "; Edep: " << fEdep/keV <<" keV"<< G4endl;
+	G4cout<<"MySensitiveDetector["<<fLogVolume->GetName() << "]-> time: " << fTime / ns 
+			<< " ns; Pos: " << fPos.z()/um << " um; Edep: " << fEdep/keV <<" keV"<< G4endl;
 }
 

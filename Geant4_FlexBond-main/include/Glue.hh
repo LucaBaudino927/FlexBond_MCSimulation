@@ -13,6 +13,7 @@
 #include "G4SubtractionSolid.hh"
 #include "G4VSolid.hh"
 #include "MapsFoilDetectorList.hh"
+#include "G4AssemblyVolume.hh"
 
 //Notice that in this system:
 //Thickness refers to the Z coordinate
@@ -29,8 +30,8 @@ public:
     G4double GetGlueThickness()   { return fGlueThickness; }
     G4double GetGlueXDimension()  { return fGlueXDimension; }
     G4double GetGlueYDimension()  { return fGlueYDimension; }
-    void ConstructLowerGlueLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume* worldLog);
-    void ConstructUpperGlueLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume* worldLog, Alpide* alpide);
+    void ConstructLowerGlueLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector);
+    void ConstructUpperGlueLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector, Alpide* alpide);
     
     /*static G4VPhysicalVolume *ConstructGlueMatrixPhVolume(Glue *glue, G4double xDimGluedPad,
                                                           G4double yDimGluedPad, G4int nOfColumn,

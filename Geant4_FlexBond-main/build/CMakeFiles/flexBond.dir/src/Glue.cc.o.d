@@ -351,6 +351,10 @@ CMakeFiles/flexBond.dir/src/Glue.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MapsFoilDetectorList.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubtractionSolid.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4DisplacedSolid.hh \

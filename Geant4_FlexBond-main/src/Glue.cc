@@ -27,7 +27,7 @@ Glue::Glue(G4double x, G4double y, G4double glueThickness, G4Material* glue, G4M
 Glue::~Glue(){};
 
 //Construction and placement of single glue layer physical volume, covering all the detection system
-void Glue::ConstructLowerGlueLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume *worldLog) {
+void Glue::ConstructLowerGlueLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector) {
 
     //G4cout << "Lower glue X: " << GetGlueXDimension()/cm << "cm" << G4endl;
     //G4cout << "Lower glue Y: " << GetGlueYDimension()/cm << "cm" << G4endl;
@@ -44,13 +44,25 @@ void Glue::ConstructLowerGlueLayerPV(G4double xInWorld, G4double yInWorld, G4dou
     green->SetVisibility(true);
     logicGlue->SetVisAttributes(green);
     
+    // Rotation and translation of a plate inside the assembly
+    G4RotationMatrix Ra;
+    G4ThreeVector Ta;
+    G4Transform3D Tr;
+
+    // Fill the assembly by the plates
+    Ta.setX(xInWorld); 
+    Ta.setY(yInWorld);
+    Ta.setZ(zInWorld);
+    Tr = G4Transform3D(Ra,Ta);
+    assemblyDetector->AddPlacedVolume(logicGlue, Tr);
+    
     //placement of the layer logical volume into its mother frame
-    new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicGlue, "physLowerGlue", worldLog, false, 1, true);
+    //new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicGlue, "physLowerGlue", worldLog, false, 1, true);
 
 }
 
 //Construction and placement of single glue layer physical volume, covering all the detection system
-void Glue::ConstructUpperGlueLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume *worldLog, Alpide* alpide){
+void Glue::ConstructUpperGlueLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector, Alpide* alpide){
 
     std::vector<G4ThreeVector> padPositions = alpide->GetPadCoordinates();
     
@@ -65,13 +77,12 @@ void Glue::ConstructUpperGlueLayerPV(G4double xInWorld, G4double yInWorld, G4dou
     G4VSolid* solidGlue = new G4Box("solidGlue", GetGlueXDimension()*0.5, GetGlueYDimension()*0.5, GetGlueThickness()*0.5);
     for(int i = 0; i < alpide->GetNOfPads(); i++){
     
-    	G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(),GetGlueThickness()*0.5, 0., 360.*degree);
+    	G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(), GetGlueThickness()*0.5, 0., 360.*degree);
     	G4ThreeVector* translation = new G4ThreeVector(padPositions[i].x(), padPositions[i].y(), padPositions[i].z());
     	solidGlue = new G4SubtractionSolid("solidUpperGlue", solidGlue, solidPadHole, 0, *translation);
     	
     	//logs
-    	G4cout << "solidPadHole Z: " 
-    		<< padPositions[i].z()+(alpide->GetAlpideThickness()+GetGlueThickness())*0.5/um << " um" << G4endl;
+    	G4cout << "solidPadHole Z: "<< padPositions[i].z()+(alpide->GetAlpideThickness()+GetGlueThickness())*0.5/um << " um" << G4endl;
     	G4cout << "solidPadHole goes from: " 
     	<< (padPositions[i].z()+(alpide->GetAlpideThickness()+GetGlueThickness())*0.5 - GetGlueThickness()*0.5)/um << " um to " 
     	<< (padPositions[i].z()+(alpide->GetAlpideThickness()+GetGlueThickness())*0.5 + (GetGlueThickness())*0.5)/um << " um" << G4endl;
@@ -85,8 +96,20 @@ void Glue::ConstructUpperGlueLayerPV(G4double xInWorld, G4double yInWorld, G4dou
     green->SetVisibility(true);
     logicGlue->SetVisAttributes(green);
     
+    // Rotation and translation of a plate inside the assembly
+    G4RotationMatrix Ra;
+    G4ThreeVector Ta;
+    G4Transform3D Tr;
+
+    // Fill the assembly by the plates
+    Ta.setX(xInWorld); 
+    Ta.setY(yInWorld);
+    Ta.setZ(zInWorld);
+    Tr = G4Transform3D(Ra,Ta);
+    assemblyDetector->AddPlacedVolume(logicGlue, Tr);
+    
     //placement of the layer logical volume into its mother frame
-    new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicGlue, "physUpperGlue", worldLog, false, 1, true);
+    //new G4PVPlacement(0, {xInWorld, yInWorld, zInWorld}, logicGlue, "physUpperGlue", worldLog, false, 1, true);
 
 }
 

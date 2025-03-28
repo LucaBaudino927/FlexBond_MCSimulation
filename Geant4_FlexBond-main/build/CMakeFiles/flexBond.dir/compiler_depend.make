@@ -793,6 +793,10 @@ CMakeFiles/flexBond.dir/sim.cc.o: ../sim.cc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VReadOutGeometry.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4SensitiveVolumeList.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSDFilter.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
   ../include/MySensitiveDetector.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
@@ -1316,7 +1320,11 @@ CMakeFiles/flexBond.dir/src/Alpide.cc.o: ../src/Alpide.cc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc \
-  ../include/MapsFoilDetectorList.hh
+  ../include/MapsFoilDetectorList.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc
 
 CMakeFiles/flexBond.dir/src/Copper.cc.o: ../src/Copper.cc \
   /usr/include/stdc-predef.h \
@@ -1719,7 +1727,11 @@ CMakeFiles/flexBond.dir/src/Copper.cc.o: ../src/Copper.cc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Pow.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Exp.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
-  ../include/MapsFoilDetectorList.hh
+  ../include/MapsFoilDetectorList.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc
 
 CMakeFiles/flexBond.dir/src/Glue.cc.o: ../src/Glue.cc \
   /usr/include/stdc-predef.h \
@@ -2126,6 +2138,10 @@ CMakeFiles/flexBond.dir/src/Glue.cc.o: ../src/Glue.cc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc \
   ../include/MapsFoilDetectorList.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubtractionSolid.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4DisplacedSolid.hh \
@@ -2539,7 +2555,18 @@ CMakeFiles/flexBond.dir/src/Kapton.cc.o: ../src/Kapton.cc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc \
-  ../include/MapsFoilDetectorList.hh
+  ../include/MapsFoilDetectorList.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubtractionSolid.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4DisplacedSolid.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AffineTransform.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AffineTransform.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VBooleanProcessor.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.icc
 
 CMakeFiles/flexBond.dir/src/MapsFoilDetectorList.cc.o: ../src/MapsFoilDetectorList.cc \
   /usr/include/stdc-predef.h \
@@ -3693,6 +3720,10 @@ CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o: ../src/MyActionInitiali
   /usr/include/c++/11/bits/deque.tcc \
   /usr/include/c++/11/bits/stl_queue.h \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
   ../include/MySensitiveDetector.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
@@ -4438,6 +4469,10 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: ../src/MyDetectorConstr
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VReadOutGeometry.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4SensitiveVolumeList.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSDFilter.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
   ../include/MySensitiveDetector.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
@@ -5899,7 +5934,8 @@ CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: ../src/MyRunAction.cc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.icc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
-  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h
+  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Threading.hh
 
 CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o: ../src/MySensitiveDetector.cc \
   /usr/include/stdc-predef.h \
@@ -7645,6 +7681,10 @@ CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o: ../src/MySteppingAction.cc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VReadOutGeometry.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4SensitiveVolumeList.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSDFilter.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
   ../include/MySensitiveDetector.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
@@ -8154,6 +8194,10 @@ CMakeFiles/flexBond.dir/src/SolderBall.cc.o: ../src/SolderBall.cc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Box.icc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.icc
 
@@ -8261,6 +8305,8 @@ CMakeFiles/flexBond.dir/src/SolderBall.cc.o: ../src/SolderBall.cc \
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4VAnalysisManager.hh:
 
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh:
+
+/home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh:
 
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSDFilter.hh:
 
@@ -8876,6 +8922,8 @@ CMakeFiles/flexBond.dir/src/SolderBall.cc.o: ../src/SolderBall.cc \
 
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4BaseAnalysisManager.hh:
 
+/home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc:
+
 /usr/include/c++/11/future:
 
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4GMocrenFile.hh:
@@ -9155,6 +9203,8 @@ CMakeFiles/flexBond.dir/src/SolderBall.cc.o: ../src/SolderBall.cc \
 /usr/include/c++/11/bits/invoke.h:
 
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4NavigationLevel.icc:
+
+/home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh:
 
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUPLSplitter.hh:
 
@@ -9817,6 +9867,8 @@ CMakeFiles/flexBond.dir/src/SolderBall.cc.o: ../src/SolderBall.cc \
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4NormalNavigation.icc:
 
 /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh:
+
+/home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 

@@ -12,6 +12,8 @@
 #include "G4Tubs.hh"
 #include "G4SystemOfUnits.hh"
 #include "MapsFoilDetectorList.hh"
+#include "G4AssemblyVolume.hh"
+#include "G4SubtractionSolid.hh"
 
 //Notice that in this system:
 //Thickness refers to the Z coordinate
@@ -28,8 +30,8 @@ public:
     G4double GetKaptonThickness()   { return fKaptonThickness; }
     G4double GetKaptonXDimension()  { return fKaptonXDimension; }
     G4double GetKaptonYDimension()  { return fKaptonYDimension; }
-    void ConstructLowerKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume* worldLog);
-    void ConstructUpperKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume* worldLog, Alpide* alpide);
+    void ConstructLowerKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector);
+    void ConstructUpperKaptonLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector, Alpide* alpide);
     
     /*static G4VPhysicalVolume *ConstructKaptonMatrixPhVolume(Kapton *kapton, G4double xDimKaptondPad,
                                                           G4double yDimKaptondPad, G4int nOfColumn,

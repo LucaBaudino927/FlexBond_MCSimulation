@@ -9,6 +9,7 @@ MySteppingAction::~MySteppingAction(){}
 // ######## Step by step get the energy deposition and add it to the total deposit
 void MySteppingAction::UserSteppingAction(const G4Step *step){   
 
+	//G4cout << "---MySteppingAction---" << G4endl;
         G4LogicalVolume * volume = step->GetPreStepPoint()->GetTouchableHandle()->GetVolume()->GetLogicalVolume();
         const MyDetectorConstruction *detectorConstruction = 
         		static_cast<const MyDetectorConstruction*> (G4RunManager::GetRunManager()->GetUserDetectorConstruction());

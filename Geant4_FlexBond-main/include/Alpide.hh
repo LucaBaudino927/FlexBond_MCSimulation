@@ -11,6 +11,7 @@
 #include "G4SystemOfUnits.hh"
 #include "G4Tubs.hh"
 #include "MapsFoilDetectorList.hh"
+#include "G4AssemblyVolume.hh"
 
 //Notice that in this system:
 //Thickness refers to the Z coordinate
@@ -33,7 +34,7 @@ public:
     G4Material* GetPadMaterial2()   { return fPadMaterial2; }
     G4double GetPadThickness2()     { return fPadThickness2; }
     std::vector<G4ThreeVector> GetPadCoordinates() { return fPadCoordinates; }
-    void ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4LogicalVolume* worldLog);
+    void ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector);
     
     /*static G4VPhysicalVolume *ConstructAlpideMatrixPhVolume(Alpide *alpide, G4double xDimAlpidedPad,
                                                           G4double yDimAlpidedPad, G4int nOfColumn,

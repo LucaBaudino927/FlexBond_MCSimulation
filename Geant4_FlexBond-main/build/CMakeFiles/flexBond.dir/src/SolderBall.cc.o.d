@@ -351,5 +351,9 @@ CMakeFiles/flexBond.dir/src/SolderBall.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Box.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.icc
