@@ -2,9 +2,9 @@
 
 G4ThreadLocal G4Allocator<MySensitiveDetectorHit>* MySensitiveDetectorHitAllocator;
 
-MySensitiveDetectorHit::MySensitiveDetectorHit(G4int id) : fId(id), fTime(0.), fEdep(0.), fPos(0.), fLogVolume(0) {}
+MySensitiveDetectorHit::MySensitiveDetectorHit(G4int id) : fId(id) {}
 
-G4bool MySensitiveDetectorHit::operator==(const MySensitiveDetectorHit& /*right*/) const
+G4bool MySensitiveDetectorHit::operator==(const MySensitiveDetectorHit&) const
 {
   return false;
 }
@@ -23,7 +23,7 @@ void MySensitiveDetectorHit::Draw()
 	visManager->Draw(*fLogVolume, attribs, trans);
 }
 
-/*
+
 const std::map<G4String, G4AttDef>* MySensitiveDetectorHit::GetAttDefs() const
 {
 	G4bool isNew;
@@ -60,7 +60,7 @@ std::vector<G4AttValue>* MySensitiveDetectorHit::CreateAttValues() const
 
 	return values;
 }
-*/
+
 
 void MySensitiveDetectorHit::Print()
 {

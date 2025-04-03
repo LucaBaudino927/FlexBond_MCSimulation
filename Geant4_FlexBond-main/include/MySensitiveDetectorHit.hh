@@ -32,6 +32,7 @@
 class MySensitiveDetectorHit : public G4VHit
 {
   public:
+    MySensitiveDetectorHit() = default;
     MySensitiveDetectorHit(G4int id);
     MySensitiveDetectorHit(const MySensitiveDetectorHit& right) = default;
     ~MySensitiveDetectorHit() override = default;
@@ -43,11 +44,12 @@ class MySensitiveDetectorHit : public G4VHit
     inline void operator delete(void* aHit);
 
     void Draw() override;
-    //const std::map<G4String, G4AttDef>* GetAttDefs() const override;
-    //std::vector<G4AttValue>* CreateAttValues() const override;
+    const std::map<G4String, G4AttDef>* GetAttDefs() const override;
+    std::vector<G4AttValue>* CreateAttValues() const override;
     void Print() override;
     
     G4int GetID() const { return fId; }
+    void SetID(G4int id) { fId = id; }
 
     void SetTime(G4double val) { fTime = val; }
     G4double GetTime() const { return fTime; }
@@ -59,6 +61,7 @@ class MySensitiveDetectorHit : public G4VHit
     G4RotationMatrix GetRot() const { return fRot; }
     
     void SetEdep(G4double Edep) { fEdep = Edep; }
+    void AddEdep(G4double de) { fEdep += de; }
     G4double GetEdep() const { return fEdep; }
 
     void SetLogVolume(G4LogicalVolume* val) { fLogVolume = val; }

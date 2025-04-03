@@ -15,6 +15,7 @@ SolderBall::SolderBall(Alpide* alpide, G4Material* material)
 //destructor
 SolderBall::~SolderBall(){};
 
+/*
 //Construction and placement of single solderBall layer physical volume, covering all the detection system
 void SolderBall::ConstructSolderBallLayerPV(G4double zInWorld, G4AssemblyVolume* assemblyDetector)
 {
@@ -50,5 +51,5 @@ void SolderBall::ConstructSolderBallLayerPV(G4double zInWorld, G4AssemblyVolume*
     	
     }
 
-}
+}*/
 

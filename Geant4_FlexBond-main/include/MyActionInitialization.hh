@@ -6,7 +6,6 @@
 
 //User defined
 #include "MyEventAction.hh"
-#include "MySteppingAction.hh"
 #include "MyPrimaryGenerator.hh"
 #include "MyRunAction.hh"
 

@@ -10,7 +10,7 @@
 #include "G4NistManager.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4Tubs.hh"
-#include "MapsFoilDetectorList.hh"
+#include "StaticInfo.hh"
 #include "G4AssemblyVolume.hh"
 
 //Notice that in this system:
@@ -36,11 +36,6 @@ public:
     std::vector<G4ThreeVector> GetPadCoordinates() { return fPadCoordinates; }
     void ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector);
     
-    /*static G4VPhysicalVolume *ConstructAlpideMatrixPhVolume(Alpide *alpide, G4double xDimAlpidedPad,
-                                                          G4double yDimAlpidedPad, G4int nOfColumn,
-                                                          G4int nOfRows, G4double xInWorld,
-                                                          G4double yInWorld, G4double zInWorld,
-                                                          G4LogicalVolume *worldLog);*/
 
 private:
 

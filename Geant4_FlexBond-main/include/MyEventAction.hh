@@ -14,32 +14,28 @@
 #include "G4HCtable.hh"
 
 //User defined
-#include "MyRunAction.hh"
-#include "MapsFoilDetectorList.hh"
-
-
-const G4int NofObservables = 3;
-const G4int NofMySensitiveDetector = 6;
-
-using namespace std;
+//#include "MapsFoilDetectorList.hh"
+#include "Constants.hh"
+#include "StaticInfo.hh"
 
 class MyEventAction : public G4UserEventAction
 {
 
 public:
 
-    MyEventAction(MyRunAction*);
-    ~MyEventAction();
-    virtual void BeginOfEventAction(const G4Event*) override;
-    virtual void EndOfEventAction(const G4Event*) override;
-    void AddEdep(G4double edep) { fEdep += edep; }//Add edep every step. It is called in MySteppingAction.cc
+    MyEventAction();
+    ~MyEventAction() override = default;
+    void BeginOfEventAction(const G4Event*) override;
+    void EndOfEventAction(const G4Event*) override;
     
 private:
 
+    G4VHitsCollection* GetHC(const G4Event* event, G4int collId);
+
     G4double fEdep;
-    std::vector<G4int> fHitCollID = {-1};
-    MyRunAction* fRunAction;
-    array<array<G4int, NofMySensitiveDetector>, NofObservables> fMySensitiveDetectorHistoID;
+    std::array<G4int, NofMySensitiveDetector> fHitCollID;
+    //Array che contiene NofMySensitiveDetector vector. Ogni vector contiene le energie delle N hit del detector
+    std::array<std::vector<G4double>, NofMySensitiveDetector> fDetEdep;
     
 };
 

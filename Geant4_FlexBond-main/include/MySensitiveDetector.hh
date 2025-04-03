@@ -26,9 +26,8 @@ public:
     ~MySensitiveDetector();
     
     //G4HCofThisEvent: hits container that contains hits collections
-    virtual void Initialize(G4HCofThisEvent* hitsContainer);
-    virtual G4bool ProcessHits(G4Step *, G4TouchableHistory *);
-    virtual void clear();
+    void Initialize(G4HCofThisEvent* hitsContainer) override;
+    G4bool ProcessHits(G4Step *, G4TouchableHistory *) override;
     
 private:
     

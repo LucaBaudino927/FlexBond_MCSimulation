@@ -1,15 +1,15 @@
 #include "MyRunAction.hh"
 
 // ######## Costructor
-MyRunAction::MyRunAction() {
+MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction) {
 
 	//G4cout<<"---MyRunAction---"<<G4endl;
 	G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-	//analysisManager->SetVerboseLevel(1);
+	analysisManager->SetDefaultFileType("root");
+	analysisManager->SetVerboseLevel(1);
 	analysisManager->SetNtupleMerging(true);
 	//analysisManager->SetHistoDirectoryName("output");
-	//analysisManager->SetFileName("output");
-	//analysisManager->SetDefaultFileType("root");
+	analysisManager->SetFileName("output");
 	
 	
 	/***********************************************************************************************************************************
@@ -17,8 +17,39 @@ MyRunAction::MyRunAction() {
 	 *	NofMySensitiveDetector = 6+(#pad*2) se ho alpide, colla, kapton, rame e pad dell'alpide					   *
 	 *	NofMySensitiveDetector = 6+(#pad*3) se ho alpide, colla, kapton, rame, pad dell'alpide e solder balls per ogni pad	   *
 	 ***********************************************************************************************************************************/
-	G4int NofMySensitiveDetector = 6;
-	for(int i = 0; i < NofMySensitiveDetector; i++){
+	if (fEventAction) {
+		analysisManager->CreateNtuple("MapsFoil", "Hits");
+		analysisManager->CreateNtupleDColumn("AlpideEnergy");  					// column Id = 0
+		//analysisManager->CreateNtupleDColumn("AlpidePad1Energy_0");  	// column Id: from 1 to 1 + (#pad - 1)*2
+		//analysisManager->CreateNtupleDColumn("AlpidePad2Energy_0");  	// column Id: from 2 to 2 + (#pad - 1)*2
+		for(G4int i = 0; i < StaticInfo::GetNOfAlpidePads(); i++){
+			analysisManager->CreateNtupleDColumn("AlpidePad1Energy_"+std::to_string(i));  	// column Id: from 1 to 1 + (#pad - 1)*2
+			analysisManager->CreateNtupleDColumn("AlpidePad2Energy_"+std::to_string(i));  	// column Id: from 2 to 2 + (#pad - 1)*2
+		}
+		analysisManager->CreateNtupleDColumn("LowerGlueEnergy");  				// column Id: from 3 to 3 + (#pad - 1)*2
+		analysisManager->CreateNtupleDColumn("UpperGlueEnergy");  				// column Id: from 4 to 4 + (#pad - 1)*2
+		analysisManager->CreateNtupleDColumn("LowerKaptonEnergy");  				// column Id: from 5 to 5 + (#pad - 1)*2
+		analysisManager->CreateNtupleDColumn("UpperKaptonEnergy");  				// column Id: from 6 to 6 + (#pad - 1)*2
+		analysisManager->CreateNtupleDColumn("CopperEnergy");  					// column Id: from 7 to 7 + (#pad - 1)*2
+		//analysisManager->CreateNtupleDColumn("SolderBallEnergy_0");	// column Id: from 8 to 8 + (#pad - 1)*3  10,11
+		for(G4int i = 0; i < StaticInfo::GetNOfAlpidePads(); i++){
+			analysisManager->CreateNtupleDColumn("SolderBallEnergy_"+std::to_string(i));	// column Id: from 8 to 8 + (#pad - 1)*3  10,11
+		}
+		analysisManager->FinishNtuple(0);
+		
+		/*
+		//Energy deposition for each event
+		analysisManager->CreateNtuple("MapsFoil", "Scoring");
+		analysisManager->CreateNtupleDColumn("fEdep");
+		analysisManager->FinishNtuple(1);
+		*/
+	}
+
+	// Set ntuple output file
+	analysisManager->SetNtupleFileName(0, "outputNtuple");
+	
+	
+	/*for(int i = 0; i < NofMySensitiveDetector; i++){
 		//histograms
 		analysisManager->CreateH1("Layer"+std::to_string(i)+", HitTime", "Hit Time", 10, 0.*ns, 1*ns, "ns");
 		AddToHistoNames("Layer"+std::to_string(i)+", HitTime");
@@ -35,58 +66,10 @@ MyRunAction::MyRunAction() {
 		//analysisManager->SetH1YAxisTitle(0, "");
 
 	}	
-	
-	//Energy deposition for each event
-	analysisManager->CreateNtuple("Scoring", "Scoring");
-	analysisManager->CreateNtupleDColumn("fEdep");
-	analysisManager->FinishNtuple(0);
-	
-/*-------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : Analysis_W001
-      issued by : G4THnManager<T>::Fillh1
-Histogram 45 does not exist.
-*** This is just a warning message. ***
--------- WWWW -------- G4Exception-END --------- WWWW -------
-
-G4WT3 > 
--------- WWWW ------- G4Exception-START -------- WWWW -------
-*** G4Exception : Analysis_W001
-      issued by : G4THnToolsManager::Fill
-Failed to fill h1 id 45. Histogram does not exist.
-*** This is just a warning message. ***
--------- WWWW -------- G4Exception-END --------- WWWW -------*/
-	
-	
-	
-	/*
-        // ######## MC data truth
-	analysisManager->CreateNtuple("Photons","Photons");
-	analysisManager->CreateNtupleIColumn("fEvent");
-	analysisManager->CreateNtupleDColumn("fX");
-	analysisManager->CreateNtupleDColumn("fY");
-	analysisManager->CreateNtupleDColumn("fZ");//mm
-	analysisManager->CreateNtupleDColumn("fWlen");//nm
-	analysisManager->CreateNtupleDColumn("fT");//ns
-	analysisManager->FinishNtuple(0);// First ntuple
-
-        // ######## Experimental-like simulation
-	analysisManager->CreateNtuple("Hits","Hits");
-	analysisManager->CreateNtupleIColumn("fEvent");
-	analysisManager->CreateNtupleDColumn("fX");
-	analysisManager->CreateNtupleDColumn("fY");
-	analysisManager->CreateNtupleDColumn("fZ");
-	analysisManager->FinishNtuple(1);//Seconda ntuple
-
-        //Energy deposition for each event
-	analysisManager->CreateNtuple("Scoring", "Scoring");
-	analysisManager->CreateNtupleDColumn("fEdep");
-	analysisManager->FinishNtuple(2);
 	*/
             
 }
-    
-// ######## Destructor
-MyRunAction::~MyRunAction(){}
+
 
 // ######## Begin of the run
 void MyRunAction::BeginOfRunAction(const G4Run* run){
@@ -100,7 +83,7 @@ void MyRunAction::BeginOfRunAction(const G4Run* run){
 	//std::stringstream strRunID;
 	//strRunID << runID;
 	//analysisManager->OpenFile("../output/output"+strRunID.str()+".root");
-	analysisManager->OpenFile("../output/output.root");
+	analysisManager->OpenFile();
 
 }
 
@@ -108,13 +91,8 @@ void MyRunAction::BeginOfRunAction(const G4Run* run){
 void MyRunAction::EndOfRunAction(const G4Run*){
 
         G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-        G4cout<<"---debugEndOfRunAction()---1---"<<G4endl;
         analysisManager->Write();
-        G4cout<<"---debugEndOfRunAction()---2---"<<G4endl;
         analysisManager->CloseFile(false);
-        G4cout<<"---debugEndOfRunAction()---3---"<<G4endl;
-        
-        //delete G4AnalysisManager::Instance();
 
 }
 

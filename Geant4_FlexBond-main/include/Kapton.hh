@@ -11,7 +11,7 @@
 #include "Alpide.hh"
 #include "G4Tubs.hh"
 #include "G4SystemOfUnits.hh"
-#include "MapsFoilDetectorList.hh"
+#include "StaticInfo.hh"
 #include "G4AssemblyVolume.hh"
 #include "G4SubtractionSolid.hh"
 

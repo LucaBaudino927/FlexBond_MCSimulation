@@ -2,27 +2,10 @@
 
 MySensitiveDetector::MySensitiveDetector(G4String name) : G4VSensitiveDetector(name) {
 	
-	//G4cout << "------------------------MySensitiveDetector::MySensitiveDetector()---------------" << G4endl;
-	//G4cout << "-----------Creating an SD with name " << name << " and HitsCollection name MySensitiveDetectorColl -------------" << G4endl;
+	
+	//G4cout << "---Creating an SD with name " << name << " and HitsCollection name MySensitiveDetectorColl---" << G4endl;
 	collectionName.insert("MySensitiveDetectorColl");	
 
-	//meccanismo per simulare sensitive detector come se fosse un PMT: per ora non mi interessa
-	// ######## Quantum efficiency of the PMT from data eff.dat taken online 
-        /*quEff = new G4PhysicsOrderedFreeVector();
-        std::ifstream datafile;
-        datafile.open("pmt_efficiency.dat");
-        G4cout << "Reading PMT quantum efficiency vs wavelength data" << std::endl;
-        while(!datafile.eof())//until the datafile is open
-        {
-            G4double wlen, queff;
-            datafile >> wlen >> queff;
-            G4cout << "wavelength: " << wlen << " ; quantum efficiency: " << queff << std::endl;
-            quEff->InsertValues(wlen, queff/100.);
-        }
-        datafile.close();
-        G4cout << "PMT quantum efficiency data read. " << quEff->GetVectorLength() << " QE data are stored" << std::endl;
-        //quEff->SetSpline(false);//To use linear interpolation instead of Spline.
-        */
 }
 
 // ######## Destructor
@@ -31,17 +14,15 @@ MySensitiveDetector::~MySensitiveDetector(){}
 
 void MySensitiveDetector::Initialize(G4HCofThisEvent* hitsContainer){
 
-	//G4cout << "------------------------MySensitiveDetector::Initialize()-----------------------" << G4endl;
 	fHitsCollection = new MySensitiveDetectorHitsCollection(SensitiveDetectorName, collectionName[0]);
 	if (fHCID < 0) {
-		G4cout << "------------Creating the HitsCollection: " << SensitiveDetectorName << "/" << collectionName[0] << "--------------" << G4endl;
+		G4cout << "---Creating the HitsCollection: " << SensitiveDetectorName << "/" << collectionName[0] << "---" << G4endl;
 		fHCID = G4SDManager::GetSDMpointer()->GetCollectionID(fHitsCollection);
 	}
 	hitsContainer->AddHitsCollection(fHCID, fHitsCollection);
+	
   
 }
-
-void MySensitiveDetector::clear() { delete this; }
 
 
 // ######## Get informations from the sensistive detectors, MC truth and experimental-like simulation
@@ -57,27 +38,28 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
 	 *	-momento della particella?							*
 	 ****************************************************************************************/
 	
-	
-	//G4cout<<"------------ProcessHit-------------"<<G4endl;
 	auto edep = aStep->GetTotalEnergyDeposit();
   	if (edep == 0.) return true;
-
 	auto preStepPoint = aStep->GetPreStepPoint();
 	auto touchable = preStepPoint->GetTouchable();
 	auto copyNo = touchable->GetVolume()->GetCopyNo();
 	auto hitTime = preStepPoint->GetGlobalTime();
 
+	//G4cout<<"---ProcessHit---Edep: "<<edep/MeV<<" MeV, copyNo: "<<copyNo<<G4endl;
 	// Create a new hit and set it to the collection
-	auto hit = new MySensitiveDetectorHit(copyNo);
-	auto physical = touchable->GetVolume();
-	hit->SetLogVolume(physical->GetLogicalVolume());
+	auto hit = new MySensitiveDetectorHit(copyNo);	
+	hit->SetID(copyNo);
+	auto depth = touchable->GetHistory()->GetDepth();
 	auto transform = touchable->GetHistory()->GetTopTransform();
 	transform.Invert();
 	hit->SetRot(transform.NetRotation());
 	hit->SetPos(transform.NetTranslation());
-	hit->SetEdep(edep);
+	hit->SetLogVolume(touchable->GetVolume()->GetLogicalVolume());
 	hit->SetTime(hitTime);
-	fHitsCollection->insert(hit);
+	
+	// add energy deposition
+  	hit->AddEdep(edep);
+  	fHitsCollection->insert(hit);
 	
   
   

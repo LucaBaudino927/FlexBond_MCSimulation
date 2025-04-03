@@ -13,15 +13,17 @@ Alpide::Alpide(G4double x, G4double y, G4double alpideThickness, G4double padRad
        
     // ##### info dei pad da 300 um dell'alpide 
     //per ora non configurabile
-    //fPadCoordinates = {{-0.*mm, -0.*mm, 0.}, {-1.*mm, -1.*mm, 0.}, {-1.*mm, +1.*mm, 0.}, {+1.*mm, -1.*mm, 0.}, {+1.*mm, +1.*mm, 0.}};
-    fPadCoordinates = {{-0.*mm, -0.*mm, 0.}};
+    fPadCoordinates = {{-0.*mm, -0.*mm, 0.}, {-1.*mm, -1.*mm, 0.}, {-1.*mm, +1.*mm, 0.}, {+1.*mm, -1.*mm, 0.}, {+1.*mm, +1.*mm, 0.}};
+    //fPadCoordinates = {{-0.*mm, -0.*mm, 0.}};
     fNOfPads = fPadCoordinates.size();
+    StaticInfo::SetNOfAlpidePads(fNOfPads);
     
 }
 
 //destructor
 Alpide::~Alpide(){};
 
+/*
 //Construction and placement of single alpide layer physical volume, covering all the detection system
 void Alpide::ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector)
 {
@@ -76,7 +78,7 @@ void Alpide::ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4doub
     	G4VisAttributes* grey = new G4VisAttributes(G4Colour::Grey());
     	grey->SetVisibility(true);
     	logicPad1->SetVisAttributes(grey);
-    	//MapsFoilDetectorList::AddToLogicalDetectorList(logicPad1);
+    	MapsFoilDetectorList::AddToLogicalDetectorList(logicPad1);
     	//new G4PVPlacement(0, {padPositions[i].x(), padPositions[i].y(), pad1Center}, logicPad1, "physPad1_"+std::to_string(i), worldLog, false, 1, true);
     	
     	// Fill the assembly by the plates
@@ -104,4 +106,5 @@ void Alpide::ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4doub
     }
 
 }
+*/
 

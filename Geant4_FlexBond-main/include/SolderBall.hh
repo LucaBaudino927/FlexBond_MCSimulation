@@ -8,7 +8,7 @@
 #include "G4LogicalVolume.hh"
 #include "G4NistManager.hh"
 #include "G4SystemOfUnits.hh"
-#include "MapsFoilDetectorList.hh"
+#include "StaticInfo.hh"
 #include "Alpide.hh"
 #include "G4Sphere.hh"
 #include "G4AssemblyVolume.hh"

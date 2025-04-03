@@ -12,7 +12,7 @@
 #include "G4SystemOfUnits.hh"
 #include "G4SubtractionSolid.hh"
 #include "G4VSolid.hh"
-#include "MapsFoilDetectorList.hh"
+#include "StaticInfo.hh"
 #include "G4AssemblyVolume.hh"
 
 //Notice that in this system:

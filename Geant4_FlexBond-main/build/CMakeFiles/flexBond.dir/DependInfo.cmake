@@ -13,7 +13,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/Copper.cc" "CMakeFiles/flexBond.dir/src/Copper.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/Copper.cc.o.d"
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/Glue.cc" "CMakeFiles/flexBond.dir/src/Glue.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/Glue.cc.o.d"
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/Kapton.cc" "CMakeFiles/flexBond.dir/src/Kapton.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/Kapton.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MapsFoilDetectorList.cc" "CMakeFiles/flexBond.dir/src/MapsFoilDetectorList.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MapsFoilDetectorList.cc.o.d"
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyActionInitialization.cc" "CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o.d"
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyDetectorConstruction.cc" "CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o.d"
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyEventAction.cc" "CMakeFiles/flexBond.dir/src/MyEventAction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyEventAction.cc.o.d"
@@ -21,8 +20,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MyRunAction.cc" "CMakeFiles/flexBond.dir/src/MyRunAction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MyRunAction.cc.o.d"
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySensitiveDetector.cc" "CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o.d"
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySensitiveDetectorHit.cc" "CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.o.d"
-  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySteppingAction.cc" "CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o.d"
   "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/SolderBall.cc" "CMakeFiles/flexBond.dir/src/SolderBall.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/SolderBall.cc.o.d"
+  "/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/StaticInfo.cc" "CMakeFiles/flexBond.dir/src/StaticInfo.cc.o" "gcc" "CMakeFiles/flexBond.dir/src/StaticInfo.cc.o.d"
   )
 
 # Targets to which this target links.
