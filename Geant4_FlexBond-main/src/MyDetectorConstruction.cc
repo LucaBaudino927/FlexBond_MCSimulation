@@ -4,37 +4,37 @@
 MyDetectorConstruction::MyDetectorConstruction(){
 
         // ######## User Defined Messages
-	fMessenger = new G4GenericMessenger(this, "/detector/", "Detector Construction");//non mi funziona sulla interfaccia grafica...
-	fMessenger->DeclareProperty("nCols", nCols, "N cols");
-	fMessenger->DeclareProperty("nRows", nRows, "N rows");
-	fMessenger->DeclareProperty("cherenkov", isCherenkov, "Construct Cherenkov detector");
-	fMessenger->DeclareProperty("scintillator", isScintillator, "Construct Scintillator");
-	fMessenger->DeclareProperty("tof", isTOF, "Construct Time Of Flight");
-	fMessenger->DeclareProperty("atmosphere", isAtmosphere, "Construct Atmosphere");
-        
-        // ######## Void function of this class definted in the next rows. Material properties definition.
-	if(!materialsDefined){
-		DefineMaterials();
-		materialsDefined = true;
-	}
+	fMessenger = new G4GenericMessenger(this, "/detector/", "Detector Construction");
+	//fMessenger->DeclareProperty("nCols", nCols, "N cols");
+	//fMessenger->DeclareProperty("nRows", nRows, "N rows");
+	fMessenger->DeclareProperty("mapsFoil",  		isMapsFoil, 			"Construct Maps Foil");
+	fMessenger->DeclareProperty("verboseDetConstruction",  	verboseDetConstr, 		"Verbose Detector Construction");
+	fMessenger->DeclareProperty("constructEpoxyGlueLayer", 	constructEpoxyGlueLayer, 	"Use Epoxy Glue Layers");
+	fMessenger->DeclareProperty("constructKaptonLayer",    	constructKaptonLayer, 		"Use Kapton Layers");
+	fMessenger->DeclareProperty("constructCopperLayer", 	constructCopperLayer, 		"Use Copper Layer");
+	fMessenger->DeclareProperty("constructSolderBalls", 	constructSolderBalls, 		"Use Solder Balls");
+	fMessenger->DeclareProperty("alpideXDimension", 	alpideXFromMessenger, 		"Alpide X-Dimension");
+	fMessenger->DeclareProperty("alpideYDimension", 	alpideYFromMessenger, 		"Alpide Y-Dimension");
+	fMessenger->DeclareProperty("alpideThickness",  	alpideThicknessFromMessenger, 	"Alpide Z-Thickness");
+	fMessenger->DeclareProperty("alpidePadRadius",  	alpidePadRadiusFromMessenger, 	"Alpide Pad Radius");
+	fMessenger->DeclareProperty("glueThickness", 		glueThicknessFromMessenger, 	"Glue Thickness");
+	fMessenger->DeclareProperty("kaptonThickness", 		kaptonThicknessFromMessenger, 	"Kapton Thickness");
+	fMessenger->DeclareProperty("copperThickness", 		copperThicknessFromMessenger, 	"Copper Thickness");
 
-        // ######## Boolean for User Message option definitions
-	isCherenkov = true;
-	isScintillator = false;// Set particle momentum = 0 in generator.cc and particle = "geantino"
-	isTOF= false;
-	isAtmosphere = false;
+	// Add info to Static class
+	StaticInfo::Clear();
+	StaticInfo::AddToDetectorFlagMap("constructEpoxyGlueLayer", 	constructEpoxyGlueLayer);
+	StaticInfo::AddToDetectorFlagMap("constructKaptonLayer", 	constructKaptonLayer);
+	StaticInfo::AddToDetectorFlagMap("constructCopperLayer", 	constructCopperLayer);
+	StaticInfo::AddToDetectorFlagMap("constructSolderBalls", 	constructSolderBalls);
+	
 
         // ######## World dimension definition
-	if(isAtmosphere){
-		xWorld = 40.*km;// x2 is the real distance. The arrow in the visualization is insted x0.5
-		yWorld = 40.*km;
-		zWorld = 20.*km;
-	}else{
-		xWorld = 10.*cm;// x2 is the real distance. The arrow in the visualization is insted x0.5
-		yWorld = 10.*cm;
-		zWorld = 10.*cm;
-	}
-
+	xWorld = 5.*cm;
+	yWorld = 5.*cm;
+	zWorld = 5.*cm;
+	
+	
 }
 
 // ######## Destructor
@@ -43,275 +43,460 @@ MyDetectorConstruction::~MyDetectorConstruction(){}
 // ######## Function to define material properties used in the simulation
 void MyDetectorConstruction::DefineMaterials(){
 
+	/************************************************************************
+	 *									*
+	 *	IMPORTANTE: 							*
+	 *	Se costruisco un G4Material lo cerco come "G4_XYZ"		*
+	 *	Se costruisco un G4Element lo cerco come "XYZ"			*
+	 *	G4Material* Cu = nist->FindOrBuildMaterial("G4_Cu");		*
+	 *	G4Element* C = nist->FindOrBuildElement("C");			*
+	 *									*
+	 ************************************************************************/
+	
+	auto nist = G4NistManager::Instance();
+	
         // ######## AIR
-	G4NistManager* nist = G4NistManager::Instance();
 	worldMat = nist->FindOrBuildMaterial("G4_Galactic");
 
         // ######## Si
 	Si = nist->FindOrBuildMaterial("G4_Si");
 
         // ######## Kapton
-	Kapton = nist->FindOrBuildMaterial("G4_KAPTON");
+	KaptonMaterial = nist->FindOrBuildMaterial("G4_KAPTON");
 
         // ######## Al
 	Al = nist->FindOrBuildMaterial("G4_Al");
-
-        // ######## Cu
-	Cu = nist->FindOrBuildMaterial("G4_Cu");
-
-        // ######## SiO2 
-	SiO2 = new G4Material("SiO2",2.201*g/cm3,2);//2 components
-	SiO2->AddElement(nist->FindOrBuildElement("Si"),1);//1 atomo di Si
-	SiO2->AddElement(nist->FindOrBuildElement("O"),2);//2 atomo di ossigeno
-        
-        // ####### H2O
-	H2O = new G4Material("H2O",1.000*g/cm3,2);//2 components
-	H2O->AddElement(nist->FindOrBuildElement("H"),2);//1 atomo di Si
-	H2O->AddElement(nist->FindOrBuildElement("O"),1);//2 atomo di ossigeno
-
-        // ####### C
-	C = nist->FindOrBuildElement("C");
-
-        // ####### Aerogel 
-	Aerogel = new G4Material("Aerogel",0.200*g/cm3,3);
-	Aerogel->AddMaterial(SiO2, 62.5*perCent);
-	Aerogel->AddMaterial(H2O, 37.4*perCent);
-	Aerogel->AddElement(C, 0.1*perCent);
-        
-        // ####### NaI(Tl)
-	Na = nist->FindOrBuildElement("Na");
-	I = nist->FindOrBuildElement("I");
-	NaI = new G4Material("NaI", 3.67*g/cm3, 2);
-	NaI->AddElement(Na, 1);
-	NaI->AddElement(I, 1);
-
-        // ####### Wrapping of NaI(Tl)
-	mirrorSurface = new G4OpticalSurface("mirrorSurface");
-	mirrorSurface->SetType(dielectric_metal);
-	mirrorSurface->SetFinish(ground);
-	mirrorSurface->SetModel(unified);
-
-        // ######## Air for atmosphere with different density at different altitudes
-	G4double density0 = 1.29*kg/m3;
-	G4double aN = 14.01*g/mole;//70% nitrogen
-	G4double aO = 16.00*g/mole;//30% oxigen
-	G4double f = 3;
-	G4double R = 8.3144626181532;//gas constant
-	G4double g0 = 9.81;
-	G4double kappa = (f+2)/f;
-	G4double T = 293.15;//Kelvin
-	G4double M = (0.3*aO+0.7*aN)/1000;//molar mass conversion. 70%N e 30%O
-	N= new G4Element("Nitrogen","N",7,aN);
-	O= new G4Element("Oxygen","O",8,aO);
-
-	for(G4int i= 0;i<10;i++){
-		std::stringstream stri;
-		stri << i;
-		G4double h = 40e3/10.*i;
-		G4double density = density0*pow((1-(kappa-1)/kappa*M*g0*h/(R*T)),(1/(kappa-1)));
-		Air[i] = new G4Material("G4_AIR_"+stri.str(), density, 2);//2 components
-		Air[i]->AddElement(N, 70*perCent);
-		Air[i]->AddElement(O, 30*perCent);
-	}
-
-        // ######## Optical paremeters of Aerogel, World and NaI
-	G4double energy[2] = {1.239841939*eV/0.9,1.239841939*eV/0.2};//0.2 -> 200 nm (blue). 900 nm red light. Conversion factor is 1240 eV*nm (h*c).
-	G4double fraction[2] = {1.0, 1.0};//hypotesis, fraction of photons in blue and red is the same
-	G4double reflectivity[2] = {1.0, 1.0};//all reflected for all wavelenghts (wrapping)
-	G4double rindexAerogel[2] = {1.1,1.1};
-	G4double rindexWorld[2] = {1.0,1.0};
-	G4double rindexNaI[2] = {1.78, 1.78};
-	G4MaterialPropertiesTable *mptAerogel = new G4MaterialPropertiesTable();
-	G4MaterialPropertiesTable *mptWorld = new G4MaterialPropertiesTable();
-	G4MaterialPropertiesTable *mptNaI = new G4MaterialPropertiesTable();
-	G4MaterialPropertiesTable *mptMirror = new G4MaterialPropertiesTable();
-	mptAerogel->AddProperty("RINDEX",energy, rindexAerogel,2); //2 values in the array.
-	mptWorld->AddProperty("RINDEX",energy, rindexWorld,2);
-	mptNaI->AddProperty("RINDEX", energy, rindexNaI, 2);
-	mptNaI->AddProperty("SCINTILLATIONCOMPONENT1", energy, fraction, 2);// how many photons in each wavelenght
-	mptNaI->AddConstProperty("SCINTILLATIONYIELD",38./keV);//photons per energy loss of the particle
-	mptNaI->AddConstProperty("RESOLUTIONSCALE",1.0);//
-	mptNaI->AddConstProperty("SCINTILLATIONTIMECONSTANT1", 250.*ns);//exponential function. Decay time of the scint. 
-	mptNaI->AddConstProperty("SCINTILLATIONYIELD1",1.);//distribution of the photons. you can create a sigma of the desided spectrum, now =1. 
-	mptMirror->AddProperty("REFLECTIVITY", energy, reflectivity, 2);
-	Aerogel->SetMaterialPropertiesTable(mptAerogel);
-	worldMat->SetMaterialPropertiesTable(mptWorld);
-	NaI->SetMaterialPropertiesTable(mptNaI);
-	mirrorSurface->SetMaterialPropertiesTable(mptMirror);
-            
-        //Note: I was using Geant v.11 and found you need to replace FASTCOMPONENT->SCINTILLATIONCOMPONENT1, 
-        //FASTTIMECONST->SCINTILLATIONTIMECONSTANT1 and YIELDRATIO->SCINTILLATIONYIELD1 and then things worked the same
-    }
-
-// ######## Cherenkov detector with radiator and silicon detectors in an array of rectangular shape.
-void MyDetectorConstruction::ConstructCherenkov(){
-
-	AlTck = 20*um;
-	SiTck = 50*um;
-	KaTck = 150*um;
-	PlaneDistance = 20*mm;
-
-        // ######## PCB
-	solidRadiator = new G4Box("solidRadiator", 7.5*mm*2+1*cm, 15*mm*5+1*cm, KaTck/2);//spessore 75 um
-	logicRadiator = new G4LogicalVolume(solidRadiator, Kapton, "logicalRadiator");
-	fScoringVolume = logicRadiator;//Where the energy deposit is evaluated for each step of the event. 
-	solidRadiator2 = new G4Box("solidRadiator2", 7.5*mm*2+0.1*cm, 15*mm*5+0.1*cm, AlTck/2);//spessore 10 um
-	logicRadiator2 = new G4LogicalVolume(solidRadiator2, Al, "logicalRadiator2");
-	solidDetector = new G4Box("solidDetector", 7.5*mm, 15*mm, SiTck/2);//spessore 25 um
-	logicDetector = new G4LogicalVolume(solidDetector, Si, "logicalCherenkovDetector");
-
-        // ######## Detector (array of rectangular solid state detectors)
-	G4VisAttributes* yellowVisAtt = new G4VisAttributes(G4Colour(1.0, 1.0, 0.0)); // Yellow color
-	G4VisAttributes* redVisAtt = new G4VisAttributes(G4Colour(1.0, 0.0, 0.0)); // Red color
-	G4VisAttributes* grayVisAtt = new G4VisAttributes(G4Colour(0.5, 0.5, 0.5)); // RGB values (0.5, 0.5, 0.5) for gray
-	yellowVisAtt->SetForceSolid(true);
-	redVisAtt->SetForceSolid(true);
-	grayVisAtt->SetForceSolid(true);
-
-	nCols = 5;
-	nRows = 2;
-	nPlanes = 3;// NB energia depositata e' calcolata su tutti i volumi identici che metti, fa la somma. Si vede che con 3 o 5 piani cambia Edep.
-	//Array of detectors. nRows and nCols define the array (in the constructor). 
-
-	for(G4int k = 0; k < nPlanes; k++){
-		physRadiator = new G4PVPlacement(
-			0, 
-			G4ThreeVector(0.,0.,PlaneDistance*k), //piazzato a z = 0, occupa fino a z = 37.5 um
-			logicRadiator,
-			"physRadiator",
-			logicWorld,
-			false,
-			0,
-			true);
-		physRadiator2 = new G4PVPlacement(
-			0,
-			G4ThreeVector(0.,0.,PlaneDistance*k+0.5*(KaTck+AlTck)), //piazzato a z = 85, occupa da z = 80 um a z = 90 um
-			logicRadiator2, 
-			"physRadiator2", 
-			logicWorld,
-			false,
-			0,
-			true);
-		for(G4int i = 0; i < nRows; i++){
-			for(G4int j = 0; j < nCols; j++){
-				physDetector = new G4PVPlacement(
-					0,					//piazzato a z = 110, occupa da z = 85 um a z = 135 um
-					G4ThreeVector(-7.5*mm+(i*15)*mm,-60*mm+(j*30)*mm,PlaneDistance*k+(0.5*KaTck+AlTck+0.5*SiTck)),
-					logicDetector,
-					"physDetector",
-					logicWorld,
-					false,
-					j+i*nCols,
-					true);
-			}
-		}
-	}
 	
-	logicRadiator->SetVisAttributes(yellowVisAtt);
-	logicDetector->SetVisAttributes(redVisAtt);
-	logicRadiator2->SetVisAttributes(grayVisAtt);
+	// ####### C
+	C = nist->FindOrBuildElement("C");
+	
+	// ######## H
+	H = nist->FindOrBuildElement("H");
+	
+	// ######## N
+	N = nist->FindOrBuildElement("N");
+	
+	// ######## O
+	O = nist->FindOrBuildElement("O");
+	
+	// ####### Epoxy glue C8H20N2O
+	epoxyGlue = new G4Material("EpoxyGlue", 1.25 * CLHEP::g / CLHEP::cm3, 4);
+    	epoxyGlue->AddElement(C, 25.8064516*perCent);
+    	epoxyGlue->AddElement(H, 64.516129*perCent);
+    	epoxyGlue->AddElement(N, 6.4516129*perCent);
+    	epoxyGlue->AddElement(O, 3.2258065*perCent);
 
-}
-
-// ######## TOF with two detectors placed at 7 meters of distance along the Z axis
-void MyDetectorConstruction::ConstructTOF(){
-
-        solidDetector = new G4Box("solidDetector", 1.*cm, 1.*cm, 0.1*cm);
-        logicDetector = new G4LogicalVolume(solidDetector, Si, "logicTOFDetector");//Worldmat as material to avoid secondary production
-        physDetector = new G4PVPlacement(0, G4ThreeVector(0.*m, 0.*m, -4.*cm), logicDetector, "physDetector", logicWorld, false, 0, true);
-        //physDetector = new G4PVPlacement(0, G4ThreeVector(0.*m, 0.*m, 3.*m), logicDetector, "physDetector", logicWorld, false, 1, true);
-        fScoringVolume = logicDetector;//Both the phys detector will store the energy release. The logic volume is the same.
-
-}
-
-// ######## Atmosphere for shower production. 10 layers of atmosphere with different logicvolumes. Each volume has different density with exponential decrease. 
-void MyDetectorConstruction::ConstructAtmosphere(){
-
-        solidAtmosphere = new G4Box("solidAtmosphere", xWorld, yWorld, zWorld/10.);//divido per 10 perche ho 10 layers, di larghezza 1/10 zworld
-        for(G4int i = 0; i < 10; i++){
-		logicAtmosphere[i] = new G4LogicalVolume(solidAtmosphere,Air[i],"logicAtmosphere");
-		physAtmosphere[i] = new G4PVPlacement(0, G4ThreeVector(0, 0, zWorld/10.*2*i - zWorld + zWorld/10.), logicAtmosphere[i], "physAtmosphere", logicWorld, false, i, true);
-        }
-
-}
-
-// ######## Scintillators for PET detector. Cilindrical geometry with 6 layers of 360 degree covering detectors. Each detector is 10x10x12 cmˆ3 with sensitive detectors.
-void MyDetectorConstruction::ConstructScintillator(){
-
-        // ######## Scintillators fot PET detector. 
-	//solidScintillator = new G4Tubs("solidScintillator",10*cm,20*cm,30*cm,0*deg,360*deg);
-	solidScintillator = new G4Box("solidScintillator",5*cm,5*cm,6*cm);
-	logicScintillator = new G4LogicalVolume(solidScintillator,NaI,"logicalScintillator");
-	//physScintillator = new G4PVPlacement(0,G4ThreeVector(0.,0.,0.),logicScintillator,"pyisScintillator",logicWorld,false,0,true);
-	G4LogicalSkinSurface *skin = new G4LogicalSkinSurface("skin", logicWorld, mirrorSurface);//for the reflectivity
-	fScoringVolume = logicScintillator;
-
-        // ######## Detectors to be coupled with NaI for PET detector
-	solidDetector = new G4Box("solidDetector", 1.*cm, 5.*cm, 6*cm);
-	logicDetector = new G4LogicalVolume(solidDetector, worldMat, "logicScintillatorDetector");
-
-        // ####### Array creation for both scintillators and detectors
-	for(G4int i=0;i<6;i++){ // 6 layers along the Z axis
-		for(G4int j=0;j<16;j++){// Pi/16  
-			G4Rotate3D rotZ(j*22.5*deg, G4ThreeVector(0,0,1));//360/16 = 22.5. (0,0,1) rotation along Z axis 
-			//scint rotation
-			G4Translate3D transXScint(G4ThreeVector(5./tan(22.5/2*deg)*cm+5.*cm, 0.*cm, -40.*cm + i*15*cm));
-			G4Transform3D transformScint = (rotZ)*(transXScint);
-			//det rotation
-			G4Translate3D transXDet(G4ThreeVector(5./tan(22.5/2*deg)*cm+5.*cm+6.*cm, 0.*cm, -40.*cm + i*15*cm));
-			G4Transform3D transformDet = (rotZ)*(transXDet);
-
-			physScintillator = new G4PVPlacement(transformScint, logicScintillator, "physScintillator", logicWorld, false, 0, true);
-			physDetector = new G4PVPlacement(transformDet, logicDetector, "physDetector", logicWorld, false, 0, true);
-		} 
-	}
-
+	G4cout << G4endl << "The materials defined are : " << G4endl << G4endl;
+	G4cout << *(G4Material::GetMaterialTable()) << G4endl;
+  
 }
 
 // ######## Actual construction of the detector based on the boolean selections 
 G4VPhysicalVolume* MyDetectorConstruction::Construct(){
-        
-        //per eliminare la geometria e reinizializzarla da zero
-        if(reinitialize){
-		G4GeometryManager::GetInstance()->OpenGeometry();
-		//G4PhysicalVolumeStore::GetInstance()->Clean();
-		//G4LogicalVolumeStore::GetInstance()->Clean();
-		//G4SolidStore::GetInstance()->Clean();
-	}
 
+	// Material properties definition
+	DefineMaterials();
+	
 	//inizializzare geometria
         solidWorld = new G4Box("solidWorld", xWorld, yWorld, zWorld);
-        logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicworld");
+        logicWorld = new G4LogicalVolume(solidWorld, worldMat, "logicWorld");        
+        physWorld = new G4PVPlacement(nullptr, G4ThreeVector(), logicWorld, "physWorld", nullptr, false, 0, true);
         
-        //Deve essere incluso nel volume madre se faccio un volume dentro a un altro. 
-        //Posso anche fare operazioni booleane (false). Ultimo true check sugli overlap.
-        physWorld = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicWorld, "physWorld", 0, false, 0, true);
+        G4VisAttributes* white = new G4VisAttributes(G4Colour::White());
+    	white->SetVisibility(true);
+    	logicWorld->SetVisAttributes(white);
 
-        if(isCherenkov) 	{ ConstructCherenkov(); }
-        if(isScintillator) 	{ ConstructScintillator(); }
-        if(isTOF) 		{ ConstructTOF(); }
-        if(isAtmosphere) 	{ ConstructAtmosphere(); }
-        
-        //inserire qui meccanismo per modificare il sensitive detector per adattarlo alla nuova forma del setup quando si cambia run?
-        if(reinitialize){
-        	delete sensDet;
-        	ConstructSDandField();
-        	G4cout << "logicDetector is now associated to " << logicDetector->GetName() << std::endl;
-        	G4MTRunManager::GetRunManager()->GeometryHasBeenModified();
-        	G4GeometryManager::GetInstance()->CloseGeometry();
-        }
-        
-        reinitialize = true;
+        if(isMapsFoil) { ConstructMapsFoil(); }
         
         return physWorld;//mother volume
 }
 
+// ######## Counstruct Maps detector surrounded by foils of glue and polyimide
+// TODO: tutte le dimensioni qui saranno da parametrizzare!!!
+void MyDetectorConstruction::ConstructMapsFoil(){
+
+	G4double alpideX 	 =	(alpideXFromMessenger != 0.) 		? alpideXFromMessenger*mm 	  : 30.*mm;
+	G4double alpideY 	 = 	(alpideYFromMessenger != 0.) 		? alpideYFromMessenger*mm 	  : 15.*mm;
+	G4double alpideThickness = 	(alpideThicknessFromMessenger != 0.) 	? alpideThicknessFromMessenger*um : 50.*um;
+	G4double alpidePadRadius = 	(alpidePadRadiusFromMessenger != 0.) 	? alpidePadRadiusFromMessenger*um : 150.*um;
+	G4double glueThickness 	 = 	(glueThicknessFromMessenger != 0.) 	? glueThicknessFromMessenger*um   : 25.*um;
+	G4double kaptonThickness = 	(kaptonThicknessFromMessenger != 0.) 	? kaptonThicknessFromMessenger*um : 50.*um;
+	G4double copperThickness = 	(copperThicknessFromMessenger != 0.) 	? copperThicknessFromMessenger*um : 5.*um;
+	
+	/*G4double totalThickness = alpideThickness + ((constructEpoxyGlueLayer) 	? glueThickness*2   : 0.) 
+						  + ((constructKaptonLayer) 	? kaptonThickness*2 : 0.)
+						  + ((constructCopperLayer) 	? copperThickness*2 : 0.)
+						  + ((constructSolderBalls) 	? alpidePadRadius*4 : 0.);*/
+	
+	G4cout << "AlpideX: " << alpideX/cm << " cm" << G4endl;
+	G4cout << "AlpideX: " << alpideXFromMessenger/cm << " cm" << G4endl;
+	// Define one layer as one assembly volume
+	G4AssemblyVolume* assemblyDetector = new G4AssemblyVolume();
+	
+	// Alpide----------------------------------------------------------------------------------------------------------------
+	G4double Z = 0.*um;
+	// Rotation and translation of a layer inside the assembly
+	G4RotationMatrix Ra;
+	G4ThreeVector Ta;
+	G4Transform3D Tr;
+	Alpide *alpide = new Alpide(alpideX, alpideY, alpideThickness, alpidePadRadius);
+	//std::vector<G4ThreeVector> padCoordinates = alpide->GetPadCoordinates();
+	
+	G4Box* solidAlpide = new G4Box("solidAlpide", alpide->GetAlpideXDimension()*0.5, alpide->GetAlpideYDimension()*0.5, alpide->GetAlpideThickness()*0.5);
+	fLogicAlpide = new G4LogicalVolume(solidAlpide, alpide->GetAlpideMaterial(), "logicAlpide");
+
+	// Fill the assembly by the plates
+	Ta.setX(0.*um); 
+	Ta.setY(0.*um);
+	Ta.setZ(Z);
+	Tr = G4Transform3D(Ra,Ta);
+	assemblyDetector->AddPlacedVolume(fLogicAlpide, Tr);
+
+	if(verboseDetConstr){
+		G4cout << "AlpideX: " << alpide->GetAlpideXDimension()/cm << " cm" << G4endl;
+		G4cout << "AlpideY: " << alpide->GetAlpideYDimension()/cm << " cm" << G4endl;
+		G4cout << "AlpideThickness: " << alpide->GetAlpideThickness()/um << " um" << G4endl;
+	}
+
+	// alpide pads
+	for(int i = 0; i < NofPads; i++){
+
+		G4double pad1Center = padCoordinates[i].z()+alpide->GetAlpideThickness()*0.5+alpide->GetPadThickness1()*0.5;
+		G4double pad2Center = padCoordinates[i].z()+alpide->GetAlpideThickness()*0.5+alpide->GetPadThickness1()+alpide->GetPadThickness2()*0.5;
+
+		G4Tubs* solidPad1 = new G4Tubs("solidPad1_"+std::to_string(i), 0., alpide->GetPadRadius(), alpide->GetPadThickness1()*0.5, 0., 360.*degree);
+		G4LogicalVolume* logicPad1 = new G4LogicalVolume(solidPad1, alpide->GetPadMaterial1(), "logicPad1_"+std::to_string(i));
+		fLogicalAlpidePad1.push_back(logicPad1);
+
+		// Fill the assembly
+		Ta.setX(padCoordinates[i].x()); 
+		Ta.setY(padCoordinates[i].y());
+		Ta.setZ(pad1Center);
+		Tr = G4Transform3D(Ra,Ta);
+		assemblyDetector->AddPlacedVolume(logicPad1, Tr);
+
+		G4Tubs* solidPad2 = new G4Tubs("solidPad2_"+std::to_string(i), 0., alpide->GetPadRadius(), alpide->GetPadThickness2()*0.5, 0., 360.*degree);
+		G4LogicalVolume* logicPad2 = new G4LogicalVolume(solidPad2, alpide->GetPadMaterial2(), "logicPad2_"+std::to_string(i));
+		fLogicalAlpidePad2.push_back(logicPad2);
+
+		// Fill the assembly
+		Ta.setX(padCoordinates[i].x()); 
+		Ta.setY(padCoordinates[i].y());
+		Ta.setZ(pad2Center);
+		Tr = G4Transform3D(Ra,Ta);
+		assemblyDetector->AddPlacedVolume(logicPad2, Tr);
+		
+		if(verboseDetConstr){
+			G4cout << "PadRadius1: " << alpide->GetPadRadius()/um << " um" << G4endl;
+			G4cout << "PadThickness1: " << alpide->GetPadThickness1()/um << " um" << G4endl;
+			//G4cout << "PadMaterial1: " << alpide->GetPadMaterial1() << G4endl;
+			G4cout << "Pad1 Z center: " << pad1Center/um << " um" << G4endl;
+			G4cout << "Pad1 Z goes from: " << (pad1Center - alpide->GetPadThickness1()*0.5)/um << " um to "
+							<<(pad1Center + alpide->GetPadThickness1()*0.5)/um <<" um"      <<G4endl;
+			G4cout << "PadRadius2: " << alpide->GetPadRadius()/um << " um" << G4endl;
+			G4cout << "PadThickness2: " << alpide->GetPadThickness2()/nm << " nm" << G4endl;
+			//G4cout << "PadMaterial2: " << alpide->GetPadMaterial2() << G4endl;
+			G4cout << "Pad2 Z center: " << (pad2Center)/um << " um" << G4endl;
+			G4cout << "Pad2 Z goes from: " << (pad2Center - alpide->GetPadThickness2()*0.5)/um << " um to "
+							<<(pad2Center + alpide->GetPadThickness2()*0.5)/um <<" um"      <<G4endl;
+		}
+
+	}
+	
+	// Glue------------------------------------------------------------------------------------------------------------------
+	if(constructEpoxyGlueLayer) {
+		// Lower Glue Layer----------------------------------------------------------------------------------------------------------
+		Glue *lowerGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
+		Z = 0 - alpideThickness*0.5 - glueThickness*0.5;
+		
+		if(verboseDetConstr){
+			//G4cout << "Lower glue X: " << lowerGlue->GetGlueXDimension()/cm << "cm" << G4endl;
+			//G4cout << "Lower glue Y: " << lowerGlue->GetGlueYDimension()/cm << "cm" << G4endl;
+			G4cout << "Lower glue Z thickness: " << lowerGlue->GetGlueThickness()/CLHEP::um << " um" << G4endl;
+			G4cout << "Lower zInWorld: " << Z/CLHEP::um << " um" << G4endl;
+			G4cout << "Lower glue goes from: " << (Z - lowerGlue->GetGlueThickness()*0.5)/um << " um to "
+							   << (Z + lowerGlue->GetGlueThickness()*0.5)/um << " um"     <<G4endl;
+		}
+
+		G4Box* solidLowerGlue = new G4Box("solidLowerGlue", lowerGlue->GetGlueXDimension()*0.5, 
+							       	    lowerGlue->GetGlueYDimension()*0.5, 
+							            lowerGlue->GetGlueThickness()*0.5   );
+		fLogicLowerGlue = new G4LogicalVolume(solidLowerGlue, lowerGlue->GetGlueMaterial(), "logicLowerGlue", 0);
+
+		// Fill the assembly
+		Ta.setX(0.*um); 
+		Ta.setY(0.*um);
+		Ta.setZ(Z);
+		Tr = G4Transform3D(Ra,Ta);
+		assemblyDetector->AddPlacedVolume(fLogicLowerGlue, Tr);
+		
+		// Upper Glue Layer----------------------------------------------------------------------------------------------------------
+		Glue *upperGlue = new Glue(alpideX, alpideY, glueThickness, epoxyGlue, worldMat);
+		Z = 0 + alpideThickness*0.5 + glueThickness*0.5;
+    		
+    		if(verboseDetConstr){
+    			//G4cout << "Upper glue X: " << upperGlue->GetGlueXDimension()/cm << "cm" << G4endl;
+			//G4cout << "Upper glue Y: " << upperGlue->GetGlueYDimension()/cm << "cm" << G4endl;
+			G4cout << "Upper glue Z thickness: " << upperGlue->GetGlueThickness()/CLHEP::um << " um" << G4endl;
+			G4cout << "Upper zInWorld: " << Z/CLHEP::um << " um" << G4endl;
+			G4cout << "Upper glue goes from: " << (Z - upperGlue->GetGlueThickness()*0.5)/um << " um to " 
+							   << (Z + upperGlue->GetGlueThickness()*0.5)/um << " um"     << G4endl;
+    		}
+
+		G4VSolid* solidUpperGlue = new G4Box("solidGlue", upperGlue->GetGlueXDimension()*0.5, 
+								  upperGlue->GetGlueYDimension()*0.5, 
+								  upperGlue->GetGlueThickness()*0.5   );
+		for(int i = 0; i < NofPads; i++) {
+			G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(), upperGlue->GetGlueThickness()*0.5, 0., 360.*degree);
+			G4ThreeVector* translation = new G4ThreeVector(padCoordinates[i].x(), padCoordinates[i].y(), padCoordinates[i].z());
+			solidUpperGlue = new G4SubtractionSolid("solidUpperGlue", solidUpperGlue, solidPadHole, 0, *translation);
+
+			if(verboseDetConstr){
+				G4cout<<"solidPadHole Z: "<<padCoordinates[i].z()+(alpide->GetAlpideThickness()+upperGlue->GetGlueThickness())*0.5/um<<" um"<<G4endl;
+				G4cout<<"solidPadHole goes from: "<<(padCoordinates[i].z()+(alpide->GetAlpideThickness())*0.5)/um<<" um to "
+							<<(padCoordinates[i].z()+(alpide->GetAlpideThickness())*0.5+upperGlue->GetGlueThickness())/um<<" um"<<G4endl;
+				G4cout << "solidGlue volume: " << solidUpperGlue->GetCubicVolume() << G4endl;
+			}
+		}
+
+		fLogicUpperGlue = new G4LogicalVolume(solidUpperGlue, upperGlue->GetGlueMaterial(), "logicUpperGlue", 0);
+
+		// Fill the assembly
+		Ta.setX(0.*um); 
+		Ta.setY(0.*um);
+		Ta.setZ(Z);
+		Tr = G4Transform3D(Ra,Ta);
+		assemblyDetector->AddPlacedVolume(fLogicUpperGlue, Tr);
+	}
+	// Kapton----------------------------------------------------------------------------------------------------------------
+	if(constructKaptonLayer) {
+		// Lower Kapton Layer--------------------------------------------------------------------------------------------------------
+		Kapton *lowerKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
+		Z = 0 - alpideThickness*0.5 - ((constructEpoxyGlueLayer) ? glueThickness : 0.) - kaptonThickness*0.5;
+		G4Box* solidLowerKapton = new G4Box("solidLowerKapton", lowerKapton->GetKaptonXDimension()*0.5,
+									lowerKapton->GetKaptonYDimension()*0.5,
+									lowerKapton->GetKaptonThickness()*0.5  );
+		fLogicLowerKapton = new G4LogicalVolume(solidLowerKapton,lowerKapton->GetKaptonMaterial(), "logicLowerKapton", 0);
+		
+		// Fill the assembly
+		Ta.setX(0.*um); 
+		Ta.setY(0.*um);
+		Ta.setZ(Z);
+		Tr = G4Transform3D(Ra,Ta);
+		assemblyDetector->AddPlacedVolume(fLogicLowerKapton, Tr);
+		
+		// Upper Kapton Layer--------------------------------------------------------------------------------------------------------
+		Kapton *upperKapton = new Kapton(alpideX, alpideY, kaptonThickness, worldMat);
+		Z = 0 + alpideThickness*0.5 + ((constructEpoxyGlueLayer) ? glueThickness : 0.) + kaptonThickness*0.5;
+		G4VSolid* solidUpperKapton = new G4Box("solidUpperKapton", upperKapton->GetKaptonXDimension()*0.5,
+									   upperKapton->GetKaptonYDimension()*0.5,
+									   upperKapton->GetKaptonThickness()*0.5  );
+									   
+		if(verboseDetConstr){
+			G4cout << "solidUpperKaptonThickness: " << upperKapton->GetKaptonThickness()/um << " um" << G4endl;
+			G4cout << "solidUpperKapton Z center: " << Z/um << " um" << G4endl;
+			G4cout << "solidUpperKapton Z goes from: " << (Z - upperKapton->GetKaptonThickness()*0.5)/um << " um to "
+								   << (Z + upperKapton->GetKaptonThickness()*0.5)/um << " um"    << G4endl;
+		}
+		
+		for(int i = 0; i < NofPads; i++){
+			G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(), upperKapton->GetKaptonThickness()*0.5, 0., 360.*degree);
+			G4ThreeVector* translation = new G4ThreeVector(padCoordinates[i].x(), padCoordinates[i].y(), padCoordinates[i].z());
+			solidUpperKapton = new G4SubtractionSolid("solidUpperGlue", solidUpperKapton, solidPadHole, 0, *translation);
+			
+			if(verboseDetConstr){
+				G4cout << "solidPadHoleThickness: " << upperKapton->GetKaptonThickness()/um << " um" << G4endl;
+				G4cout << "solidPadHole Z center: " << Z/um << " um" << G4endl;
+				G4cout << "solidPadHole Z goes from: " << (Z - upperKapton->GetKaptonThickness()*0.5)/um << " um to "
+								       << (Z + upperKapton->GetKaptonThickness()*0.5)/um << " um"     << G4endl;
+			}
+		}
+
+		fLogicUpperKapton = new G4LogicalVolume(solidUpperKapton,upperKapton->GetKaptonMaterial(), "logicUpperKapton", 0);
+
+		// Fill the assembly by the plates
+		Ta.setX(0.*um); 
+		Ta.setY(0.*um);
+		Ta.setZ(Z);
+		Tr = G4Transform3D(Ra,Ta);
+		assemblyDetector->AddPlacedVolume(fLogicUpperKapton, Tr);
+	}
+	// Copper----------------------------------------------------------------------------------------------------------------
+	if(constructCopperLayer) {
+		Copper *copperLayer = new Copper(alpideX, alpideY, copperThickness);
+		Z = 0+alpideThickness*0.5+((constructEpoxyGlueLayer) ? glueThickness : 0.)+((constructKaptonLayer) ? kaptonThickness : 0.)+copperThickness*0.5;
+		G4Box* solidCopper = new G4Box("solidCopper", copperLayer->GetCopperXDimension()*0.5, 
+							      copperLayer->GetCopperYDimension()*0.5,
+							      copperLayer->GetCopperThickness()*0.5   );
+		fLogicCopper = new G4LogicalVolume(solidCopper, copperLayer->GetCopperMaterial(), "logicCopper");
+		
+		if(verboseDetConstr){
+			G4cout << "CopperThickness: " << copperLayer->GetCopperThickness()/um << " um" << G4endl;
+			G4cout << "Copper Z center: " << Z/um << " um" << G4endl;
+			G4cout << "Copper Z goes from: " << (Z - copperLayer->GetCopperThickness()*0.5)/um << " um to " 
+							 << (Z + copperLayer->GetCopperThickness()*0.5)/um << " um"	<< G4endl;
+		}
+
+		// Fill the assembly by the plates
+		Ta.setX(0.*um); 
+		Ta.setY(0.*um);
+		Ta.setZ(Z);
+		Tr = G4Transform3D(Ra,Ta);
+		assemblyDetector->AddPlacedVolume(fLogicCopper, Tr);
+	}
+	// Solder Balls----------------------------------------------------------------------------------------------------------
+	if(constructSolderBalls) {
+		SolderBall *solderBalls = new SolderBall(alpide);
+		Z = alpideThickness*0.5 + ((constructEpoxyGlueLayer) ? glueThickness : 0.)
+					+ ((constructKaptonLayer) ? kaptonThickness : 0.) 
+					+ ((constructCopperLayer) ? copperThickness : 0.) 
+					+ alpidePadRadius;
+					
+		for(int i = 0; i < NofPads; i++){
+
+			G4Sphere* solidSolderBall = new G4Sphere("solidSolderBall_"+std::to_string(i), 0., alpide->GetPadRadius(), 0., 360.*degree, 
+																   0., 360.*degree );
+			G4LogicalVolume* logicSolderBall = new G4LogicalVolume(
+							solidSolderBall, solderBalls->GetSolderBallMaterial(), "logicSolderBall_"+std::to_string(i));
+			fLogicSolderBalls.push_back(logicSolderBall);
+
+			if(verboseDetConstr){
+				G4cout << "solidSolderBall Radius: " << alpide->GetPadRadius()/um << " um" << G4endl;
+				G4cout << "solidSolderBall Z center: " << Z/um << " um" << G4endl;
+				G4cout << "solidSolderBall Z goes from: " << (Z - alpide->GetPadRadius())/um << " um to " 
+									  << (Z + alpide->GetPadRadius())/um << " um"     << G4endl;
+				G4cout << "solidSolderBall_" << std::to_string(i) << " volume: " << solidSolderBall->GetCubicVolume() << G4endl;
+			}
+			
+			// Fill the assembly by the plates
+			Ta.setX(padCoordinates[i].x()); 
+			Ta.setY(padCoordinates[i].y());
+			Ta.setZ(Z);
+			Tr = G4Transform3D(Ra,Ta);
+			assemblyDetector->AddPlacedVolume(logicSolderBall, Tr);
+		}
+		
+		//solderBalls->ConstructSolderBallLayerPV(Z, assemblyDetector);
+	}
+	//*
+	//*
+	//*
+	
+	// Inserisco l'assembly nel world logical volume
+	G4int NofLayer = 1;
+	for(unsigned int i = 0; i < NofLayer; i++) {
+		// Rotation of the assembly inside the world
+		G4RotationMatrix Rm;
+		// Translation of the assembly inside the world
+		G4double offset = 1.*cm;
+		G4ThreeVector Tm(0., 0., 0. + i*offset);
+		G4Transform3D Tr = G4Transform3D(Rm,Tm);
+		assemblyDetector->MakeImprint(logicWorld, Tr);
+	}
+	
+	// visualization attributes ------------------------------------------------
+
+	G4VisAttributes invisible(G4VisAttributes::GetInvisible());
+	G4VisAttributes invisibleBlue(false, G4Colour::Blue());
+	G4VisAttributes invisibleGreen(false, G4Colour::Green());
+	G4VisAttributes invisibleYellow(false, G4Colour::Yellow());
+	G4VisAttributes blue(G4Colour::Blue());
+	G4VisAttributes cgray(G4Colour::Gray());
+	G4VisAttributes green(G4Colour::Green());
+	G4VisAttributes red(G4Colour::Red());
+	G4VisAttributes yellow(G4Colour::Yellow());
+	G4VisAttributes brown(G4Colour::Brown());
+
+	fLogicAlpide->SetVisAttributes(yellow);
+	for(unsigned int i = 0; i < fLogicalAlpidePad1.size(); i++) fLogicalAlpidePad1[i]->SetVisAttributes(cgray);
+	for(unsigned int i = 0; i < fLogicalAlpidePad2.size(); i++) fLogicalAlpidePad2[i]->SetVisAttributes(yellow);
+	fLogicLowerGlue->SetVisAttributes(green);
+	fLogicUpperGlue->SetVisAttributes(green);
+	fLogicLowerKapton->SetVisAttributes(brown);
+	fLogicUpperKapton->SetVisAttributes(brown);
+	fLogicCopper->SetVisAttributes(red);
+	for(unsigned int i = 0; i < fLogicSolderBalls.size(); i++) fLogicSolderBalls[i]->SetVisAttributes(blue);
+	
+}
+
 // ######## Construction of Sensitive Detector 
 void MyDetectorConstruction::ConstructSDandField(){
-        sensDet = new MySensitiveDetector("SensitiveDetector");
-        if(logicDetector != NULL){
-		logicDetector->SetSensitiveDetector(sensDet);
-        }
+	
+	auto sdManager = G4SDManager::GetSDMpointer();
+	G4String SDname;
+	
+	auto alpide = new MySensitiveDetector(SDname = "/Alpide");
+	sdManager->AddNewDetector(alpide);
+	fLogicAlpide->SetSensitiveDetector(alpide);
+	//StaticInfo::AddOneSensitiveDetector();
+	
+	for(unsigned int i = 0; i < fLogicalAlpidePad1.size(); i++){
+		auto alpidePad1 = new MySensitiveDetector(SDname = "/"+fLogicalAlpidePad1[i]->GetName());
+		sdManager->AddNewDetector(alpidePad1);
+		fLogicalAlpidePad1[i]->SetSensitiveDetector(alpidePad1);
+		//StaticInfo::AddOneSensitiveDetector();
+	}
+	
+	for(unsigned int i = 0; i < fLogicalAlpidePad2.size(); i++){
+		auto alpidePad2 = new MySensitiveDetector(SDname = "/"+fLogicalAlpidePad2[i]->GetName());
+		sdManager->AddNewDetector(alpidePad2);
+		fLogicalAlpidePad2[i]->SetSensitiveDetector(alpidePad2);
+		//StaticInfo::AddOneSensitiveDetector();
+	}
+	
+	if(constructEpoxyGlueLayer) {
+		auto lowerGlue = new MySensitiveDetector(SDname = "/LowerGlue");
+		sdManager->AddNewDetector(lowerGlue);
+		fLogicLowerGlue->SetSensitiveDetector(lowerGlue);
+		//StaticInfo::AddOneSensitiveDetector();
+	
+		auto upperGlue = new MySensitiveDetector(SDname = "/UpperGlue");
+		sdManager->AddNewDetector(upperGlue);
+		fLogicUpperGlue->SetSensitiveDetector(upperGlue);
+		//StaticInfo::AddOneSensitiveDetector();
+	}
+	
+	if(constructKaptonLayer) {
+		auto lowerKapton = new MySensitiveDetector(SDname = "/LowerKapton");
+		sdManager->AddNewDetector(lowerKapton);
+		fLogicLowerKapton->SetSensitiveDetector(lowerKapton);
+		//StaticInfo::AddOneSensitiveDetector();
+		
+		auto upperKapton = new MySensitiveDetector(SDname = "/UpperKapton");
+		sdManager->AddNewDetector(upperKapton);
+		fLogicUpperKapton->SetSensitiveDetector(upperKapton);
+		//StaticInfo::AddOneSensitiveDetector();
+	}
+	
+	if(constructCopperLayer) {
+		auto copperLayer = new MySensitiveDetector(SDname = "/CopperLayer");
+		sdManager->AddNewDetector(copperLayer);
+		fLogicCopper->SetSensitiveDetector(copperLayer);
+		//StaticInfo::AddOneSensitiveDetector();
+	}
+	
+	if(constructSolderBalls) {
+		for(unsigned int i = 0; i < fLogicSolderBalls.size(); i++){
+			auto solderBall = new MySensitiveDetector(SDname = "/"+fLogicSolderBalls[i]->GetName());
+			sdManager->AddNewDetector(solderBall);
+			fLogicSolderBalls[i]->SetSensitiveDetector(solderBall);
+			//StaticInfo::AddOneSensitiveDetector();
+		}
+	}
+	
+	
+	
+	//TODO
+	/*
+	programma prossima settimana:
+	-rendere configurabile TUTTO! pure le costanti che ho messo in MyEventAction
+	-risolvere problemi con i pad (chiedere a Mario?)
+	-creare il detector usando G4AssemblyDetector?
+	-risolvere problema sull'istogramma dei tempi delle hit
+	
+	- per importare la geometria del flexbond dal file step leggere la guida per gli sviluppatori, paragrafo Tessellated Solids, G4TessellatedSolid
+	*/
+	
 }
 
 

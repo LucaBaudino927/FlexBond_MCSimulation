@@ -211,6 +211,102 @@ sim.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/sim.cc.s
 .PHONY : sim.cc.s
 
+src/Alpide.o: src/Alpide.cc.o
+.PHONY : src/Alpide.o
+
+# target to build an object file
+src/Alpide.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Alpide.cc.o
+.PHONY : src/Alpide.cc.o
+
+src/Alpide.i: src/Alpide.cc.i
+.PHONY : src/Alpide.i
+
+# target to preprocess a source file
+src/Alpide.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Alpide.cc.i
+.PHONY : src/Alpide.cc.i
+
+src/Alpide.s: src/Alpide.cc.s
+.PHONY : src/Alpide.s
+
+# target to generate assembly for a file
+src/Alpide.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Alpide.cc.s
+.PHONY : src/Alpide.cc.s
+
+src/Copper.o: src/Copper.cc.o
+.PHONY : src/Copper.o
+
+# target to build an object file
+src/Copper.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Copper.cc.o
+.PHONY : src/Copper.cc.o
+
+src/Copper.i: src/Copper.cc.i
+.PHONY : src/Copper.i
+
+# target to preprocess a source file
+src/Copper.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Copper.cc.i
+.PHONY : src/Copper.cc.i
+
+src/Copper.s: src/Copper.cc.s
+.PHONY : src/Copper.s
+
+# target to generate assembly for a file
+src/Copper.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Copper.cc.s
+.PHONY : src/Copper.cc.s
+
+src/Glue.o: src/Glue.cc.o
+.PHONY : src/Glue.o
+
+# target to build an object file
+src/Glue.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Glue.cc.o
+.PHONY : src/Glue.cc.o
+
+src/Glue.i: src/Glue.cc.i
+.PHONY : src/Glue.i
+
+# target to preprocess a source file
+src/Glue.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Glue.cc.i
+.PHONY : src/Glue.cc.i
+
+src/Glue.s: src/Glue.cc.s
+.PHONY : src/Glue.s
+
+# target to generate assembly for a file
+src/Glue.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Glue.cc.s
+.PHONY : src/Glue.cc.s
+
+src/Kapton.o: src/Kapton.cc.o
+.PHONY : src/Kapton.o
+
+# target to build an object file
+src/Kapton.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Kapton.cc.o
+.PHONY : src/Kapton.cc.o
+
+src/Kapton.i: src/Kapton.cc.i
+.PHONY : src/Kapton.i
+
+# target to preprocess a source file
+src/Kapton.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Kapton.cc.i
+.PHONY : src/Kapton.cc.i
+
+src/Kapton.s: src/Kapton.cc.s
+.PHONY : src/Kapton.s
+
+# target to generate assembly for a file
+src/Kapton.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/Kapton.cc.s
+.PHONY : src/Kapton.cc.s
+
 src/MyActionInitialization.o: src/MyActionInitialization.cc.o
 .PHONY : src/MyActionInitialization.o
 
@@ -355,29 +451,77 @@ src/MySensitiveDetector.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.s
 .PHONY : src/MySensitiveDetector.cc.s
 
-src/MySteppingAction.o: src/MySteppingAction.cc.o
-.PHONY : src/MySteppingAction.o
+src/MySensitiveDetectorHit.o: src/MySensitiveDetectorHit.cc.o
+.PHONY : src/MySensitiveDetectorHit.o
 
 # target to build an object file
-src/MySteppingAction.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o
-.PHONY : src/MySteppingAction.cc.o
+src/MySensitiveDetectorHit.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.o
+.PHONY : src/MySensitiveDetectorHit.cc.o
 
-src/MySteppingAction.i: src/MySteppingAction.cc.i
-.PHONY : src/MySteppingAction.i
+src/MySensitiveDetectorHit.i: src/MySensitiveDetectorHit.cc.i
+.PHONY : src/MySensitiveDetectorHit.i
 
 # target to preprocess a source file
-src/MySteppingAction.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySteppingAction.cc.i
-.PHONY : src/MySteppingAction.cc.i
+src/MySensitiveDetectorHit.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.i
+.PHONY : src/MySensitiveDetectorHit.cc.i
 
-src/MySteppingAction.s: src/MySteppingAction.cc.s
-.PHONY : src/MySteppingAction.s
+src/MySensitiveDetectorHit.s: src/MySensitiveDetectorHit.cc.s
+.PHONY : src/MySensitiveDetectorHit.s
 
 # target to generate assembly for a file
-src/MySteppingAction.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySteppingAction.cc.s
-.PHONY : src/MySteppingAction.cc.s
+src/MySensitiveDetectorHit.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.s
+.PHONY : src/MySensitiveDetectorHit.cc.s
+
+src/SolderBall.o: src/SolderBall.cc.o
+.PHONY : src/SolderBall.o
+
+# target to build an object file
+src/SolderBall.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/SolderBall.cc.o
+.PHONY : src/SolderBall.cc.o
+
+src/SolderBall.i: src/SolderBall.cc.i
+.PHONY : src/SolderBall.i
+
+# target to preprocess a source file
+src/SolderBall.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/SolderBall.cc.i
+.PHONY : src/SolderBall.cc.i
+
+src/SolderBall.s: src/SolderBall.cc.s
+.PHONY : src/SolderBall.s
+
+# target to generate assembly for a file
+src/SolderBall.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/SolderBall.cc.s
+.PHONY : src/SolderBall.cc.s
+
+src/StaticInfo.o: src/StaticInfo.cc.o
+.PHONY : src/StaticInfo.o
+
+# target to build an object file
+src/StaticInfo.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/StaticInfo.cc.o
+.PHONY : src/StaticInfo.cc.o
+
+src/StaticInfo.i: src/StaticInfo.cc.i
+.PHONY : src/StaticInfo.i
+
+# target to preprocess a source file
+src/StaticInfo.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/StaticInfo.cc.i
+.PHONY : src/StaticInfo.cc.i
+
+src/StaticInfo.s: src/StaticInfo.cc.s
+.PHONY : src/StaticInfo.s
+
+# target to generate assembly for a file
+src/StaticInfo.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/StaticInfo.cc.s
+.PHONY : src/StaticInfo.cc.s
 
 # Help Target
 help:
@@ -396,6 +540,18 @@ help:
 	@echo "... sim.o"
 	@echo "... sim.i"
 	@echo "... sim.s"
+	@echo "... src/Alpide.o"
+	@echo "... src/Alpide.i"
+	@echo "... src/Alpide.s"
+	@echo "... src/Copper.o"
+	@echo "... src/Copper.i"
+	@echo "... src/Copper.s"
+	@echo "... src/Glue.o"
+	@echo "... src/Glue.i"
+	@echo "... src/Glue.s"
+	@echo "... src/Kapton.o"
+	@echo "... src/Kapton.i"
+	@echo "... src/Kapton.s"
 	@echo "... src/MyActionInitialization.o"
 	@echo "... src/MyActionInitialization.i"
 	@echo "... src/MyActionInitialization.s"
@@ -414,9 +570,15 @@ help:
 	@echo "... src/MySensitiveDetector.o"
 	@echo "... src/MySensitiveDetector.i"
 	@echo "... src/MySensitiveDetector.s"
-	@echo "... src/MySteppingAction.o"
-	@echo "... src/MySteppingAction.i"
-	@echo "... src/MySteppingAction.s"
+	@echo "... src/MySensitiveDetectorHit.o"
+	@echo "... src/MySensitiveDetectorHit.i"
+	@echo "... src/MySensitiveDetectorHit.s"
+	@echo "... src/SolderBall.o"
+	@echo "... src/SolderBall.i"
+	@echo "... src/SolderBall.s"
+	@echo "... src/StaticInfo.o"
+	@echo "... src/StaticInfo.i"
+	@echo "... src/StaticInfo.s"
 .PHONY : help
 
 

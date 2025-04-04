@@ -6,10 +6,25 @@
 #
 #	add new geometries here
 #
-/detector/cherenkov true
-/detector/scintillator false
-/detector/tof false
-/detector/atmosphere false
+/detector/verboseDetConstruction true
+/detector/mapsFoil true
+
+#
+# Defaults:
+#
+#	add new geometries here
+#
+/detector/constructEpoxyGlueLayer true
+/detector/constructKaptonLayer true
+/detector/constructCopperLayer true
+/detector/constructSolderBalls false
+/detector/alpideXDimension 30. #mm
+/detector/alpideYDimension 15. #mm
+/detector/alpideThickness 50. #um
+/detector/alpidePadRadius 150. #um
+/detector/glueThickness 25. #um
+/detector/kaptonThickness 50. #um
+/detector/copperThickness 5. #um
 
 # Initialize kernel
 /run/initialize
@@ -36,7 +51,7 @@
 /vis/scene/endOfEventAction accumulate
 #/vis/ogl/set/displayListLimit 5000000
 #If you want to add a scale in the viewer
-/vis/scene/add/scale 5 cm
+/vis/scene/add/scale 30 mm
 #############################################################
 
 /run/beamOn 100

@@ -344,11 +344,13 @@ CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4TrajectoryContainer.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTrajectory.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserEventInformation.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyRunAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySteppingAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserSteppingAction.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SDManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4HCtable.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SDStructure.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4CollectionNameVector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Step.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VPhysicalVolume.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/geomdefs.hh \
@@ -363,7 +365,6 @@ CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationX.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationX.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/PhysicalConstants.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Units/SystemOfUnits.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationY.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationY.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/RotationZ.h \
@@ -441,11 +442,35 @@ CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserTrackInformation.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsModelCatalog.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Track.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Step.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Gamma.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Electron.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyDetectorConstruction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SystemOfUnits.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VHit.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VReadOutGeometry.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SensitiveVolumeList.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSDFilter.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THitsCollection.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetectorHit.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VHit.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Allocator.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4RotationMatrix.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Threading.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDef.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TypeKey.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttValue.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolume.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Colour.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Transform3D.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommand.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UnitsTable.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UnitsTable.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VVisManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/graphics_reps_defs.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Colour.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Color.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDefStore.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4EventManager.hh \
@@ -562,177 +587,9 @@ CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/rundefs.hh \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
  /usr/include/c++/11/bits/list.tcc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UImanager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommandStatus.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VStateDependent.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/icomsdefs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VVisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GraphicsSystemList.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VGraphicsSystem.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ModelingParameters.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisExtent.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Point3D.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/graphics_reps_defs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Colour.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Color.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ModelingParameters.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4NullModel.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VModel.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VModel.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SceneHandlerList.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSceneHandler.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VGraphicsScene.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ViewerList.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VViewer.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SceneTreeItem.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDef.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TypeKey.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttValue.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ViewParameters.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Vector3D.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Plane3D.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Geometry/Plane3D.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VMarker.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Visible.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Visible.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VMarker.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ViewParameters.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicalVolumeModel.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PseudoScene.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Box.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GeomTypes.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GeomConfig.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4CSGSolid.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Polyhedron.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/HepPolyhedron.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TwoVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/TwoVector.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Vector/TwoVector.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Normal3D.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Box.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Cons.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Cons.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Orb.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Orb.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Para.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Para.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Torus.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Torus.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Trap.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Trap.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Trd.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Trd.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Ellipsoid.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Ellipsoid.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Polycone.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VCSGfaceted.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PolyconeSide.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VCSGface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PolyconeHistorical.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Polycone.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Polyhedra.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PolyhedraSide.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PolyhedraHistorical.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Polyhedra.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TessellatedSolid.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Voxelizer.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SurfBits.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VFacet.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/windefs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Voxelizer.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VViewer.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THitsMap.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THitsCollection.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSceneHandler.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SceneList.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Scene.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Scene.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TrajectoriesModel.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisExecutive.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisExecutive.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4HitFilterFactories.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VFilter.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VModelFactory.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VHit.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4DigiFilterFactories.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VDigi.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TrajectoryFilterFactories.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TrajectoryModelFactories.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTrajectoryModel.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ASCIITree.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTree.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4DAWNFILE.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4HepRepFile.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4HepRepFileXMLWriter.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4RayTracer.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VRML2File.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GMocrenFile.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsSGOffscreen.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4OpenGLImmediateQt.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4OpenGLQt.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4OpenGLStoredQt.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4RayTracerX.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsSGQtGLES.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsSGQtZB.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UImanager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIsession.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4coutDestination.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIbatch.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIExecutive.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUIshell.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolume.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Box.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PVPlacement.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4NistManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ICRU90StoppingData.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4NistElementBuilder.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4NistMaterialBuilder.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Pow.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Exp.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserDetectorConstruction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericMessenger.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnyMethod.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnyType.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4OpticalSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Physics2DVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Physics2DVector.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SurfaceProperty.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GeometryManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SmartVoxelStat.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicalVolumeStore.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VStoreNotifier.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VNotifier.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalVolumeStore.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SolidStore.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4MTRunManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4MTBarrier.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4RNGHelper.hh \
- /usr/include/c++/11/queue /usr/include/c++/11/deque \
- /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
- /usr/include/c++/11/bits/stl_queue.h \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TouchableHistory.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4CollectionNameVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VReadOutGeometry.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SensitiveVolumeList.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSDFilter.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4HCtable.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Constants.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyPrimaryGenerator.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleGun.hh \
@@ -740,4 +597,7 @@ CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ParticleTable.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4IonTable.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Ions.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Geantino.hh
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Geantino.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyRunAction.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh
