@@ -28,12 +28,12 @@ public:
     G4double GetAlpideXDimension()  { return fAlpideXDimension; }
     G4double GetAlpideYDimension()  { return fAlpideYDimension; }
     G4double GetPadRadius()	    { return fPadRadius; }
-    G4int GetNOfPads()		    { return fNOfPads; }
+    //G4int GetNOfPads()		    { return fNOfPads; }
     G4Material* GetPadMaterial1()   { return fPadMaterial1; }
     G4double GetPadThickness1()     { return fPadThickness1; }
     G4Material* GetPadMaterial2()   { return fPadMaterial2; }
     G4double GetPadThickness2()     { return fPadThickness2; }
-    std::vector<G4ThreeVector> GetPadCoordinates() { return fPadCoordinates; }
+    //std::vector<G4ThreeVector> GetPadCoordinates() { return fPadCoordinates; }
     void ConstructAlpideLayerPV(G4double xInWorld, G4double yInWorld, G4double zInWorld, G4AssemblyVolume* assemblyDetector);
     
 
@@ -44,12 +44,12 @@ private:
     G4double fAlpideXDimension;
     G4double fAlpideYDimension;
     G4double fPadRadius;
-    G4int fNOfPads;
+    //G4int fNOfPads;
     G4Material* fPadMaterial1 = G4NistManager::Instance()->FindOrBuildMaterial("G4_Ni");
     G4double fPadThickness1 = 2.5*um;
     G4Material* fPadMaterial2 = G4NistManager::Instance()->FindOrBuildMaterial("G4_Au");
     G4double fPadThickness2 = 50.*nm;
-    std::vector<G4ThreeVector> fPadCoordinates;
+    //std::vector<G4ThreeVector> fPadCoordinates;
     
 };
 

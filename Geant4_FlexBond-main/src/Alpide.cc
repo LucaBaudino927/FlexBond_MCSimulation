@@ -13,10 +13,10 @@ Alpide::Alpide(G4double x, G4double y, G4double alpideThickness, G4double padRad
        
     // ##### info dei pad da 300 um dell'alpide 
     //per ora non configurabile
-    fPadCoordinates = {{-0.*mm, -0.*mm, 0.}, {-1.*mm, -1.*mm, 0.}, {-1.*mm, +1.*mm, 0.}, {+1.*mm, -1.*mm, 0.}, {+1.*mm, +1.*mm, 0.}};
+    //fPadCoordinates = {{-0.*mm, -0.*mm, 0.}, {-1.*mm, -1.*mm, 0.}, {-1.*mm, +1.*mm, 0.}, {+1.*mm, -1.*mm, 0.}, {+1.*mm, +1.*mm, 0.}};
     //fPadCoordinates = {{-0.*mm, -0.*mm, 0.}};
-    fNOfPads = fPadCoordinates.size();
-    StaticInfo::SetNOfAlpidePads(fNOfPads);
+    //fNOfPads = fPadCoordinates.size();
+    //StaticInfo::SetNOfAlpidePads(fNOfPads);
     
 }
 

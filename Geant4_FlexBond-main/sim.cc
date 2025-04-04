@@ -31,7 +31,7 @@ int main(int argc, char** argv){
         G4VModularPhysicsList *physicsList = new FTFP_BERT();
 	physicsList->SetVerboseLevel(1);
 	runManager->SetUserInitialization(physicsList);
-        //Third: action -> 1. generator, 2. run, 3. event, 4. stepping 
+        //Third: action -> 1. generator, 2. event, 3. run, 4. stepping 
         runManager->SetUserInitialization(new MyActionInitialization);
 
         //Only for cosmic showers in the atmosphere. It takes into account hadronic decays. 

@@ -14,7 +14,6 @@
 #include "G4HCtable.hh"
 
 //User defined
-//#include "MapsFoilDetectorList.hh"
 #include "Constants.hh"
 #include "StaticInfo.hh"
 
@@ -33,9 +32,11 @@ private:
     G4VHitsCollection* GetHC(const G4Event* event, G4int collId);
 
     G4double fEdep;
+    // problema per rendere tutto configurabile: fHitCollID funziona solo se è un array di lunghezza FISSA -> non posso usare vector
     std::array<G4int, NofMySensitiveDetector> fHitCollID;
     //Array che contiene NofMySensitiveDetector vector. Ogni vector contiene le energie delle N hit del detector
     std::array<std::vector<G4double>, NofMySensitiveDetector> fDetEdep;
+    std::array<G4String, NofMySensitiveDetector> detHCName;
     
 };
 

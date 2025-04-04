@@ -140,7 +140,7 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 	G4ThreeVector Ta;
 	G4Transform3D Tr;
 	Alpide *alpide = new Alpide(alpideX, alpideY, alpideThickness, alpidePadRadius);
-	std::vector<G4ThreeVector> padPositions = alpide->GetPadCoordinates();
+	//std::vector<G4ThreeVector> padCoordinates = alpide->GetPadCoordinates();
 	
 	G4Box* solidAlpide = new G4Box("solidAlpide", alpide->GetAlpideXDimension()*0.5, alpide->GetAlpideYDimension()*0.5, alpide->GetAlpideThickness()*0.5);
 	fLogicAlpide = new G4LogicalVolume(solidAlpide, alpide->GetAlpideMaterial(), "logicAlpide");
@@ -159,18 +159,18 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 	}
 
 	// alpide pads
-	for(int i = 0; i < alpide->GetNOfPads(); i++){
+	for(int i = 0; i < NofPads; i++){
 
-		G4double pad1Center = padPositions[i].z()+alpide->GetAlpideThickness()*0.5+alpide->GetPadThickness1()*0.5;
-		G4double pad2Center = padPositions[i].z()+alpide->GetAlpideThickness()*0.5+alpide->GetPadThickness1()+alpide->GetPadThickness2()*0.5;
+		G4double pad1Center = padCoordinates[i].z()+alpide->GetAlpideThickness()*0.5+alpide->GetPadThickness1()*0.5;
+		G4double pad2Center = padCoordinates[i].z()+alpide->GetAlpideThickness()*0.5+alpide->GetPadThickness1()+alpide->GetPadThickness2()*0.5;
 
 		G4Tubs* solidPad1 = new G4Tubs("solidPad1_"+std::to_string(i), 0., alpide->GetPadRadius(), alpide->GetPadThickness1()*0.5, 0., 360.*degree);
 		G4LogicalVolume* logicPad1 = new G4LogicalVolume(solidPad1, alpide->GetPadMaterial1(), "logicPad1_"+std::to_string(i));
 		fLogicalAlpidePad1.push_back(logicPad1);
 
 		// Fill the assembly
-		Ta.setX(padPositions[i].x()); 
-		Ta.setY(padPositions[i].y());
+		Ta.setX(padCoordinates[i].x()); 
+		Ta.setY(padCoordinates[i].y());
 		Ta.setZ(pad1Center);
 		Tr = G4Transform3D(Ra,Ta);
 		assemblyDetector->AddPlacedVolume(logicPad1, Tr);
@@ -180,8 +180,8 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 		fLogicalAlpidePad2.push_back(logicPad2);
 
 		// Fill the assembly
-		Ta.setX(padPositions[i].x()); 
-		Ta.setY(padPositions[i].y());
+		Ta.setX(padCoordinates[i].x()); 
+		Ta.setY(padCoordinates[i].y());
 		Ta.setZ(pad2Center);
 		Tr = G4Transform3D(Ra,Ta);
 		assemblyDetector->AddPlacedVolume(logicPad2, Tr);
@@ -246,15 +246,15 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 		G4VSolid* solidUpperGlue = new G4Box("solidGlue", upperGlue->GetGlueXDimension()*0.5, 
 								  upperGlue->GetGlueYDimension()*0.5, 
 								  upperGlue->GetGlueThickness()*0.5   );
-		for(int i = 0; i < alpide->GetNOfPads(); i++) {
+		for(int i = 0; i < NofPads; i++) {
 			G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(), upperGlue->GetGlueThickness()*0.5, 0., 360.*degree);
-			G4ThreeVector* translation = new G4ThreeVector(padPositions[i].x(), padPositions[i].y(), padPositions[i].z());
+			G4ThreeVector* translation = new G4ThreeVector(padCoordinates[i].x(), padCoordinates[i].y(), padCoordinates[i].z());
 			solidUpperGlue = new G4SubtractionSolid("solidUpperGlue", solidUpperGlue, solidPadHole, 0, *translation);
 
 			if(verboseDetConstr){
-				G4cout<<"solidPadHole Z: "<<padPositions[i].z()+(alpide->GetAlpideThickness()+upperGlue->GetGlueThickness())*0.5/um<<" um"<<G4endl;
-				G4cout<<"solidPadHole goes from: "<<(padPositions[i].z()+(alpide->GetAlpideThickness())*0.5)/um<<" um to "
-							<<(padPositions[i].z()+(alpide->GetAlpideThickness())*0.5+upperGlue->GetGlueThickness())/um<<" um"<<G4endl;
+				G4cout<<"solidPadHole Z: "<<padCoordinates[i].z()+(alpide->GetAlpideThickness()+upperGlue->GetGlueThickness())*0.5/um<<" um"<<G4endl;
+				G4cout<<"solidPadHole goes from: "<<(padCoordinates[i].z()+(alpide->GetAlpideThickness())*0.5)/um<<" um to "
+							<<(padCoordinates[i].z()+(alpide->GetAlpideThickness())*0.5+upperGlue->GetGlueThickness())/um<<" um"<<G4endl;
 				G4cout << "solidGlue volume: " << solidUpperGlue->GetCubicVolume() << G4endl;
 			}
 		}
@@ -299,9 +299,9 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 								   << (Z + upperKapton->GetKaptonThickness()*0.5)/um << " um"    << G4endl;
 		}
 		
-		for(int i = 0; i < alpide->GetNOfPads(); i++){
+		for(int i = 0; i < NofPads; i++){
 			G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(), upperKapton->GetKaptonThickness()*0.5, 0., 360.*degree);
-			G4ThreeVector* translation = new G4ThreeVector(padPositions[i].x(), padPositions[i].y(), padPositions[i].z());
+			G4ThreeVector* translation = new G4ThreeVector(padCoordinates[i].x(), padCoordinates[i].y(), padCoordinates[i].z());
 			solidUpperKapton = new G4SubtractionSolid("solidUpperGlue", solidUpperKapton, solidPadHole, 0, *translation);
 			
 			if(verboseDetConstr){
@@ -352,7 +352,7 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 					+ ((constructCopperLayer) ? copperThickness : 0.) 
 					+ alpidePadRadius;
 					
-		for(int i = 0; i < alpide->GetNOfPads(); i++){
+		for(int i = 0; i < NofPads; i++){
 
 			G4Sphere* solidSolderBall = new G4Sphere("solidSolderBall_"+std::to_string(i), 0., alpide->GetPadRadius(), 0., 360.*degree, 
 																   0., 360.*degree );
@@ -369,8 +369,8 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 			}
 			
 			// Fill the assembly by the plates
-			Ta.setX(padPositions[i].x()); 
-			Ta.setY(padPositions[i].y());
+			Ta.setX(padCoordinates[i].x()); 
+			Ta.setY(padCoordinates[i].y());
 			Ta.setZ(Z);
 			Tr = G4Transform3D(Ra,Ta);
 			assemblyDetector->AddPlacedVolume(logicSolderBall, Tr);
@@ -428,51 +428,51 @@ void MyDetectorConstruction::ConstructSDandField(){
 	auto alpide = new MySensitiveDetector(SDname = "/Alpide");
 	sdManager->AddNewDetector(alpide);
 	fLogicAlpide->SetSensitiveDetector(alpide);
-	StaticInfo::AddOneSensitiveDetector();
+	//StaticInfo::AddOneSensitiveDetector();
 	
 	for(unsigned int i = 0; i < fLogicalAlpidePad1.size(); i++){
 		auto alpidePad1 = new MySensitiveDetector(SDname = "/"+fLogicalAlpidePad1[i]->GetName());
 		sdManager->AddNewDetector(alpidePad1);
 		fLogicalAlpidePad1[i]->SetSensitiveDetector(alpidePad1);
-		StaticInfo::AddOneSensitiveDetector();
+		//StaticInfo::AddOneSensitiveDetector();
 	}
 	
 	for(unsigned int i = 0; i < fLogicalAlpidePad2.size(); i++){
 		auto alpidePad2 = new MySensitiveDetector(SDname = "/"+fLogicalAlpidePad2[i]->GetName());
 		sdManager->AddNewDetector(alpidePad2);
 		fLogicalAlpidePad2[i]->SetSensitiveDetector(alpidePad2);
-		StaticInfo::AddOneSensitiveDetector();
+		//StaticInfo::AddOneSensitiveDetector();
 	}
 	
 	if(constructEpoxyGlueLayer) {
 		auto lowerGlue = new MySensitiveDetector(SDname = "/LowerGlue");
 		sdManager->AddNewDetector(lowerGlue);
 		fLogicLowerGlue->SetSensitiveDetector(lowerGlue);
-		StaticInfo::AddOneSensitiveDetector();
+		//StaticInfo::AddOneSensitiveDetector();
 	
 		auto upperGlue = new MySensitiveDetector(SDname = "/UpperGlue");
 		sdManager->AddNewDetector(upperGlue);
 		fLogicUpperGlue->SetSensitiveDetector(upperGlue);
-		StaticInfo::AddOneSensitiveDetector();
+		//StaticInfo::AddOneSensitiveDetector();
 	}
 	
 	if(constructKaptonLayer) {
 		auto lowerKapton = new MySensitiveDetector(SDname = "/LowerKapton");
 		sdManager->AddNewDetector(lowerKapton);
 		fLogicLowerKapton->SetSensitiveDetector(lowerKapton);
-		StaticInfo::AddOneSensitiveDetector();
+		//StaticInfo::AddOneSensitiveDetector();
 		
 		auto upperKapton = new MySensitiveDetector(SDname = "/UpperKapton");
 		sdManager->AddNewDetector(upperKapton);
 		fLogicUpperKapton->SetSensitiveDetector(upperKapton);
-		StaticInfo::AddOneSensitiveDetector();
+		//StaticInfo::AddOneSensitiveDetector();
 	}
 	
 	if(constructCopperLayer) {
 		auto copperLayer = new MySensitiveDetector(SDname = "/CopperLayer");
 		sdManager->AddNewDetector(copperLayer);
 		fLogicCopper->SetSensitiveDetector(copperLayer);
-		StaticInfo::AddOneSensitiveDetector();
+		//StaticInfo::AddOneSensitiveDetector();
 	}
 	
 	if(constructSolderBalls) {
@@ -480,7 +480,7 @@ void MyDetectorConstruction::ConstructSDandField(){
 			auto solderBall = new MySensitiveDetector(SDname = "/"+fLogicSolderBalls[i]->GetName());
 			sdManager->AddNewDetector(solderBall);
 			fLogicSolderBalls[i]->SetSensitiveDetector(solderBall);
-			StaticInfo::AddOneSensitiveDetector();
+			//StaticInfo::AddOneSensitiveDetector();
 		}
 	}
 	

@@ -8,9 +8,31 @@ MyEventAction::MyEventAction(){
 	G4RunManager::GetRunManager()->SetPrintProgress(1);
 	fHitCollID.fill(-1);
 	fDetEdep.fill(std::vector<G4double>(NofMySensitiveDetector, 0.));
+	// hits collections names
+	detHCName = { { "Alpide/MySensitiveDetectorColl", 
+			"logicPad1_0/MySensitiveDetectorColl",
+			"logicPad2_0/MySensitiveDetectorColl",
+			"logicPad1_1/MySensitiveDetectorColl", 
+			"logicPad2_1/MySensitiveDetectorColl",
+			"logicPad1_2/MySensitiveDetectorColl", 
+			"logicPad2_2/MySensitiveDetectorColl",
+			"logicPad1_3/MySensitiveDetectorColl", 
+			"logicPad2_3/MySensitiveDetectorColl",
+			"logicPad1_4/MySensitiveDetectorColl", 
+			"logicPad2_4/MySensitiveDetectorColl",
+			"LowerGlue/MySensitiveDetectorColl",
+			"UpperGlue/MySensitiveDetectorColl",
+			"LowerKapton/MySensitiveDetectorColl",
+			"UpperKapton/MySensitiveDetectorColl",
+			"CopperLayer/MySensitiveDetectorColl",
+			"logicSolderBall_0/MySensitiveDetectorColl",
+			"logicSolderBall_1/MySensitiveDetectorColl",
+			"logicSolderBall_2/MySensitiveDetectorColl",
+			"logicSolderBall_3/MySensitiveDetectorColl",
+			"logicSolderBall_4/MySensitiveDetectorColl"	}};
 }
 
-// ######## Initialization of fEdep to 0 at the beginning of the event
+// ######## Start of Event -> call MySensitiveDetector::Initialize() and then MyEventAction::BeginOfEventAction()
 void MyEventAction::BeginOfEventAction(const G4Event*){ 
 	
 	/*
@@ -36,21 +58,8 @@ void MyEventAction::BeginOfEventAction(const G4Event*){
 	
 	
 	if (fHitCollID[0] < 0) {
-	
-		//G4cout << "---BeginOfEventAction---1---" << G4endl;
 		auto sdManager = G4SDManager::GetSDMpointer();
 		auto analysisManager = G4AnalysisManager::Instance();
-
-		// hits collections names
-		array<G4String, NofMySensitiveDetector> detHCName = {{ "Alpide/MySensitiveDetectorColl", 
-								       "logicPad1_0/MySensitiveDetectorColl", 
-								       "logicPad2_0/MySensitiveDetectorColl",
-								       "LowerGlue/MySensitiveDetectorColl",
-								       "UpperGlue/MySensitiveDetectorColl",
-								       "LowerKapton/MySensitiveDetectorColl",
-								       "UpperKapton/MySensitiveDetectorColl",
-								       "CopperLayer/MySensitiveDetectorColl",
-								       "logicSolderBall_0/MySensitiveDetectorColl"	}};
 
 		for (G4int iDet = 0; iDet < NofMySensitiveDetector; ++iDet) {
 			// hit collections IDs
@@ -138,18 +147,8 @@ void MyEventAction::EndOfEventAction(const G4Event* anEvent){
 	G4cout << G4endl << ">>> Event " << anEvent->GetEventID() << " >>> Simulation truth : " << primary->GetG4code()->GetParticleName() << " "
 															 << primary->GetMomentum() << G4endl;
 
-	// MySensitiveDetector
-	array<G4String, NofMySensitiveDetector> detName = {{ "Alpide", 
-					   		     "logicPad1_0", 
-					   		     "logicPad2_0",
-					   		     "lowerGlue",
-					   		     "upperGlue",
-					   		     "lowerKapton",
-					   		     "upperKapton",
-					   		     "copperLayer",
-					   		     "solderBall_0"	}};
-	for (G4int iDet = 0; iDet < NofMySensitiveDetector; ++iDet) {
-		G4cout << detName[iDet] << " has " << totalDetHit[iDet] << " hits." << " Total Edep is " << totalDetEdep[iDet] / MeV << " (MeV)" << G4endl;
+	for (G4int iDet = 0; iDet < detHCName.size(); ++iDet) {
+		G4cout << detHCName[iDet] << " has " << totalDetHit[iDet] << " hits." << " Total Edep is " << totalDetEdep[iDet] / MeV << " (MeV)" << G4endl;
 	}
 
 	

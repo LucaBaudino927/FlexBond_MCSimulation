@@ -26,8 +26,8 @@ class StaticInfo
         static G4ThreeVector GetAlpidePadCoordinates(G4int index) { return alpidePadCoordinates[index]; };
         static void AddToAlpidePadCoordinatesList(G4ThreeVector v) { alpidePadCoordinates.push_back(v); };
         
-        static G4int GetNOfSensitiveDetector() { return NOfSensitiveDetector; };
-        static void AddOneSensitiveDetector() { NOfSensitiveDetector++; };
+        //static G4int GetNOfSensitiveDetector() { return NOfSensitiveDetector; };
+        //static void AddOneSensitiveDetector() { NOfSensitiveDetector++; };
         
         static std::map<G4String, G4bool> GetDetectorConstructionFlags() { return detectorConstructionFlags; };
         static G4bool GetDetectorFlag(G4String flagName) { return detectorConstructionFlags[flagName]; };
@@ -39,7 +39,7 @@ class StaticInfo
     private:
     	
     	static std::vector<G4ThreeVector> alpidePadCoordinates;
-        static G4int NOfSensitiveDetector;
+        //static G4int NOfSensitiveDetector;
         static std::map<G4String, G4bool> detectorConstructionFlags;
         static G4int NOfAlpidePads;
 

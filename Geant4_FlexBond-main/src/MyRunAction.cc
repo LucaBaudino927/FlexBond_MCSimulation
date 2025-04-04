@@ -20,9 +20,9 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 	if (fEventAction) {
 		analysisManager->CreateNtuple("MapsFoil", "Hits");
 		analysisManager->CreateNtupleDColumn("AlpideEnergy");  					// column Id = 0
-		//analysisManager->CreateNtupleDColumn("AlpidePad1Energy_0");  	// column Id: from 1 to 1 + (#pad - 1)*2
-		//analysisManager->CreateNtupleDColumn("AlpidePad2Energy_0");  	// column Id: from 2 to 2 + (#pad - 1)*2
-		for(G4int i = 0; i < StaticInfo::GetNOfAlpidePads(); i++){
+		//analysisManager->CreateNtupleDColumn("AlpidePad1Energy_0");  				// column Id: from 1 to 1 + (#pad - 1)*2
+		//analysisManager->CreateNtupleDColumn("AlpidePad2Energy_0");  				// column Id: from 2 to 2 + (#pad - 1)*2
+		for(G4int i = 0; i < NofPads; i++){
 			analysisManager->CreateNtupleDColumn("AlpidePad1Energy_"+std::to_string(i));  	// column Id: from 1 to 1 + (#pad - 1)*2
 			analysisManager->CreateNtupleDColumn("AlpidePad2Energy_"+std::to_string(i));  	// column Id: from 2 to 2 + (#pad - 1)*2
 		}
@@ -31,9 +31,9 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 		analysisManager->CreateNtupleDColumn("LowerKaptonEnergy");  				// column Id: from 5 to 5 + (#pad - 1)*2
 		analysisManager->CreateNtupleDColumn("UpperKaptonEnergy");  				// column Id: from 6 to 6 + (#pad - 1)*2
 		analysisManager->CreateNtupleDColumn("CopperEnergy");  					// column Id: from 7 to 7 + (#pad - 1)*2
-		//analysisManager->CreateNtupleDColumn("SolderBallEnergy_0");	// column Id: from 8 to 8 + (#pad - 1)*3  10,11
-		for(G4int i = 0; i < StaticInfo::GetNOfAlpidePads(); i++){
-			analysisManager->CreateNtupleDColumn("SolderBallEnergy_"+std::to_string(i));	// column Id: from 8 to 8 + (#pad - 1)*3  10,11
+		//analysisManager->CreateNtupleDColumn("SolderBallEnergy_0");				// column Id: from 8 to 8 + (#pad - 1)*3
+		for(G4int i = 0; i < NofPads; i++){
+			analysisManager->CreateNtupleDColumn("SolderBallEnergy_"+std::to_string(i));	// column Id: from 8 to 8 + (#pad - 1)*3
 		}
 		analysisManager->FinishNtuple(0);
 		
