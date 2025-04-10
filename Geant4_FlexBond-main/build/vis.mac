@@ -1,12 +1,13 @@
 /control/verbose 2
 /control/saveHistory
 
-/detector/verboseDetConstruction true
+/detector/verboseDetConstruction false
 /detector/mapsFoil true
 /detector/constructEpoxyGlueLayer true
 /detector/constructKaptonLayer true
 /detector/constructCopperLayer true
 /detector/constructSolderBalls true
+/detector/constructPCB true
 /detector/alpideXDimension 30. #mm
 /detector/alpideYDimension 15. #mm
 /detector/alpideThickness 50. #um
@@ -16,6 +17,7 @@
 /detector/copperThickness 5. #um
 
 /run/numberOfThreads 4
+/run/printProgress 0
 /run/verbose 2
 /run/initialize
 

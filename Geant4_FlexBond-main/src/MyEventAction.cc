@@ -9,27 +9,41 @@ MyEventAction::MyEventAction(){
 	fHitCollID.fill(-1);
 	fDetEdep.fill(std::vector<G4double>(NofMySensitiveDetector, 0.));
 	// hits collections names
-	detHCName = { { "Alpide/MySensitiveDetectorColl", 
-			"logicPad1_0/MySensitiveDetectorColl",
-			"logicPad2_0/MySensitiveDetectorColl",
-			"logicPad1_1/MySensitiveDetectorColl", 
-			"logicPad2_1/MySensitiveDetectorColl",
-			"logicPad1_2/MySensitiveDetectorColl", 
-			"logicPad2_2/MySensitiveDetectorColl",
-			"logicPad1_3/MySensitiveDetectorColl", 
-			"logicPad2_3/MySensitiveDetectorColl",
-			"logicPad1_4/MySensitiveDetectorColl", 
-			"logicPad2_4/MySensitiveDetectorColl",
-			"LowerGlue/MySensitiveDetectorColl",
-			"UpperGlue/MySensitiveDetectorColl",
-			"LowerKapton/MySensitiveDetectorColl",
-			"UpperKapton/MySensitiveDetectorColl",
-			"CopperLayer/MySensitiveDetectorColl",
-			"logicSolderBall_0/MySensitiveDetectorColl",
-			"logicSolderBall_1/MySensitiveDetectorColl",
-			"logicSolderBall_2/MySensitiveDetectorColl",
-			"logicSolderBall_3/MySensitiveDetectorColl",
-			"logicSolderBall_4/MySensitiveDetectorColl"	}};
+	/*
+	detHCName = { { "Alpide/MySensitiveDetectorColl" } };
+	for(G4int i = 0; i < NofPads; i++){
+		detHCName.push_back("logicPad1_"+std::to_string(i)+"/MySensitiveDetectorColl");
+		detHCName.push_back("logicPad2_"+std::to_string(i)+"/MySensitiveDetectorColl");
+	}
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) detHCName.push_back("LowerGlue/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) detHCName.push_back("UpperGlue/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) detHCName.push_back("LowerKapton/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) detHCName.push_back("UpperKapton/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructCopperLayer")) detHCName.push_back("CopperLayer/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructSolderBalls")) {
+		for(G4int i = 0; i < NofPads; i++){
+			detHCName.push_back("logicSolderBall_"+std::to_string(i)+"/MySensitiveDetectorColl");
+		}
+	}
+	if(StaticInfo::GetDetectorFlag("constructPCB")){ 
+		detHCName.push_back("PCB_UpperLayer/MySensitiveDetectorColl");
+	}
+	*/
+	detHCName = { { "Alpide/MySensitiveDetectorColl" } };
+	for(G4int i = 0; i < NofPads; i++){
+		detHCName.push_back("logicPad1_"+std::to_string(i)+"/MySensitiveDetectorColl");
+		detHCName.push_back("logicPad2_"+std::to_string(i)+"/MySensitiveDetectorColl");
+	}
+	detHCName.push_back("LowerGlue/MySensitiveDetectorColl");
+	detHCName.push_back("UpperGlue/MySensitiveDetectorColl");
+	detHCName.push_back("LowerKapton/MySensitiveDetectorColl");
+	detHCName.push_back("UpperKapton/MySensitiveDetectorColl");
+	detHCName.push_back("CopperLayer/MySensitiveDetectorColl");
+	for(G4int i = 0; i < NofPads; i++){
+			detHCName.push_back("logicSolderBall_"+std::to_string(i)+"/MySensitiveDetectorColl");
+	}
+	detHCName.push_back("PCB_UpperLayer/MySensitiveDetectorColl");
+
 }
 
 // ######## Start of Event -> call MySensitiveDetector::Initialize() and then MyEventAction::BeginOfEventAction()
@@ -71,7 +85,7 @@ void MyEventAction::BeginOfEventAction(const G4Event*){
 	
 }
 
-// ####### Storing of fEdep at the end of the event 
+
 void MyEventAction::EndOfEventAction(const G4Event* anEvent){
 	
 	/*G4SDManager* SDmanager = G4SDManager::GetSDMpointer();
@@ -139,6 +153,8 @@ void MyEventAction::EndOfEventAction(const G4Event* anEvent){
 	//G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
 	//analysisManager->FillNtupleDColumn(1, 0, fEdep);
 	//analysisManager->AddNtupleRow();
+	
+	if(!StaticInfo::GetDetectorFlag("verboseDetConstruction")) return;
 	
 	auto printModulo = G4RunManager::GetRunManager()->GetPrintProgress();
 	if (printModulo == 0 || anEvent->GetEventID() % printModulo != 0) return;

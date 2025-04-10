@@ -16,6 +16,7 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 	 *	NofMySensitiveDetector = 6          se ho alpide, colla, kapton e rame							   *
 	 *	NofMySensitiveDetector = 6+(#pad*2) se ho alpide, colla, kapton, rame e pad dell'alpide					   *
 	 *	NofMySensitiveDetector = 6+(#pad*3) se ho alpide, colla, kapton, rame, pad dell'alpide e solder balls per ogni pad	   *
+	 *	NofMySensitiveDetector = 9+(#pad*3) se ho alpide, colla, kapton, rame, pad dell'alpide, solder balls per ogni pad e PCB	   *
 	 ***********************************************************************************************************************************/
 	if (fEventAction) {
 		analysisManager->CreateNtuple("MapsFoil", "Hits");
@@ -35,6 +36,9 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 		for(G4int i = 0; i < NofPads; i++){
 			analysisManager->CreateNtupleDColumn("SolderBallEnergy_"+std::to_string(i));	// column Id: from 8 to 8 + (#pad - 1)*3
 		}
+		analysisManager->CreateNtupleDColumn("PCB_UpperLayer");					// column Id: from 9 to 9 + (#pad - 1)*3
+		//analysisManager->CreateNtupleDColumn("PCB_MiddleLayer");				// column Id: from 10 to 10 + (#pad - 1)*3
+		
 		analysisManager->FinishNtuple(0);
 		
 		/*

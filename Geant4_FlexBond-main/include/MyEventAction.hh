@@ -36,7 +36,7 @@ private:
     std::array<G4int, NofMySensitiveDetector> fHitCollID;
     //Array che contiene NofMySensitiveDetector vector. Ogni vector contiene le energie delle N hit del detector
     std::array<std::vector<G4double>, NofMySensitiveDetector> fDetEdep;
-    std::array<G4String, NofMySensitiveDetector> detHCName;
+    std::vector<G4String> detHCName;
     
 };
 

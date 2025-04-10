@@ -7,6 +7,7 @@
 #include "G4MTRunManager.hh"
 #include "QGSP_BERT.hh"//for hadronic processes
 #include "FTFP_BERT.hh"
+#include "G4GDMLReadStructure.hh"
 
 // User defined
 #include "MyDetectorConstruction.hh"
@@ -15,6 +16,12 @@
 //main take directly argc and argv from the command line -> ./sim ciccio.mac -> argc = 2, argv = {./sim, ciccio.mac}. argv[1]=ciccio.mac
 int main(int argc, char** argv){
 
+	if (argc < 2) {
+	    G4cout << "Error! Mandatory input file is not specified!" << G4endl;
+	    G4cout << G4endl;
+	    return -1;
+  	}
+  
     	// ######## runManager initialization. 
 
         #ifdef G4MULTITHREADED
@@ -26,7 +33,7 @@ int main(int argc, char** argv){
     	// ######## This is the real simulation architecture construction 
 
         //First: construction -> creates detectors
-        runManager->SetUserInitialization(new MyDetectorConstruction);
+        runManager->SetUserInitialization(new MyDetectorConstruction(argv[1]));
         //Second: physics
         G4VModularPhysicsList *physicsList = new FTFP_BERT();
 	physicsList->SetVerboseLevel(1);
@@ -43,10 +50,10 @@ int main(int argc, char** argv){
 
         G4UIExecutive* ui = 0;
 
-        if(argc==1){//no argument after ./sim 
-            ui = new G4UIExecutive(argc,argv);
+        if(argc==2){ //one argument after ./flexbond 
+            ui = new G4UIExecutive(argc, argv);
         }
-
+	
         G4VisManager * visManager = new G4VisExecutive();
         visManager->Initialize(); 
         G4UImanager* UImanager = G4UImanager::GetUIpointer();  
@@ -59,7 +66,7 @@ int main(int argc, char** argv){
             ui->SessionStart();
         }else{//a file is called after ./sim, e.g. ./sim ciccio.mac
             G4String command = "/control/execute ";
-            G4String fileName = argv[1];
+            G4String fileName = argv[2];
             UImanager->ApplyCommand(command+fileName);
         }
 

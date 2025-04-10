@@ -36,6 +36,7 @@
 #include "SolderBall.hh"
 #include "StaticInfo.hh"
 #include "Constants.hh"
+#include "G4GDMLParser.hh"
 
 class G4FieldManager;
 class G4VPhysicalVolume;
@@ -45,7 +46,7 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
 {
     public:
 
-        MyDetectorConstruction();
+        MyDetectorConstruction(G4String);
         ~MyDetectorConstruction() override;
         G4LogicalVolume *GetScoringVolume() const { return fScoringVolume; }//energy deposit
         G4VPhysicalVolume* Construct() override;
@@ -60,6 +61,7 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         void ConstructTOF();
         void ConstructAtmosphere();
         void ConstructMapsFoil();
+        void ConstructPCB();
         
         G4GenericMessenger *fMessenger = nullptr;
         G4double xWorld, yWorld, zWorld;
@@ -76,7 +78,7 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         //flags to declare the detector
         G4bool isMapsFoil;
         //flags to declare the setup of the detector
-        G4bool constructEpoxyGlueLayer, constructKaptonLayer, constructCopperLayer, constructSolderBalls;
+        G4bool constructEpoxyGlueLayer, constructKaptonLayer, constructCopperLayer, constructSolderBalls, constructPCB;
         //flags to tune the setup: if they are specified in the macro -> use those values otherwise use default values
         G4double alpideXFromMessenger 		= 0.;
         G4double alpideYFromMessenger 		= 0.;
@@ -93,9 +95,12 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         G4LogicalVolume *fLogicLowerKapton 	= nullptr;
         G4LogicalVolume *fLogicUpperKapton 	= nullptr;
         G4LogicalVolume *fLogicCopper		= nullptr;
+        G4LogicalVolume *fPCBUpperLayerLV	= nullptr;
         std::vector<G4LogicalVolume*> fLogicalAlpidePad1;
         std::vector<G4LogicalVolume*> fLogicalAlpidePad2;
         std::vector<G4LogicalVolume*> fLogicSolderBalls;
+        
+        G4String fGDMLReadStructure;
                
 
 };
