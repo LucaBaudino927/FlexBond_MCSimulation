@@ -153,7 +153,8 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/iterator \
+ /usr/include/c++/11/bits/stream_iterator.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
  /usr/include/c++/11/set /usr/include/c++/11/bits/stl_tree.h \
@@ -629,14 +630,6 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnyMethod.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnyType.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4OpticalSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Physics2DVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Physics2DVector.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SurfaceProperty.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GeometryManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SmartVoxelStat.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicalVolumeStore.hh \
@@ -664,6 +657,178 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Threading.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyStore.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadStructure.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadParamvol.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadSetup.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadSolids.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadMaterials.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadDefine.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLRead.hh \
+ /usr/include/xercesc/parsers/XercesDOMParser.hpp \
+ /usr/include/xercesc/parsers/AbstractDOMParser.hpp \
+ /usr/include/xercesc/dom/DOMDocument.hpp \
+ /usr/include/xercesc/util/XercesDefs.hpp \
+ /usr/include/xercesc/util/Xerces_autoconf_config.hpp \
+ /usr/include/inttypes.h /usr/include/xercesc/util/XercesVersion.hpp \
+ /usr/include/xercesc/dom/DOMNode.hpp \
+ /usr/include/xercesc/dom/DOMDocumentRange.hpp \
+ /usr/include/xercesc/dom/DOMDocumentTraversal.hpp \
+ /usr/include/xercesc/dom/DOMNodeFilter.hpp \
+ /usr/include/xercesc/dom/DOMXPathEvaluator.hpp \
+ /usr/include/xercesc/dom/DOMXPathResult.hpp \
+ /usr/include/xercesc/framework/XMLDocumentHandler.hpp \
+ /usr/include/xercesc/util/RefVectorOf.hpp \
+ /usr/include/xercesc/util/BaseRefVectorOf.hpp \
+ /usr/include/xercesc/util/ArrayIndexOutOfBoundsException.hpp \
+ /usr/include/xercesc/util/XMLException.hpp \
+ /usr/include/xercesc/util/XMemory.hpp \
+ /usr/include/xercesc/util/XMLExceptMsgs.hpp \
+ /usr/include/xercesc/dom/DOMError.hpp \
+ /usr/include/xercesc/util/XMLUni.hpp \
+ /usr/include/xercesc/framework/XMLErrorReporter.hpp \
+ /usr/include/xercesc/util/XMLEnumerator.hpp \
+ /usr/include/xercesc/util/PlatformUtils.hpp \
+ /usr/include/xercesc/util/PanicHandler.hpp \
+ /usr/include/xercesc/util/XMLFileMgr.hpp \
+ /usr/include/xercesc/util/XMLMutexMgr.hpp \
+ /usr/include/xercesc/framework/MemoryManager.hpp \
+ /usr/include/xercesc/util/BaseRefVectorOf.c \
+ /usr/include/xercesc/util/RefVectorOf.c \
+ /usr/include/xercesc/framework/XMLAttr.hpp \
+ /usr/include/xercesc/util/QName.hpp \
+ /usr/include/xercesc/util/XMLString.hpp \
+ /usr/include/xercesc/framework/XMLBuffer.hpp \
+ /usr/include/xercesc/util/XMLUniDefs.hpp \
+ /usr/include/xercesc/internal/XSerializable.hpp \
+ /usr/include/xercesc/internal/XSerializeEngine.hpp \
+ /usr/include/xercesc/util/RefHashTableOf.hpp \
+ /usr/include/xercesc/util/Hashers.hpp \
+ /usr/include/xercesc/util/IllegalArgumentException.hpp \
+ /usr/include/xercesc/util/NoSuchElementException.hpp \
+ /usr/include/xercesc/util/RuntimeException.hpp \
+ /usr/include/xercesc/util/RefHashTableOf.c \
+ /usr/include/xercesc/util/Janitor.hpp \
+ /usr/include/xercesc/util/Janitor.c \
+ /usr/include/xercesc/util/NullPointerException.hpp \
+ /usr/include/xercesc/util/ValueVectorOf.hpp \
+ /usr/include/xercesc/util/ValueVectorOf.c \
+ /usr/include/xercesc/internal/XSerializationException.hpp \
+ /usr/include/xercesc/internal/XProtoType.hpp \
+ /usr/include/xercesc/framework/XMLAttDef.hpp \
+ /usr/include/xercesc/validators/datatype/DatatypeValidator.hpp \
+ /usr/include/xercesc/util/KVStringPair.hpp \
+ /usr/include/xercesc/util/regx/RegularExpression.hpp \
+ /usr/include/xercesc/util/RefArrayVectorOf.hpp \
+ /usr/include/xercesc/util/RefArrayVectorOf.c \
+ /usr/include/xercesc/util/regx/Op.hpp \
+ /usr/include/xercesc/util/regx/TokenFactory.hpp \
+ /usr/include/xercesc/util/regx/Token.hpp \
+ /usr/include/xercesc/util/Mutexes.hpp \
+ /usr/include/xercesc/util/regx/BMPattern.hpp \
+ /usr/include/xercesc/util/regx/OpFactory.hpp \
+ /usr/include/xercesc/util/regx/RegxUtil.hpp \
+ /usr/include/xercesc/validators/schema/SchemaSymbols.hpp \
+ /usr/include/xercesc/framework/psvi/XSSimpleTypeDefinition.hpp \
+ /usr/include/xercesc/framework/psvi/XSTypeDefinition.hpp \
+ /usr/include/xercesc/framework/psvi/XSObject.hpp \
+ /usr/include/xercesc/framework/psvi/XSConstants.hpp \
+ /usr/include/xercesc/framework/ValidationContext.hpp \
+ /usr/include/xercesc/util/NameIdPool.hpp \
+ /usr/include/xercesc/util/NameIdPool.c \
+ /usr/include/xercesc/framework/XMLEntityHandler.hpp \
+ /usr/include/xercesc/util/SecurityManager.hpp \
+ /usr/include/xercesc/util/ValueStackOf.hpp \
+ /usr/include/xercesc/util/EmptyStackException.hpp \
+ /usr/include/xercesc/util/ValueStackOf.c \
+ /usr/include/xercesc/validators/DTD/DocTypeHandler.hpp \
+ /usr/include/xercesc/framework/XMLNotationDecl.hpp \
+ /usr/include/xercesc/validators/DTD/DTDAttDef.hpp \
+ /usr/include/xercesc/validators/DTD/DTDElementDecl.hpp \
+ /usr/include/xercesc/framework/XMLElementDecl.hpp \
+ /usr/include/xercesc/framework/XMLAttDefList.hpp \
+ /usr/include/xercesc/framework/XMLContentModel.hpp \
+ /usr/include/xercesc/validators/DTD/DTDEntityDecl.hpp \
+ /usr/include/xercesc/framework/XMLEntityDecl.hpp \
+ /usr/include/xercesc/dom/DOMDocumentType.hpp \
+ /usr/include/xercesc/framework/XMLBufferMgr.hpp \
+ /usr/include/xercesc/framework/psvi/PSVIHandler.hpp \
+ /usr/include/xercesc/validators/common/Grammar.hpp \
+ /usr/include/xercesc/sax/HandlerBase.hpp \
+ /usr/include/xercesc/sax/DocumentHandler.hpp \
+ /usr/include/xercesc/sax/DTDHandler.hpp \
+ /usr/include/xercesc/sax/EntityResolver.hpp \
+ /usr/include/xercesc/sax/ErrorHandler.hpp \
+ /usr/include/xercesc/sax/SAXParseException.hpp \
+ /usr/include/xercesc/sax/SAXException.hpp \
+ /usr/include/xercesc/dom/DOM.hpp /usr/include/xercesc/dom/DOMAttr.hpp \
+ /usr/include/xercesc/dom/DOMCDATASection.hpp \
+ /usr/include/xercesc/dom/DOMText.hpp \
+ /usr/include/xercesc/dom/DOMCharacterData.hpp \
+ /usr/include/xercesc/dom/DOMComment.hpp \
+ /usr/include/xercesc/dom/DOMDocumentFragment.hpp \
+ /usr/include/xercesc/dom/DOMElement.hpp \
+ /usr/include/xercesc/dom/DOMEntity.hpp \
+ /usr/include/xercesc/dom/DOMEntityReference.hpp \
+ /usr/include/xercesc/dom/DOMException.hpp \
+ /usr/include/xercesc/dom/DOMImplementation.hpp \
+ /usr/include/xercesc/dom/DOMImplementationLS.hpp \
+ /usr/include/xercesc/dom/DOMLSException.hpp \
+ /usr/include/xercesc/dom/DOMRangeException.hpp \
+ /usr/include/xercesc/dom/DOMNamedNodeMap.hpp \
+ /usr/include/xercesc/dom/DOMNodeList.hpp \
+ /usr/include/xercesc/dom/DOMNotation.hpp \
+ /usr/include/xercesc/dom/DOMProcessingInstruction.hpp \
+ /usr/include/xercesc/dom/DOMNodeIterator.hpp \
+ /usr/include/xercesc/dom/DOMRange.hpp \
+ /usr/include/xercesc/dom/DOMTreeWalker.hpp \
+ /usr/include/xercesc/dom/DOMLSParser.hpp \
+ /usr/include/xercesc/dom/DOMConfiguration.hpp \
+ /usr/include/xercesc/dom/DOMStringList.hpp \
+ /usr/include/xercesc/dom/DOMLSParserFilter.hpp \
+ /usr/include/xercesc/dom/DOMLSResourceResolver.hpp \
+ /usr/include/xercesc/dom/DOMErrorHandler.hpp \
+ /usr/include/xercesc/dom/DOMImplementationList.hpp \
+ /usr/include/xercesc/dom/DOMImplementationRegistry.hpp \
+ /usr/include/xercesc/dom/DOMImplementationSource.hpp \
+ /usr/include/xercesc/dom/DOMLSInput.hpp \
+ /usr/include/xercesc/dom/DOMLSOutput.hpp \
+ /usr/include/xercesc/dom/DOMLocator.hpp \
+ /usr/include/xercesc/dom/DOMPSVITypeInfo.hpp \
+ /usr/include/xercesc/dom/DOMTypeInfo.hpp \
+ /usr/include/xercesc/dom/DOMUserDataHandler.hpp \
+ /usr/include/xercesc/dom/DOMLSSerializer.hpp \
+ /usr/include/xercesc/dom/DOMLSSerializerFilter.hpp \
+ /usr/include/xercesc/dom/DOMXPathNSResolver.hpp \
+ /usr/include/xercesc/dom/DOMXPathException.hpp \
+ /usr/include/xercesc/dom/DOMXPathExpression.hpp \
+ /usr/include/xercesc/dom/DOMXPathNamespace.hpp \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLEvaluator.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Evaluator.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Evaluator/Evaluator.h \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLAuxStructType.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ExtrudedSolid.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ExtrudedSolid.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4MultiUnion.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParameterisation.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Hype.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Hype.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteStructure.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteParamvol.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteSetup.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteSolids.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteMaterials.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteDefine.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWrite.hh \
+ /usr/include/xercesc/framework/LocalFileFormatTarget.hpp \
+ /usr/include/xercesc/framework/XMLFormatter.hpp \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4STRead.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLMessenger.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TransportationManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SafetyHelper.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TransportationManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.icc \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
@@ -745,10 +910,11 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDefStore.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/PCBSensitiveDetector.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Glue.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Material.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Alpide.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubtractionSolid.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4DisplacedSolid.hh \

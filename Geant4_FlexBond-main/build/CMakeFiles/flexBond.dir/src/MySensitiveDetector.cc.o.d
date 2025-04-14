@@ -582,4 +582,5 @@ CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Color.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDefStore.hh
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDefStore.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh

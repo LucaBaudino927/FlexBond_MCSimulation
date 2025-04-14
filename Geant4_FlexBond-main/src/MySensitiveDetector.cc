@@ -16,7 +16,9 @@ void MySensitiveDetector::Initialize(G4HCofThisEvent* hitsContainer){
 
 	fHitsCollection = new MySensitiveDetectorHitsCollection(SensitiveDetectorName, collectionName[0]);
 	if (fHCID < 0) {
-		G4cout << "---Creating the HitsCollection: " << SensitiveDetectorName << "/" << collectionName[0] << "---" << G4endl;
+		if(StaticInfo::GetDetectorFlag("verboseDetConstruction")){
+			G4cout << "---Creating the HitsCollection: " << SensitiveDetectorName << "/" << collectionName[0] << "---" << G4endl;
+		}
 		fHCID = G4SDManager::GetSDMpointer()->GetCollectionID(fHitsCollection);
 	}
 	hitsContainer->AddHitsCollection(fHCID, fHitsCollection);

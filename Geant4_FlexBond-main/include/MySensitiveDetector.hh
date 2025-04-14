@@ -12,6 +12,7 @@
 
 //User defined
 #include "MySensitiveDetectorHit.hh"
+#include "StaticInfo.hh"
 
 class G4Step;
 class G4HCofThisEvent;

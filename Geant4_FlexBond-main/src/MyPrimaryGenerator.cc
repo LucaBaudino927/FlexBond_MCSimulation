@@ -1,45 +1,116 @@
 #include "MyPrimaryGenerator.hh"
 
 MyPrimaryGenerator::MyPrimaryGenerator(){
+	
+	G4int nofParticles = 1; //# of primary particle per event
+	fParticleGun = new G4ParticleGun(nofParticles); 
+	G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+	
+	fPositron = particleTable->FindParticle("e+");
+	fElectron = particleTable->FindParticle("e-");
+	fKaon = particleTable->FindParticle("kaon+");
+	fNeutron = particleTable->FindParticle("neutron");
+	fProton = particleTable->FindParticle("proton");
 
-    fParticleGun = new G4ParticleGun(1);//1 primary particle per event 
-    G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
-    G4String particleName = "e-";//Set "proton" except in 60Co. Set "geantino" for 60Co, i.e. a general particle placeholder. If not replaces, 60Co decay taken into account.
-    G4ParticleDefinition *particle = particleTable->FindParticle(particleName);
-    //G4ThreeVector pos (0.,0.,0.*km); // only for cosmic ray shower
-    G4ThreeVector pos (0.,0.,-5*cm);
-    G4ThreeVector mom (0.,0.,1.);// Particle along Z axis. 
+	fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
+	fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
+	fParticleGun->SetParticleMomentum(fMomentum);// set 0 for radioactive decay. 500 for cherenkov
 
-    double Energy = 10.;
+	// default particle: electron, p = 10 MeV along Z
+	auto electronMass = fElectron->GetPDGMass();
+	auto electronKinEnergy = std::sqrt(fMomentum * fMomentum + electronMass * electronMass) - electronMass;
+	fParticleGun->SetParticleEnergy(electronKinEnergy);
+	fParticleGun->SetParticleDefinition(fElectron);
 
-    fParticleGun->SetParticlePosition(pos);
-    fParticleGun->SetParticleMomentumDirection(mom);
-    fParticleGun->SetParticleMomentum(Energy*MeV);// set 0 for radioactive decay. 500 for cherenkov
-    fParticleGun->SetParticleDefinition(particle);
+	// define commands for this class
+	DefineCommands();
 
 }
 
 // ######## Destructor 
-MyPrimaryGenerator::~MyPrimaryGenerator(){ delete fParticleGun; }
+MyPrimaryGenerator::~MyPrimaryGenerator()
+{
+  delete fParticleGun;
+  delete fMessenger;
+}
 
 // ######## Generate primary particle 
 void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 
-        G4ParticleDefinition* particle = fParticleGun->GetParticleDefinition();
-
-        // ######## Only for 60Co decay for PET detector. User definition of the source
-	if(particle == G4Geantino::Geantino()){   
-		std::cout << "60Co decay was chosen"<< std::endl;
-		G4int Z = 27;//protons
-		G4int A = 60;//protons+neutrons
-		G4double charge   = 0.*eplus;//neutral ion
-		G4double energy = 0.*keV;//foundamental state
-		G4ParticleDefinition* ion = G4IonTable::GetIonTable()->GetIon(Z,A,energy);
-		fParticleGun->SetParticleDefinition(ion);
-		fParticleGun->SetParticleCharge(charge);
+        G4ParticleDefinition* particle;
+	if (fRandomizePrimary) {
+		auto i = (int)(5. * G4UniformRand());
+		switch (i) {
+			case 0:
+				particle = fPositron;
+				break;
+			case 1:
+				particle = fElectron;
+				break;
+			case 2:
+				particle = fKaon;
+				break;
+			case 3:
+				particle = fNeutron;
+				break;
+			default:
+				particle = fProton;
+				break;
+		}
+		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
+		fParticleGun->SetParticleDefinition(particle);
+		auto pp = fMomentum + (G4UniformRand() - 0.5) * fSigmaMomentum;
+		auto mass = particle->GetPDGMass();
+		auto ekin = std::sqrt(pp * pp + mass * mass) - mass;
+		fParticleGun->SetParticleEnergy(ekin);
+		auto angle = (G4UniformRand() - 0.5) * fSigmaAngle;
+		fParticleGun->SetParticleMomentumDirection(G4ThreeVector(std::sin(angle), 0., std::cos(angle)));
+	} else {
+		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
+		particle = fParticleGun->GetParticleDefinition();
 	}
 
         fParticleGun->GeneratePrimaryVertex(anEvent);
         
+}
+
+void MyPrimaryGenerator::DefineCommands()
+{
+	// Define /generator command directory using generic messenger class
+	fMessenger = new G4GenericMessenger(this, "/generator/", "Primary generator control");
+
+	// randomizePrimary command
+	auto& randomCmd = fMessenger->DeclareProperty("randomizePrimary", fRandomizePrimary);
+	G4String guidance = "Boolean flag for randomizing primary particle types.\n";
+	guidance 	 += "In case this flag is false, you can select the primary particle\n";
+	guidance	 += " with /gun/particle command.";
+	randomCmd.SetGuidance(guidance);
+	randomCmd.SetParameterName("flag", true);
+	randomCmd.SetDefaultValue("false");
+	
+	// momentum command
+	auto& momentumCmd = fMessenger->DeclarePropertyWithUnit("momentum", "MeV", fMomentum, "Mean momentum of primaries in MeV");
+	momentumCmd.SetParameterName("p", true);
+	momentumCmd.SetRange("p>=0.");
+	momentumCmd.SetDefaultValue("10.");
+
+	// sigmaMomentum command
+	auto& sigmaMomentumCmd = fMessenger->DeclarePropertyWithUnit("sigmaMomentum", "MeV", fSigmaMomentum, "Sigma momentum of primaries in MeV");
+	sigmaMomentumCmd.SetParameterName("sp", true);
+	sigmaMomentumCmd.SetRange("sp>=0.");
+	sigmaMomentumCmd.SetDefaultValue("1.");
+
+	// sigmaAngle command
+	auto& sigmaAngleCmd = fMessenger->DeclarePropertyWithUnit("sigmaAngle", "deg", fSigmaAngle, "Sigma angle divergence of primaries in degree");
+	sigmaAngleCmd.SetParameterName("t", true);
+	sigmaAngleCmd.SetRange("t>=0.");
+	sigmaAngleCmd.SetDefaultValue("1.");
+	
+	// beamPosition command
+	auto& beamPositionCmd = fMessenger->DeclarePropertyWithUnit("beamPosition", "mm", Y_BeamPosition, "Y coordinate of the beam in mm");
+	beamPositionCmd.SetParameterName("bm", true);
+	//beamPositionCmd.SetRange("bm>=0.");
+	beamPositionCmd.SetDefaultValue("-7.4");
+  
 }
 

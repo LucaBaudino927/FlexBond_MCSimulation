@@ -237,10 +237,38 @@ CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySensitiveDetectorHit.cc -o CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.s
 
+CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o: CMakeFiles/flexBond.dir/flags.make
+CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o: ../src/MySteppingAction.cc
+CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o: CMakeFiles/flexBond.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o -MF CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o.d -o CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o -c /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySteppingAction.cc
+
+CMakeFiles/flexBond.dir/src/MySteppingAction.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/flexBond.dir/src/MySteppingAction.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySteppingAction.cc > CMakeFiles/flexBond.dir/src/MySteppingAction.cc.i
+
+CMakeFiles/flexBond.dir/src/MySteppingAction.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/flexBond.dir/src/MySteppingAction.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/MySteppingAction.cc -o CMakeFiles/flexBond.dir/src/MySteppingAction.cc.s
+
+CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o: CMakeFiles/flexBond.dir/flags.make
+CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o: ../src/PCBSensitiveDetector.cc
+CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o: CMakeFiles/flexBond.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o -MF CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o.d -o CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o -c /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/PCBSensitiveDetector.cc
+
+CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/PCBSensitiveDetector.cc > CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.i
+
+CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/PCBSensitiveDetector.cc -o CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.s
+
 CMakeFiles/flexBond.dir/src/SolderBall.cc.o: CMakeFiles/flexBond.dir/flags.make
 CMakeFiles/flexBond.dir/src/SolderBall.cc.o: ../src/SolderBall.cc
 CMakeFiles/flexBond.dir/src/SolderBall.cc.o: CMakeFiles/flexBond.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/flexBond.dir/src/SolderBall.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/flexBond.dir/src/SolderBall.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/flexBond.dir/src/SolderBall.cc.o -MF CMakeFiles/flexBond.dir/src/SolderBall.cc.o.d -o CMakeFiles/flexBond.dir/src/SolderBall.cc.o -c /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/SolderBall.cc
 
 CMakeFiles/flexBond.dir/src/SolderBall.cc.i: cmake_force
@@ -254,7 +282,7 @@ CMakeFiles/flexBond.dir/src/SolderBall.cc.s: cmake_force
 CMakeFiles/flexBond.dir/src/StaticInfo.cc.o: CMakeFiles/flexBond.dir/flags.make
 CMakeFiles/flexBond.dir/src/StaticInfo.cc.o: ../src/StaticInfo.cc
 CMakeFiles/flexBond.dir/src/StaticInfo.cc.o: CMakeFiles/flexBond.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/flexBond.dir/src/StaticInfo.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/flexBond.dir/src/StaticInfo.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/flexBond.dir/src/StaticInfo.cc.o -MF CMakeFiles/flexBond.dir/src/StaticInfo.cc.o.d -o CMakeFiles/flexBond.dir/src/StaticInfo.cc.o -c /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/src/StaticInfo.cc
 
 CMakeFiles/flexBond.dir/src/StaticInfo.cc.i: cmake_force
@@ -279,6 +307,8 @@ flexBond_OBJECTS = \
 "CMakeFiles/flexBond.dir/src/MyRunAction.cc.o" \
 "CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o" \
 "CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.o" \
+"CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o" \
+"CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o" \
 "CMakeFiles/flexBond.dir/src/SolderBall.cc.o" \
 "CMakeFiles/flexBond.dir/src/StaticInfo.cc.o"
 
@@ -297,6 +327,8 @@ flexBond: CMakeFiles/flexBond.dir/src/MyPrimaryGenerator.cc.o
 flexBond: CMakeFiles/flexBond.dir/src/MyRunAction.cc.o
 flexBond: CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o
 flexBond: CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.o
+flexBond: CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o
+flexBond: CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o
 flexBond: CMakeFiles/flexBond.dir/src/SolderBall.cc.o
 flexBond: CMakeFiles/flexBond.dir/src/StaticInfo.cc.o
 flexBond: CMakeFiles/flexBond.dir/build.make
@@ -340,7 +372,7 @@ flexBond: /home/luca/geant4-v11.3.0-install/lib/libG4global.so
 flexBond: /home/luca/geant4-v11.3.0-install/lib/libG4clhep.so
 flexBond: /home/luca/geant4-v11.3.0-install/lib/libG4ptl.so.3.0.0
 flexBond: CMakeFiles/flexBond.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable flexBond"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable flexBond"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/flexBond.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

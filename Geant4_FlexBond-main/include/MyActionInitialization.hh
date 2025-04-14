@@ -8,6 +8,7 @@
 #include "MyEventAction.hh"
 #include "MyPrimaryGenerator.hh"
 #include "MyRunAction.hh"
+#include "MySteppingAction.hh"
 
 class MyActionInitialization : public G4VUserActionInitialization
 {

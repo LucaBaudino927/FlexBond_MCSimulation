@@ -1,7 +1,7 @@
 #include "MyDetectorConstruction.hh"
 
 // ######## Constructor 
-MyDetectorConstruction::MyDetectorConstruction(){
+MyDetectorConstruction::MyDetectorConstruction(std::vector<G4String> GDMLReadStructure){
 
         // ######## User Defined Messages
 	fMessenger = new G4GenericMessenger(this, "/detector/", "Detector Construction");
@@ -13,6 +13,7 @@ MyDetectorConstruction::MyDetectorConstruction(){
 	fMessenger->DeclareProperty("constructKaptonLayer",    	constructKaptonLayer, 		"Use Kapton Layers");
 	fMessenger->DeclareProperty("constructCopperLayer", 	constructCopperLayer, 		"Use Copper Layer");
 	fMessenger->DeclareProperty("constructSolderBalls", 	constructSolderBalls, 		"Use Solder Balls");
+	fMessenger->DeclareProperty("constructPCB", 		constructPCB, 			"Use PCB from GDML file");
 	fMessenger->DeclareProperty("alpideXDimension", 	alpideXFromMessenger, 		"Alpide X-Dimension");
 	fMessenger->DeclareProperty("alpideYDimension", 	alpideYFromMessenger, 		"Alpide Y-Dimension");
 	fMessenger->DeclareProperty("alpideThickness",  	alpideThicknessFromMessenger, 	"Alpide Z-Thickness");
@@ -27,13 +28,16 @@ MyDetectorConstruction::MyDetectorConstruction(){
 	StaticInfo::AddToDetectorFlagMap("constructKaptonLayer", 	constructKaptonLayer);
 	StaticInfo::AddToDetectorFlagMap("constructCopperLayer", 	constructCopperLayer);
 	StaticInfo::AddToDetectorFlagMap("constructSolderBalls", 	constructSolderBalls);
+	StaticInfo::AddToDetectorFlagMap("constructPCB", 		constructPCB);
+	StaticInfo::AddToDetectorFlagMap("verboseDetConstruction", 	verboseDetConstr);
 	
 
         // ######## World dimension definition
-	xWorld = 5.*cm;
-	yWorld = 5.*cm;
-	zWorld = 5.*cm;
+	xWorld = 10.*cm;
+	yWorld = 10.*cm;
+	zWorld = 10.*cm;
 	
+	fGDMLReadStructure = GDMLReadStructure;
 	
 }
 
@@ -106,14 +110,30 @@ G4VPhysicalVolume* MyDetectorConstruction::Construct(){
     	white->SetVisibility(true);
     	logicWorld->SetVisAttributes(white);
 
-        if(isMapsFoil) { ConstructMapsFoil(); }
+	// Define one layer as one assembly volume
+	G4AssemblyVolume* assemblyDetector = new G4AssemblyVolume(); //AssemblyID = 1
+	
+        if(isMapsFoil) 	 { ConstructMapsFoil(assemblyDetector); }
+        if(constructPCB) { ConstructPCB(assemblyDetector); }
+        
+        // Inserisco l'assembly nel world logical volume
+	G4int NofLayer = 1;
+	for(unsigned int i = 0; i < NofLayer; i++) {
+		// Rotation of the assembly inside the world
+		G4RotationMatrix Rm;
+		// Translation of the assembly inside the world
+		G4double offset = 1.*cm;
+		G4ThreeVector Tm(0., 0., 0. + i*offset);
+		G4Transform3D Tr = G4Transform3D(Rm,Tm);
+		assemblyDetector->MakeImprint(logicWorld, Tr);
+	}
         
         return physWorld;//mother volume
 }
 
 // ######## Counstruct Maps detector surrounded by foils of glue and polyimide
 // TODO: tutte le dimensioni qui saranno da parametrizzare!!!
-void MyDetectorConstruction::ConstructMapsFoil(){
+void MyDetectorConstruction::ConstructMapsFoil(G4AssemblyVolume* assemblyDetector){
 
 	G4double alpideX 	 =	(alpideXFromMessenger != 0.) 		? alpideXFromMessenger*mm 	  : 30.*mm;
 	G4double alpideY 	 = 	(alpideYFromMessenger != 0.) 		? alpideYFromMessenger*mm 	  : 15.*mm;
@@ -123,16 +143,6 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 	G4double kaptonThickness = 	(kaptonThicknessFromMessenger != 0.) 	? kaptonThicknessFromMessenger*um : 50.*um;
 	G4double copperThickness = 	(copperThicknessFromMessenger != 0.) 	? copperThicknessFromMessenger*um : 5.*um;
 	
-	/*G4double totalThickness = alpideThickness + ((constructEpoxyGlueLayer) 	? glueThickness*2   : 0.) 
-						  + ((constructKaptonLayer) 	? kaptonThickness*2 : 0.)
-						  + ((constructCopperLayer) 	? copperThickness*2 : 0.)
-						  + ((constructSolderBalls) 	? alpidePadRadius*4 : 0.);*/
-	
-	G4cout << "AlpideX: " << alpideX/cm << " cm" << G4endl;
-	G4cout << "AlpideX: " << alpideXFromMessenger/cm << " cm" << G4endl;
-	// Define one layer as one assembly volume
-	G4AssemblyVolume* assemblyDetector = new G4AssemblyVolume();
-	
 	// Alpide----------------------------------------------------------------------------------------------------------------
 	G4double Z = 0.*um;
 	// Rotation and translation of a layer inside the assembly
@@ -140,7 +150,6 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 	G4ThreeVector Ta;
 	G4Transform3D Tr;
 	Alpide *alpide = new Alpide(alpideX, alpideY, alpideThickness, alpidePadRadius);
-	//std::vector<G4ThreeVector> padCoordinates = alpide->GetPadCoordinates();
 	
 	G4Box* solidAlpide = new G4Box("solidAlpide", alpide->GetAlpideXDimension()*0.5, alpide->GetAlpideYDimension()*0.5, alpide->GetAlpideThickness()*0.5);
 	fLogicAlpide = new G4LogicalVolume(solidAlpide, alpide->GetAlpideMaterial(), "logicAlpide");
@@ -169,8 +178,8 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 		fLogicalAlpidePad1.push_back(logicPad1);
 
 		// Fill the assembly
-		Ta.setX(padCoordinates[i].x()); 
-		Ta.setY(padCoordinates[i].y());
+		Ta.setX(padCoordinates[i].x() - alpideX/2.); 
+		Ta.setY(padCoordinates[i].y() - alpideY/2.);
 		Ta.setZ(pad1Center);
 		Tr = G4Transform3D(Ra,Ta);
 		assemblyDetector->AddPlacedVolume(logicPad1, Tr);
@@ -180,8 +189,8 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 		fLogicalAlpidePad2.push_back(logicPad2);
 
 		// Fill the assembly
-		Ta.setX(padCoordinates[i].x()); 
-		Ta.setY(padCoordinates[i].y());
+		Ta.setX(padCoordinates[i].x() - alpideX/2.); 
+		Ta.setY(padCoordinates[i].y() - alpideY/2.);
 		Ta.setZ(pad2Center);
 		Tr = G4Transform3D(Ra,Ta);
 		assemblyDetector->AddPlacedVolume(logicPad2, Tr);
@@ -248,13 +257,16 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 								  upperGlue->GetGlueThickness()*0.5   );
 		for(int i = 0; i < NofPads; i++) {
 			G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(), upperGlue->GetGlueThickness()*0.5, 0., 360.*degree);
-			G4ThreeVector* translation = new G4ThreeVector(padCoordinates[i].x(), padCoordinates[i].y(), padCoordinates[i].z());
+			G4ThreeVector* translation = new G4ThreeVector(padCoordinates[i].x() - alpideX/2., 
+								       padCoordinates[i].y() - alpideY/2., 
+								       0.*um);
 			solidUpperGlue = new G4SubtractionSolid("solidUpperGlue", solidUpperGlue, solidPadHole, 0, *translation);
 
 			if(verboseDetConstr){
-				G4cout<<"solidPadHole Z: "<<padCoordinates[i].z()+(alpide->GetAlpideThickness()+upperGlue->GetGlueThickness())*0.5/um<<" um"<<G4endl;
-				G4cout<<"solidPadHole goes from: "<<(padCoordinates[i].z()+(alpide->GetAlpideThickness())*0.5)/um<<" um to "
-							<<(padCoordinates[i].z()+(alpide->GetAlpideThickness())*0.5+upperGlue->GetGlueThickness())/um<<" um"<<G4endl;
+				G4cout << "solidPadHole Z: " << padCoordinates[i].z() + (alpide->GetAlpideThickness()+upperGlue->GetGlueThickness())*0.5/um 
+				       << " um"<<G4endl;
+				G4cout << "solidPadHole goes from: " << (padCoordinates[i].z() + (alpide->GetAlpideThickness())*0.5)/um << " um to "
+				       << (padCoordinates[i].z() + (alpide->GetAlpideThickness())*0.5+upperGlue->GetGlueThickness())/um << " um" << G4endl;
 				G4cout << "solidGlue volume: " << solidUpperGlue->GetCubicVolume() << G4endl;
 			}
 		}
@@ -301,7 +313,9 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 		
 		for(int i = 0; i < NofPads; i++){
 			G4Tubs* solidPadHole = new G4Tubs("solidPadHole", 0., alpide->GetPadRadius(), upperKapton->GetKaptonThickness()*0.5, 0., 360.*degree);
-			G4ThreeVector* translation = new G4ThreeVector(padCoordinates[i].x(), padCoordinates[i].y(), padCoordinates[i].z());
+			G4ThreeVector* translation = new G4ThreeVector(padCoordinates[i].x() - alpideX/2., 
+								       padCoordinates[i].y() - alpideY/2., 
+								       0.*um);
 			solidUpperKapton = new G4SubtractionSolid("solidUpperGlue", solidUpperKapton, solidPadHole, 0, *translation);
 			
 			if(verboseDetConstr){
@@ -369,8 +383,8 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 			}
 			
 			// Fill the assembly by the plates
-			Ta.setX(padCoordinates[i].x()); 
-			Ta.setY(padCoordinates[i].y());
+			Ta.setX(padCoordinates[i].x() - alpideX/2.); 
+			Ta.setY(padCoordinates[i].y() - alpideY/2.);
 			Ta.setZ(Z);
 			Tr = G4Transform3D(Ra,Ta);
 			assemblyDetector->AddPlacedVolume(logicSolderBall, Tr);
@@ -382,17 +396,6 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 	//*
 	//*
 	
-	// Inserisco l'assembly nel world logical volume
-	G4int NofLayer = 1;
-	for(unsigned int i = 0; i < NofLayer; i++) {
-		// Rotation of the assembly inside the world
-		G4RotationMatrix Rm;
-		// Translation of the assembly inside the world
-		G4double offset = 1.*cm;
-		G4ThreeVector Tm(0., 0., 0. + i*offset);
-		G4Transform3D Tr = G4Transform3D(Rm,Tm);
-		assemblyDetector->MakeImprint(logicWorld, Tr);
-	}
 	
 	// visualization attributes ------------------------------------------------
 
@@ -418,6 +421,88 @@ void MyDetectorConstruction::ConstructMapsFoil(){
 	for(unsigned int i = 0; i < fLogicSolderBalls.size(); i++) fLogicSolderBalls[i]->SetVisAttributes(blue);
 	
 }
+
+void MyDetectorConstruction::ConstructPCB(G4AssemblyVolume* assemblyDetector){
+	
+	G4AssemblyStore* assemblyStore = G4AssemblyStore::GetInstance();
+	/*
+	for(assemblyIterator i = assemblyStore->begin(); i != assemblyStore->end(); i++){
+		G4cout<<"---ConstructPCB---GetAssemblyID(): "<<std::to_string((*i)->GetAssemblyID())<<G4endl;
+	}
+	*/
+	
+	G4GDMLParser parser;
+	// Uncomment the following if wish to avoid names stripping
+	// parser.SetStripFlag(false);
+	// Uncomment the following and set a string with proper absolute path and
+	// schema filename if wishing to use alternative schema for parsing validation
+	// parser.SetImportSchema("");
+	parser.SetOverlapCheck(true);
+	
+	G4RotationMatrix Ra;
+	Ra.rotateZ(270*deg); // Ruota attorno a Z -> Ruota piano XY
+	G4ThreeVector Ta;
+	G4Transform3D Tr;
+	
+	
+	//Parsing of PCB_UpperLayer-------------------------------------------------------------------------
+	if(verboseDetConstr) G4cout << "Parsing of PCB_UpperLayer" << G4endl;
+	parser.Read(fGDMLReadStructure[0]);
+	G4AssemblyVolume* assemblyPCBUpperLayer = assemblyStore->GetAssembly(2); //AssemblyID = 2
+
+	Ta.setX(0.*mm); 
+	Ta.setY(-7.4*mm);
+	Ta.setZ(1.*mm);
+	Tr = G4Transform3D(Ra,Ta);
+	assemblyDetector->AddPlacedAssembly(assemblyPCBUpperLayer, Tr);
+	if(verboseDetConstr) G4cout << "End of PCB_UpperLayer parsing" << G4endl;
+	parser.Clear();
+	
+	//Parsing of PCB_MiddleLayer-------------------------------------------------------------------------
+	if(verboseDetConstr) G4cout << "Parsing of PCB_MiddleLayer" << G4endl;
+	parser.Read(fGDMLReadStructure[1]);
+	G4AssemblyVolume* assemblyPCBMiddleLayer = assemblyStore->GetAssembly(3); //AssemblyID = 3
+
+	Ta.setX(0.*mm); 
+	Ta.setY(-7.4*mm);
+	Ta.setZ(-21.*mm);
+	Tr = G4Transform3D(Ra,Ta);	
+	assemblyDetector->AddPlacedAssembly(assemblyPCBMiddleLayer, Tr);
+	if(verboseDetConstr) G4cout << "End of PCB_MiddleLayer parsing" << G4endl;
+	parser.Clear();
+	
+	//Parsing of PCB_LowerLayer-------------------------------------------------------------------------
+	if(verboseDetConstr) G4cout << "Parsing of PCB_LowerLayer" << G4endl;
+	parser.Read(fGDMLReadStructure[2]);
+	G4AssemblyVolume* assemblyPCBLowerLayer = assemblyStore->GetAssembly(4); //AssemblyID = 4
+
+	Ta.setX(0.*mm); 
+	Ta.setY(-7.4*mm);
+	Ta.setZ(13.8*mm);
+	Tr = G4Transform3D(Ra,Ta);	
+	assemblyDetector->AddPlacedAssembly(assemblyPCBLowerLayer, Tr);
+	if(verboseDetConstr) G4cout << "End of PCB_LowerLayer parsing" << G4endl;
+	parser.Clear();	
+	
+	// visualization attributes ------------------------------------------------
+
+	G4VisAttributes invisible(G4VisAttributes::GetInvisible());
+	G4VisAttributes invisibleBlue(false, G4Colour::Blue());
+	G4VisAttributes invisibleGreen(false, G4Colour::Green());
+	G4VisAttributes invisibleYellow(false, G4Colour::Yellow());
+	G4VisAttributes blue(G4Colour::Blue());
+	G4VisAttributes cgray(G4Colour::Gray());
+	G4VisAttributes green(G4Colour::Green());
+	G4VisAttributes red(G4Colour::Red());
+	G4VisAttributes yellow(G4Colour::Yellow());
+	G4VisAttributes brown(G4Colour::Brown());
+
+	//fPCBUpperLayerLV->SetVisAttributes(yellow);
+	//fPCBMiddleLayerLV->SetVisAttributes(red);
+	//fPCBLowerLayerLV->SetVisAttributes(green);
+	
+}
+
 
 // ######## Construction of Sensitive Detector 
 void MyDetectorConstruction::ConstructSDandField(){
@@ -484,18 +569,85 @@ void MyDetectorConstruction::ConstructSDandField(){
 		}
 	}
 	
+	if(constructPCB){
+		/*if(fPCBUpperLayerLV != nullptr){
+			auto PCBUpperLayer = new MySensitiveDetector(SDname = "/PCB_UpperLayer");
+			sdManager->AddNewDetector(PCBUpperLayer);
+			fPCBUpperLayerLV->SetSensitiveDetector(PCBUpperLayer);
+			//StaticInfo::AddOneSensitiveDetector();
+		}
+		if(fPCBMiddleLayerLV != nullptr){
+			auto PCBMiddleLayer = new MySensitiveDetector(SDname = "/PCB_MiddleLayer");
+			sdManager->AddNewDetector(PCBMiddleLayer);
+			fPCBMiddleLayerLV->SetSensitiveDetector(PCBMiddleLayer);
+			//StaticInfo::AddOneSensitiveDetector();
+		}
+		if(fPCBLowerLayerLV != nullptr){
+			auto PCBLowerLayer = new MySensitiveDetector(SDname = "/PCB_LowerLayer");
+			sdManager->AddNewDetector(PCBLowerLayer);
+			fPCBLowerLayerLV->SetSensitiveDetector(PCBLowerLayer);
+			//StaticInfo::AddOneSensitiveDetector();
+		}*/
+		
+		/*
+		Voglio creare un solo nuovo PCBSensitiveDetector che assegno a tutti i LV del PCB
+		Come?
+		 - std::vector< G4VPhysicalVolume* >::iterator iterator = assembly->GetVolumesIterator();
+		 - foreach(iterator...){it->GetLogicalVolume()->SetSensitive(...)}
+		Nella eventAction/RunAction/steppingAction metto un meccanismo per sommare l'energia depositata in questi PCBSensitiveDetector 	
+																(come era già stato fatto prima)
+		*/
+		
+		
+		auto LVStore = G4LogicalVolumeStore::GetInstance();
+		auto PCB = new PCBSensitiveDetector(SDname = "/PCB");
+		sdManager->AddNewDetector(PCB);
+		for(logicalVolumeIterator i = LVStore->begin(); i != LVStore->end(); i++){
+			//G4cout<<"---LV->GetName(): "<<(*i)->GetName()<<G4endl;
+			if((*i)->GetName().substr(0,8).compare("LV_SOLID") != 0) continue;
+			//G4cout<<"---LV->GetName(): "<<(*i)->GetName()<<G4endl;
+			(*i)->SetSensitiveDetector(PCB);
+		}
+		
+		/*
+		auto assemblyStore = G4AssemblyStore::GetInstance();
+		G4AssemblyVolume* assemblyPCBUpperLayer  = assemblyStore->GetAssembly(2);
+		G4AssemblyVolume* assemblyPCBMiddleLayer = assemblyStore->GetAssembly(3);
+		G4AssemblyVolume* assemblyPCBLowerLayer  = assemblyStore->GetAssembly(4);
+		//PCB Upper Layer
+		//for (auto it = std::begin(foo); it!=std::end(foo); ++it)
+		//physVolumeIterator i = assemblyPCBUpperLayer->GetVolumesIterator();
+		//while(i->next() != 
+		//physVolumeIterator itr = assemblyPCBUpperLayer->GetVolumesIterator();
+		//for(; begin != end; ++begin) std::cout << *begin << '\n';
+		/*while (*itr != nullptr) {
+			G4cout << *itr  << ", ";
+
+			//  move iterator by 1 position forward
+			itr++;
+		    }
+		    */
+		
+		/*physVolumeIterator i = assemblyPCBUpperLayer->GetVolumesIterator();
+	i++;
+	if(*i == nullptr) G4cout  << "---iterator--1----"<<G4endl;
+		std::for_each (assemblyPCBUpperLayer->GetVolumesIterator(), std::next(assemblyPCBUpperLayer->GetVolumesIterator(), 5), [](G4VPhysicalVolume* x) {G4cout << ' ' << x->GetName();} );
+		for(physVolumeIterator i = assemblyPCBUpperLayer->GetVolumesIterator(); ; i++){
+			G4cout  << "---iterator--1----"<<G4endl;
+			(*i)->GetLogicalVolume()->SetSensitiveDetector(PCB);
+		}
+		//PCB Middle Layer
+		for(physVolumeIterator i = assemblyPCBMiddleLayer->GetVolumesIterator(); *i != nullptr; i++){
+			(*i)->GetLogicalVolume()->SetSensitiveDetector(PCB);
+		}
+		//PCB Lower Layer
+		for(physVolumeIterator i = assemblyPCBLowerLayer->GetVolumesIterator(); *i != nullptr; i++){
+			(*i)->GetLogicalVolume()->SetSensitiveDetector(PCB);
+		}*/
+		
+		
+	}
 	
-	
-	//TODO
-	/*
-	programma prossima settimana:
-	-rendere configurabile TUTTO! pure le costanti che ho messo in MyEventAction
-	-risolvere problemi con i pad (chiedere a Mario?)
-	-creare il detector usando G4AssemblyDetector?
-	-risolvere problema sull'istogramma dei tempi delle hit
-	
-	- per importare la geometria del flexbond dal file step leggere la guida per gli sviluppatori, paragrafo Tessellated Solids, G4TessellatedSolid
-	*/
 	
 }
 
