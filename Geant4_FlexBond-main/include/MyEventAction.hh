@@ -26,17 +26,20 @@ public:
     ~MyEventAction() override = default;
     void BeginOfEventAction(const G4Event*) override;
     void EndOfEventAction(const G4Event*) override;
+    void AddEdep(G4double edep) { fPCBedep += edep; };
     
 private:
 
     G4VHitsCollection* GetHC(const G4Event* event, G4int collId);
 
-    G4double fEdep;
+    G4double fPCBedep;
     // problema per rendere tutto configurabile: fHitCollID funziona solo se è un array di lunghezza FISSA -> non posso usare vector
-    std::array<G4int, NofMySensitiveDetector> fHitCollID;
+    std::array<G4int, NofMySensitiveDetector>  fHitCollID;
+    std::array<G4int, NofPCBSensitiveDetector> fPCBHitCollID;
     //Array che contiene NofMySensitiveDetector vector. Ogni vector contiene le energie delle N hit del detector
     std::array<std::vector<G4double>, NofMySensitiveDetector> fDetEdep;
     std::vector<G4String> detHCName;
+    std::vector<G4String> PCBHCName;
     
 };
 

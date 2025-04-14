@@ -1,3 +1,3 @@
-#/detector/nCols {cols}
+/generator/beamPosition {Y_BeamPosition}
 #/run/reinitializeGeometry
-#/run/beamOn 100
+/run/beamOn 100

@@ -8,8 +8,9 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 	analysisManager->SetDefaultFileType("root");
 	analysisManager->SetVerboseLevel(1);
 	analysisManager->SetNtupleMerging(true);
+	analysisManager->SetNtupleDirectoryName("output");
 	//analysisManager->SetHistoDirectoryName("output");
-	analysisManager->SetFileName("output");
+	//analysisManager->SetFileName("output");
 	
 	
 	/***********************************************************************************************************************************
@@ -36,21 +37,18 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 		for(G4int i = 0; i < NofPads; i++){
 			analysisManager->CreateNtupleDColumn("SolderBallEnergy_"+std::to_string(i));	// column Id: from 8 to 8 + (#pad - 1)*3
 		}
-		analysisManager->CreateNtupleDColumn("PCB_UpperLayer");					// column Id: from 9 to 9 + (#pad - 1)*3
-		//analysisManager->CreateNtupleDColumn("PCB_MiddleLayer");				// column Id: from 10 to 10 + (#pad - 1)*3
+		analysisManager->FinishNtuple(0);		
 		
-		analysisManager->FinishNtuple(0);
-		
-		/*
 		//Energy deposition for each event
-		analysisManager->CreateNtuple("MapsFoil", "Scoring");
-		analysisManager->CreateNtupleDColumn("fEdep");
+		analysisManager->CreateNtuple("PCB", "PCB_Hits");
+		analysisManager->CreateNtupleDColumn("fPCBedep");
 		analysisManager->FinishNtuple(1);
-		*/
+		
 	}
 
 	// Set ntuple output file
-	analysisManager->SetNtupleFileName(0, "outputNtuple");
+	//analysisManager->SetNtupleFileName(0, "outputNtuple");
+	//analysisManager->SetNtupleFileName(1, "outputNtuple");
 	
 	
 	/*for(int i = 0; i < NofMySensitiveDetector; i++){
@@ -83,11 +81,16 @@ void MyRunAction::BeginOfRunAction(const G4Run* run){
 	// Reset histograms from previous run
 	analysisManager->Reset();
   
-	//G4int runID = run->GetRunID();  
-	//std::stringstream strRunID;
-	//strRunID << runID;
-	//analysisManager->OpenFile("../output/output"+strRunID.str()+".root");
-	analysisManager->OpenFile();
+	G4int runID = run->GetRunID();  
+	std::stringstream strRunID;
+	strRunID << runID;
+	
+	// Set ntuple output file
+	analysisManager->SetNtupleFileName(0, "output"+strRunID.str()+".root");
+	analysisManager->SetNtupleFileName(1, "output"+strRunID.str()+".root");
+	
+	analysisManager->OpenFile("output"+strRunID.str()+".root");
+	//analysisManager->OpenFile();
 
 }
 

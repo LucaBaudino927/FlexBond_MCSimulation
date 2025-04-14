@@ -1,18 +1,18 @@
-#include "MySensitiveDetector.hh"
+#include "PCBSensitiveDetector.hh"
 
-MySensitiveDetector::MySensitiveDetector(G4String name) : G4VSensitiveDetector(name) {
+PCBSensitiveDetector::PCBSensitiveDetector(G4String name) : G4VSensitiveDetector(name) {
 	
 	
-	//G4cout << "---Creating an SD with name " << name << " and HitsCollection name MySensitiveDetectorColl---" << G4endl;
-	collectionName.insert("MySensitiveDetectorColl");	
+	//G4cout << "---Creating an SD with name " << name << " and HitsCollection name PCBSensitiveDetectorColl---" << G4endl;
+	collectionName.insert("PCBSensitiveDetectorColl");	
 
 }
 
 // ######## Destructor
-MySensitiveDetector::~MySensitiveDetector(){}
+PCBSensitiveDetector::~PCBSensitiveDetector(){}
 
 
-void MySensitiveDetector::Initialize(G4HCofThisEvent* hitsContainer){
+void PCBSensitiveDetector::Initialize(G4HCofThisEvent* hitsContainer){
 
 	fHitsCollection = new MySensitiveDetectorHitsCollection(SensitiveDetectorName, collectionName[0]);
 	if (fHCID < 0) {
@@ -28,7 +28,7 @@ void MySensitiveDetector::Initialize(G4HCofThisEvent* hitsContainer){
 
 
 // ######## Get informations from the sensistive detectors, MC truth and experimental-like simulation
-G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHist){
+G4bool PCBSensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHist){
 	
 	/****************************************************************************************
 	 *	Cosa voglio misurare?								*

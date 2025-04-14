@@ -14,6 +14,8 @@
 # Run menu :
 /gui/addMenu run Run
 /gui/addButton run run1 "/control/execute run1.mac"
+/gui/addButton run run2 "/control/execute run2.mac"
+/gui/addButton run multipleRuns "/control/execute det.mac"
 #
 # Generator menu :
 /gui/addMenu generator Generator

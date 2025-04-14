@@ -475,6 +475,54 @@ src/MySensitiveDetectorHit.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySensitiveDetectorHit.cc.s
 .PHONY : src/MySensitiveDetectorHit.cc.s
 
+src/MySteppingAction.o: src/MySteppingAction.cc.o
+.PHONY : src/MySteppingAction.o
+
+# target to build an object file
+src/MySteppingAction.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySteppingAction.cc.o
+.PHONY : src/MySteppingAction.cc.o
+
+src/MySteppingAction.i: src/MySteppingAction.cc.i
+.PHONY : src/MySteppingAction.i
+
+# target to preprocess a source file
+src/MySteppingAction.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySteppingAction.cc.i
+.PHONY : src/MySteppingAction.cc.i
+
+src/MySteppingAction.s: src/MySteppingAction.cc.s
+.PHONY : src/MySteppingAction.s
+
+# target to generate assembly for a file
+src/MySteppingAction.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/MySteppingAction.cc.s
+.PHONY : src/MySteppingAction.cc.s
+
+src/PCBSensitiveDetector.o: src/PCBSensitiveDetector.cc.o
+.PHONY : src/PCBSensitiveDetector.o
+
+# target to build an object file
+src/PCBSensitiveDetector.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.o
+.PHONY : src/PCBSensitiveDetector.cc.o
+
+src/PCBSensitiveDetector.i: src/PCBSensitiveDetector.cc.i
+.PHONY : src/PCBSensitiveDetector.i
+
+# target to preprocess a source file
+src/PCBSensitiveDetector.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.i
+.PHONY : src/PCBSensitiveDetector.cc.i
+
+src/PCBSensitiveDetector.s: src/PCBSensitiveDetector.cc.s
+.PHONY : src/PCBSensitiveDetector.s
+
+# target to generate assembly for a file
+src/PCBSensitiveDetector.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/flexBond.dir/build.make CMakeFiles/flexBond.dir/src/PCBSensitiveDetector.cc.s
+.PHONY : src/PCBSensitiveDetector.cc.s
+
 src/SolderBall.o: src/SolderBall.cc.o
 .PHONY : src/SolderBall.o
 
@@ -573,6 +621,12 @@ help:
 	@echo "... src/MySensitiveDetectorHit.o"
 	@echo "... src/MySensitiveDetectorHit.i"
 	@echo "... src/MySensitiveDetectorHit.s"
+	@echo "... src/MySteppingAction.o"
+	@echo "... src/MySteppingAction.i"
+	@echo "... src/MySteppingAction.s"
+	@echo "... src/PCBSensitiveDetector.o"
+	@echo "... src/PCBSensitiveDetector.i"
+	@echo "... src/PCBSensitiveDetector.s"
 	@echo "... src/SolderBall.o"
 	@echo "... src/SolderBall.i"
 	@echo "... src/SolderBall.s"

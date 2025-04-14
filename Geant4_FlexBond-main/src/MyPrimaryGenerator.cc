@@ -12,15 +12,15 @@ MyPrimaryGenerator::MyPrimaryGenerator(){
 	fNeutron = particleTable->FindParticle("neutron");
 	fProton = particleTable->FindParticle("proton");
 
-	fParticleGun->SetParticlePosition(G4ThreeVector(0., -7.*mm, -2.*cm));
+	fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 	fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
 	fParticleGun->SetParticleMomentum(fMomentum);// set 0 for radioactive decay. 500 for cherenkov
 
-	// default particle: positron, p = 10 MeV along Z
-	auto positronMass = fPositron->GetPDGMass();
-	auto positronKinEnergy = std::sqrt(fMomentum * fMomentum + positronMass * positronMass) - positronMass;
-	fParticleGun->SetParticleEnergy(positronKinEnergy);
-	fParticleGun->SetParticleDefinition(fPositron);
+	// default particle: electron, p = 10 MeV along Z
+	auto electronMass = fElectron->GetPDGMass();
+	auto electronKinEnergy = std::sqrt(fMomentum * fMomentum + electronMass * electronMass) - electronMass;
+	fParticleGun->SetParticleEnergy(electronKinEnergy);
+	fParticleGun->SetParticleDefinition(fElectron);
 
 	// define commands for this class
 	DefineCommands();
@@ -57,6 +57,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 				particle = fProton;
 				break;
 		}
+		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 		fParticleGun->SetParticleDefinition(particle);
 		auto pp = fMomentum + (G4UniformRand() - 0.5) * fSigmaMomentum;
 		auto mass = particle->GetPDGMass();
@@ -65,6 +66,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 		auto angle = (G4UniformRand() - 0.5) * fSigmaAngle;
 		fParticleGun->SetParticleMomentumDirection(G4ThreeVector(std::sin(angle), 0., std::cos(angle)));
 	} else {
+		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 		particle = fParticleGun->GetParticleDefinition();
 	}
 
@@ -103,6 +105,12 @@ void MyPrimaryGenerator::DefineCommands()
 	sigmaAngleCmd.SetParameterName("t", true);
 	sigmaAngleCmd.SetRange("t>=0.");
 	sigmaAngleCmd.SetDefaultValue("1.");
+	
+	// beamPosition command
+	auto& beamPositionCmd = fMessenger->DeclarePropertyWithUnit("beamPosition", "mm", Y_BeamPosition, "Y coordinate of the beam in mm");
+	beamPositionCmd.SetParameterName("bm", true);
+	//beamPositionCmd.SetRange("bm>=0.");
+	beamPositionCmd.SetDefaultValue("-7.4");
   
 }
 

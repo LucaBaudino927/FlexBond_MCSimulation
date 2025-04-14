@@ -7,6 +7,7 @@ MyEventAction::MyEventAction(){
 	// set printing per each event
 	G4RunManager::GetRunManager()->SetPrintProgress(1);
 	fHitCollID.fill(-1);
+	fPCBHitCollID.fill(-1);
 	fDetEdep.fill(std::vector<G4double>(NofMySensitiveDetector, 0.));
 	// hits collections names
 	/*
@@ -42,15 +43,20 @@ MyEventAction::MyEventAction(){
 	for(G4int i = 0; i < NofPads; i++){
 			detHCName.push_back("logicSolderBall_"+std::to_string(i)+"/MySensitiveDetectorColl");
 	}
-	detHCName.push_back("PCB_UpperLayer/MySensitiveDetectorColl");
+	//detHCName.push_back("PCB_UpperLayer/MySensitiveDetectorColl");
+	//detHCName.push_back("PCB_MiddleLayer/MySensitiveDetectorColl");
+	//detHCName.push_back("PCB_LowerLayer/MySensitiveDetectorColl");
+	
+	PCBHCName.push_back("PCB/PCBSensitiveDetectorColl");
 
 }
 
 // ######## Start of Event -> call MySensitiveDetector::Initialize() and then MyEventAction::BeginOfEventAction()
 void MyEventAction::BeginOfEventAction(const G4Event*){ 
 	
+	
+	fPCBedep = 0.;
 	/*
-	fEdep = 0.;
 	auto analysisManager = G4AnalysisManager::Instance();
 	if(fHitCollID[0] < 0){
 		auto sdManager = G4SDManager::GetSDMpointer();	
@@ -78,6 +84,17 @@ void MyEventAction::BeginOfEventAction(const G4Event*){
 		for (G4int iDet = 0; iDet < NofMySensitiveDetector; ++iDet) {
 			// hit collections IDs
 			fHitCollID[iDet] = sdManager->GetCollectionID(detHCName[iDet]);
+		}
+    
+  	}
+  	
+  	if (fPCBHitCollID[0] < 0) {
+		auto sdManager = G4SDManager::GetSDMpointer();
+		auto analysisManager = G4AnalysisManager::Instance();
+
+		for (G4int iDet = 0; iDet < NofPCBSensitiveDetector; ++iDet) {
+			// hit collections IDs
+			fPCBHitCollID[iDet] = sdManager->GetCollectionID(PCBHCName[iDet]);
 		}
     
   	}
@@ -123,6 +140,7 @@ void MyEventAction::EndOfEventAction(const G4Event* anEvent){
 	array<G4double, NofMySensitiveDetector> totalDetEdep;
 	totalDetEdep.fill(0.);
 
+	//loop over all MAPS volumes (this loop excludes PCB)
 	for (G4int iDet = 0; iDet < NofMySensitiveDetector; ++iDet) {
 		auto hc = GetHC(anEvent, fHitCollID[iDet]);
 		if (!hc) return;
@@ -142,10 +160,21 @@ void MyEventAction::EndOfEventAction(const G4Event* anEvent){
 			fDetEdep[iDet][i] = edep;
 		}
 		// columns 2, 3
-		analysisManager->FillNtupleDColumn(iDet, totalDetEdep[iDet]);
+		analysisManager->FillNtupleDColumn(0, iDet, totalDetEdep[iDet]);
 	}
-
-	analysisManager->AddNtupleRow();
+	analysisManager->AddNtupleRow(0);
+	
+	
+	//loop over all PCB volumes (this loop excludes MAPS)
+	for (G4int iDet = 0; iDet < NofPCBSensitiveDetector; ++iDet) {
+		auto hc = GetHC(anEvent, fPCBHitCollID[iDet]);
+		if (!hc) return;
+		
+		//totalDetHit[iDet] = fPCBedep;
+		//G4cout<<"---EndOfEvent()---iDet: "<<iDet<<" fPCBedep: "<<fPCBedep<<G4endl;
+		analysisManager->FillNtupleDColumn(1, iDet, fPCBedep);
+	}
+	analysisManager->AddNtupleRow(1);
 	
 	//NB: fEdep che salvo nella Ntupla è l'energia totale depositata dall'EVENTO.
 	//Se ho molti piani di detector e voglio sapere l'energia depositata in ogni piano devo cambiare la logica

@@ -9,8 +9,9 @@
 *	NofMySensitiveDetector = 6+(#pad*3) se ho alpide, colla, kapton, rame, pad dell'alpide e solder balls per ogni pad	   *
 *	NofMySensitiveDetector = 9+(#pad*3) se ho alpide, colla, kapton, rame, pad dell'alpide, solder balls per ogni pad e PCB	   *
 ************************************************************************************************************************************/
-constexpr G4int NofMySensitiveDetector = 7 + (21 + 15 + 15 + 8 + 8 + 7)*3; // per ora non configurabile
+constexpr G4int NofMySensitiveDetector = 6 + (21 + 15 + 15 + 8 + 8 + 7)*3; // per ora non configurabile
 constexpr G4int NofPads = (21 + 15 + 15 + 8 + 8 + 7);
+constexpr G4int NofPCBSensitiveDetector = 1;
 const std::vector<G4ThreeVector> padCoordinates = { {1057.62*um, 525.*um, 0.},		//B00
 						    {2157.62*um, 525.*um, 0.},
 						    {4357.62*um, 525.*um, 0.},

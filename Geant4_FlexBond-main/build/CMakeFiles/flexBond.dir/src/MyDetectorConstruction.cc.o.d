@@ -153,7 +153,8 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/iterator \
+ /usr/include/c++/11/bits/stream_iterator.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
  /usr/include/c++/11/set /usr/include/c++/11/bits/stl_tree.h \
@@ -629,14 +630,6 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnyMethod.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnyType.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4OpticalSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Physics2DVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Physics2DVector.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SurfaceProperty.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GeometryManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SmartVoxelStat.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicalVolumeStore.hh \
@@ -664,102 +657,7 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Threading.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsAnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VAnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManagerState.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisVerbose.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisUtilities.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTBaseHnManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4HnInformation.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4BinScheme.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Fcn.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VAnalysisManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4HnManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4BaseAnalysisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4NtupleBookingManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/ntuple_booking \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/cids \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/cid \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/typedefs \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/forit \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4NtupleBookingManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VNtupleManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VFileManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4BaseFileManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTHnFileManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH1ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnMessenger.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnToolsManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnMessenger.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tokenizer.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH2ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH3ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TP1ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TP2ToolsManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h1d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h1 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b1 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/base_histo \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/histo_data \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/axes \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/axis \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/eqT \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h2d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h2 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b2 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h3d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h3 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b3 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p1d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p1 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/profile_data \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p2d \
- /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p2 \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsAnalysisManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetectorHit.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VHit.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Allocator.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4RotationMatrix.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4THitsCollection.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDef.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttValue.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Colour.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Transform3D.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommand.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UnitsTable.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4UnitsTable.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VVisManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDefStore.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Glue.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Material.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Alpide.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubtractionSolid.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4DisplacedSolid.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VBooleanProcessor.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSolid.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Kapton.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Copper.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/SolderBall.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Constants.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyStore.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadStructure.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadParamvol.hh \
@@ -930,4 +828,101 @@ CMakeFiles/flexBond.dir/src/MyDetectorConstruction.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4TransportationManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SafetyHelper.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4TransportationManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.icc
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.icc \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsAnalysisManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VAnalysisManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManagerState.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisVerbose.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisUtilities.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTBaseHnManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4HnInformation.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4BinScheme.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Fcn.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VAnalysisManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4HnManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4BaseAnalysisManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4NtupleBookingManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/ntuple_booking \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/cids \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/cid \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/typedefs \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/forit \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4NtupleBookingManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VNtupleManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VFileManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4BaseFileManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VTHnFileManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH1ToolsManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnToolsManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnMessenger.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnToolsManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THnMessenger.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tokenizer.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH2ToolsManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TH3ToolsManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TP1ToolsManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TP2ToolsManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h1d \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h1 \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b1 \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/base_histo \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/histo_data \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/axes \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/axis \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/eqT \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h2d \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h2 \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b2 \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h3d \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/h3 \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/b3 \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p1d \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p1 \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/profile_data \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p2d \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/tools/histo/p2 \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ToolsAnalysisManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericAnalysisManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GenericFileManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicsOrderedFreeVector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetectorHit.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VHit.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Allocator.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4RotationMatrix.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4THitsCollection.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDef.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttValue.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Colour.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Transform3D.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommand.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UnitsTable.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UnitsTable.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VVisManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDefStore.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/PCBSensitiveDetector.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Glue.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Material.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Alpide.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubtractionSolid.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4DisplacedSolid.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VBooleanProcessor.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSolid.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Kapton.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Copper.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/SolderBall.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Constants.hh

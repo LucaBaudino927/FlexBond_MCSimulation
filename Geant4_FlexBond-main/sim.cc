@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "G4RunManager.hh"
 #include "G4UImanager.hh"
 #include "G4VisManager.hh"
@@ -16,8 +17,8 @@
 //main take directly argc and argv from the command line -> ./sim ciccio.mac -> argc = 2, argv = {./sim, ciccio.mac}. argv[1]=ciccio.mac
 int main(int argc, char** argv){
 
-	if (argc < 2) {
-	    G4cout << "Error! Mandatory input file is not specified!" << G4endl;
+	if (argc < 4) {
+	    G4cout << "Error! Mandatory input files are not specified!" << G4endl;
 	    G4cout << G4endl;
 	    return -1;
   	}
@@ -31,9 +32,13 @@ int main(int argc, char** argv){
         #endif
 
     	// ######## This is the real simulation architecture construction 
-
+	std::vector<G4String> gdmlFileNames;
+	gdmlFileNames.push_back(argv[1]);
+	gdmlFileNames.push_back(argv[2]);
+	gdmlFileNames.push_back(argv[3]);
+	
         //First: construction -> creates detectors
-        runManager->SetUserInitialization(new MyDetectorConstruction(argv[1]));
+        runManager->SetUserInitialization(new MyDetectorConstruction(gdmlFileNames));
         //Second: physics
         G4VModularPhysicsList *physicsList = new FTFP_BERT();
 	physicsList->SetVerboseLevel(1);
@@ -50,7 +55,7 @@ int main(int argc, char** argv){
 
         G4UIExecutive* ui = 0;
 
-        if(argc==2){ //one argument after ./flexbond 
+        if(argc==4){ 
             ui = new G4UIExecutive(argc, argv);
         }
 	
@@ -66,7 +71,7 @@ int main(int argc, char** argv){
             ui->SessionStart();
         }else{//a file is called after ./sim, e.g. ./sim ciccio.mac
             G4String command = "/control/execute ";
-            G4String fileName = argv[2];
+            G4String fileName = argv[4];
             UImanager->ApplyCommand(command+fileName);
         }
 

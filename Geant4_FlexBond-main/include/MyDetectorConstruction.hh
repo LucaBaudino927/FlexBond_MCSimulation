@@ -4,6 +4,7 @@
 #include "G4SystemOfUnits.hh"
 #include <iostream>
 #include <vector>
+#include <iterator>
 #include "G4RunManager.hh"
 #include "G4UImanager.hh"
 #include "G4VisManager.hh"
@@ -16,8 +17,6 @@
 #include "G4VUserDetectorConstruction.hh"
 #include "G4GenericMessenger.hh"
 #include "G4Tubs.hh"
-#include "G4OpticalSurface.hh"
-#include "G4LogicalSkinSurface.hh"
 #include "G4GeometryManager.hh"
 #include "G4PhysicalVolumeStore.hh"
 #include "G4LogicalVolumeStore.hh"
@@ -26,9 +25,12 @@
 #include "G4SDManager.hh"
 #include "G4AssemblyVolume.hh"
 #include "G4Threading.hh"
+#include "G4AssemblyStore.hh"
+#include "G4GDMLParser.hh"
 
 //User definted
 #include "MySensitiveDetector.hh"
+#include "PCBSensitiveDetector.hh"
 #include "Glue.hh"
 #include "Alpide.hh"
 #include "Kapton.hh"
@@ -36,17 +38,19 @@
 #include "SolderBall.hh"
 #include "StaticInfo.hh"
 #include "Constants.hh"
-#include "G4GDMLParser.hh"
+#include "G4LogicalVolumeStore.hh"
 
 class G4FieldManager;
 class G4VPhysicalVolume;
 class G4GenericMessenger;
 
+typedef std::vector<G4LogicalVolume*>::iterator logicalVolumeIterator;
+
 class MyDetectorConstruction : public G4VUserDetectorConstruction
 {
     public:
 
-        MyDetectorConstruction(G4String);
+        MyDetectorConstruction(std::vector<G4String>);
         ~MyDetectorConstruction() override;
         G4LogicalVolume *GetScoringVolume() const { return fScoringVolume; }//energy deposit
         G4VPhysicalVolume* Construct() override;
@@ -56,12 +60,8 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
     private:
    
         void DefineMaterials();
-        void ConstructCherenkov();
-        void ConstructScintillator();
-        void ConstructTOF();
-        void ConstructAtmosphere();
-        void ConstructMapsFoil();
-        void ConstructPCB();
+        void ConstructMapsFoil(G4AssemblyVolume* assemblyDetector);
+        void ConstructPCB(G4AssemblyVolume* assemblyDetector);
         
         G4GenericMessenger *fMessenger = nullptr;
         G4double xWorld, yWorld, zWorld;
@@ -74,7 +74,7 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         G4Element *C, *Na, *I, *N, *O, *H;
         
         // G4GenericMessenger settings
-        G4bool verboseDetConstr;
+        G4bool verboseDetConstr = false;
         //flags to declare the detector
         G4bool isMapsFoil;
         //flags to declare the setup of the detector
@@ -95,12 +95,14 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         G4LogicalVolume *fLogicLowerKapton 	= nullptr;
         G4LogicalVolume *fLogicUpperKapton 	= nullptr;
         G4LogicalVolume *fLogicCopper		= nullptr;
-        G4LogicalVolume *fPCBUpperLayerLV	= nullptr;
+        //G4LogicalVolume *fPCBUpperLayerLV	= nullptr;
+        //G4LogicalVolume *fPCBMiddleLayerLV	= nullptr;
+        //G4LogicalVolume *fPCBLowerLayerLV	= nullptr;
         std::vector<G4LogicalVolume*> fLogicalAlpidePad1;
         std::vector<G4LogicalVolume*> fLogicalAlpidePad2;
         std::vector<G4LogicalVolume*> fLogicSolderBalls;
         
-        G4String fGDMLReadStructure;
+        std::vector<G4String> fGDMLReadStructure;
                
 
 };

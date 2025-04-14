@@ -9,6 +9,7 @@
 #include "G4Geantino.hh"
 #include "G4GenericMessenger.hh"
 #include "Randomize.hh"
+#include "G4ThreeVector.hh"
 
 using namespace CLHEP;
 
@@ -45,6 +46,7 @@ private:
 	G4ParticleDefinition* fNeutron = nullptr;
 	G4ParticleDefinition* fProton = nullptr;
 	G4double fMomentum = 10.*MeV;
+	G4double Y_BeamPosition = -7.4*mm;
 	G4double fSigmaMomentum = 1.*MeV;
 	G4double fSigmaAngle = 1.*deg;
 	G4bool fRandomizePrimary = false;

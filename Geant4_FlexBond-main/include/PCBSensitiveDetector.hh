@@ -1,5 +1,5 @@
-#ifndef MY_SENSITIVE_DETECTOR_HH
-#define MY_SENSITIVE_DETECTOR_HH
+#ifndef PCB_SENSITIVE_DETECTOR_HH
+#define PCB_SENSITIVE_DETECTOR_HH
 
 #include <algorithm>
 #include "G4VSensitiveDetector.hh"
@@ -18,13 +18,13 @@ class G4Step;
 class G4HCofThisEvent;
 class G4TouchableHistory;
 
-class MySensitiveDetector : public G4VSensitiveDetector
+class PCBSensitiveDetector : public G4VSensitiveDetector
 {
 
 public:
 
-    MySensitiveDetector(G4String name);
-    ~MySensitiveDetector();
+    PCBSensitiveDetector(G4String name);
+    ~PCBSensitiveDetector();
     
     //G4HCofThisEvent: hits container that contains hits collections
     void Initialize(G4HCofThisEvent* hitsContainer) override;

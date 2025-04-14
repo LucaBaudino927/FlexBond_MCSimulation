@@ -145,7 +145,11 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
- /usr/include/c++/11/bits/istream.tcc \
+ /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/vector \
+ /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4RunManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
  /usr/include/c++/11/set /usr/include/c++/11/bits/stl_tree.h \
@@ -199,11 +203,7 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
  /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_map.h /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_uninitialized.h \
- /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc \
+ /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4String.hh \
  /usr/include/c++/11/cstring /usr/include/string.h /usr/include/strings.h \
@@ -854,14 +854,6 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnyMethod.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnyType.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Tubs.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4OpticalSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Physics2DVector.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Physics2DVector.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SurfaceProperty.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSurface.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4LogicalSkinSurface.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4GeometryManager.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SmartVoxelStat.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4PhysicalVolumeStore.hh \
@@ -882,6 +874,24 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyTriplet.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyVolume.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Threading.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4AssemblyStore.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadStructure.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteStructure.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteParamvol.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteSetup.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteSolids.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteMaterials.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteDefine.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWrite.hh \
+ /usr/include/xercesc/framework/LocalFileFormatTarget.hpp \
+ /usr/include/xercesc/framework/XMLFormatter.hpp \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4STRead.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLMessenger.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TransportationManager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4SafetyHelper.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4TransportationManager.icc \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.icc \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VSensitiveDetector.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AnalysisManager.hh \
@@ -963,10 +973,11 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VisAttributes.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ios.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4AttDefStore.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/PCBSensitiveDetector.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Glue.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Material.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Alpide.hh \
- /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4SubtractionSolid.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4BooleanSolid.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4DisplacedSolid.hh \
@@ -978,23 +989,6 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/SolderBall.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Sphere.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Constants.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLReadStructure.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteStructure.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteParamvol.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteSetup.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteSolids.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteMaterials.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWriteDefine.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLWrite.hh \
- /usr/include/xercesc/framework/LocalFileFormatTarget.hpp \
- /usr/include/xercesc/framework/XMLFormatter.hpp \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4STRead.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLMessenger.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TransportationManager.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4SafetyHelper.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4TransportationManager.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4GDMLParser.icc \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyActionInitialization.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VUserActionInitialization.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyEventAction.hh \
@@ -1012,4 +1006,7 @@ CMakeFiles/flexBond.dir/sim.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/Randomize.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyRunAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySteppingAction.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserSteppingAction.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4Step.hh
