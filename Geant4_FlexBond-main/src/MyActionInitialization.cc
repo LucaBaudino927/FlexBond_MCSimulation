@@ -7,19 +7,18 @@ MyActionInitialization::~MyActionInitialization(){}
 //For Multithread...
 void MyActionInitialization::BuildForMaster() const
 {
-    MyEventAction* eventAction = new MyEventAction();
-    SetUserAction(new MyRunAction(eventAction));
+    SetUserAction(new MyRunAction());
 }
 
-void MyActionInitialization::Build() const{  
+void MyActionInitialization::Build() const{ 
     MyPrimaryGenerator* generator = new MyPrimaryGenerator();
     SetUserAction(generator);
+
+    MyRunAction* runAction = new MyRunAction();
+    SetUserAction(runAction);
     
     MyEventAction* eventAction = new MyEventAction();
     SetUserAction(eventAction);
-
-    MyRunAction* runAction = new MyRunAction(eventAction);
-    SetUserAction(runAction);
     
     MySteppingAction* steppingAction = new MySteppingAction(eventAction);
     SetUserAction(steppingAction);

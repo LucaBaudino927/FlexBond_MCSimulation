@@ -34,13 +34,17 @@ class StaticInfo
         static void AddToDetectorFlagMap(G4String flagName, G4bool flag) { detectorConstructionFlags[flagName] = flag; };
         
         //static G4int GetNOfAlpidePads() { return NOfAlpidePads; };
-        //static void SetNOfAlpidePads(G4int num) { NOfAlpidePads = num; };       
+        //static void SetNOfAlpidePads(G4int num) { NOfAlpidePads = num; };
+        
+        static G4int GetRunIdOnMasterThread() { return fRunIdOnMasterThread; };
+        static void SetRunIdOnMasterThread(G4int newRunID) { fRunIdOnMasterThread = newRunID; };
 
     private:
     	
     	//static std::vector<G4ThreeVector> alpidePadCoordinates;
         //static G4int NOfSensitiveDetector;
         static std::map<G4String, G4bool> detectorConstructionFlags;
+        static G4int fRunIdOnMasterThread;
 
 };
 

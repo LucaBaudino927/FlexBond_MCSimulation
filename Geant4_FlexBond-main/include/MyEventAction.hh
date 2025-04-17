@@ -2,7 +2,6 @@
 #define MY_EVENT_ACTION_HH
 
 #include <vector>
-#include <array>
 #include "G4UserEventAction.hh"
 #include "G4Event.hh"
 #include "G4AnalysisManager.hh"
@@ -33,11 +32,12 @@ private:
     G4VHitsCollection* GetHC(const G4Event* event, G4int collId);
 
     G4double fPCBedep;
+    //G4double fScatteringAngle;
     // problema per rendere tutto configurabile: fHitCollID funziona solo se è un array di lunghezza FISSA -> non posso usare vector
-    std::array<G4int, NofMySensitiveDetector>  fHitCollID;
-    std::array<G4int, NofPCBSensitiveDetector> fPCBHitCollID;
+    std::vector<G4int> fHitCollID;
+    std::vector<G4int> fPCBHitCollID;
     //Array che contiene NofMySensitiveDetector vector. Ogni vector contiene le energie delle N hit del detector
-    std::array<std::vector<G4double>, NofMySensitiveDetector> fDetEdep;
+    //std::array<std::vector<G4double>, NofMySensitiveDetector> fDetEdep;
     std::vector<G4String> detHCName;
     std::vector<G4String> PCBHCName;
     

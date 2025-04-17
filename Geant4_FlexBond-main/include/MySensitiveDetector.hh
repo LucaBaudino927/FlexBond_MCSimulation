@@ -32,7 +32,6 @@ public:
     
 private:
     
-    //G4PhysicsOrderedFreeVector *quEff;
     MySensitiveDetectorHitsCollection *fHitsCollection = nullptr;
     G4int fHCID = -1;
     

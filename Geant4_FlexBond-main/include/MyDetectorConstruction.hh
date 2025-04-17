@@ -70,15 +70,24 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
         G4VPhysicalVolume  *physWorld;
         G4LogicalVolume *fScoringVolume;
         
-        G4Material *worldMat, *KaptonMaterial, *Si, *Al, *epoxyGlue;
-        G4Element *C, *Na, *I, *N, *O, *H;
+        G4Material *worldMat		 = nullptr;
+        G4Material *KaptonMaterial	 = nullptr;
+        G4Material *Si			 = nullptr;
+        G4Material *Al			 = nullptr;
+        G4Material *epoxyGlue		 = nullptr;
+        G4Element *C			 = nullptr;
+        G4Element *Na			 = nullptr;
+        G4Element *I			 = nullptr;
+        G4Element *N			 = nullptr;
+        G4Element *O			 = nullptr;
+        G4Element *H			 = nullptr;
         
         // G4GenericMessenger settings
         G4bool verboseDetConstr = false;
         //flags to declare the detector
         G4bool isMapsFoil;
         //flags to declare the setup of the detector
-        G4bool constructEpoxyGlueLayer, constructKaptonLayer, constructCopperLayer, constructSolderBalls, constructPCB;
+        G4bool constructAlpidePads, constructEpoxyGlueLayer, constructKaptonLayer, constructCopperLayer, constructSolderBalls, constructPCB;
         //flags to tune the setup: if they are specified in the macro -> use those values otherwise use default values
         G4double alpideXFromMessenger 		= 0.;
         G4double alpideYFromMessenger 		= 0.;

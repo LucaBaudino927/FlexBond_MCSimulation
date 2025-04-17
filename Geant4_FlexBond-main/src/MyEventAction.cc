@@ -1,20 +1,20 @@
 #include "MyEventAction.hh"
 
-using std::array;
-
 // ######## Constructor
-MyEventAction::MyEventAction(){ 
+MyEventAction::MyEventAction(){
+
 	// set printing per each event
-	G4RunManager::GetRunManager()->SetPrintProgress(1);
-	fHitCollID.fill(-1);
-	fPCBHitCollID.fill(-1);
-	fDetEdep.fill(std::vector<G4double>(NofMySensitiveDetector, 0.));
+	//G4RunManager::GetRunManager()->SetPrintProgress(1);
+	fHitCollID.push_back(-1);
+	fPCBHitCollID.push_back(-1);
+	
 	// hits collections names
-	/*
 	detHCName = { { "Alpide/MySensitiveDetectorColl" } };
-	for(G4int i = 0; i < NofPads; i++){
-		detHCName.push_back("logicPad1_"+std::to_string(i)+"/MySensitiveDetectorColl");
-		detHCName.push_back("logicPad2_"+std::to_string(i)+"/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructAlpidePads")) {
+		for(G4int i = 0; i < NofPads; i++){
+			detHCName.push_back("logicPad1_"+std::to_string(i)+"/MySensitiveDetectorColl");
+			detHCName.push_back("logicPad2_"+std::to_string(i)+"/MySensitiveDetectorColl");
+		}
 	}
 	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) detHCName.push_back("LowerGlue/MySensitiveDetectorColl");
 	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) detHCName.push_back("UpperGlue/MySensitiveDetectorColl");
@@ -27,28 +27,9 @@ MyEventAction::MyEventAction(){
 		}
 	}
 	if(StaticInfo::GetDetectorFlag("constructPCB")){ 
-		detHCName.push_back("PCB_UpperLayer/MySensitiveDetectorColl");
+		PCBHCName.push_back("PCB/PCBSensitiveDetectorColl");
 	}
-	*/
-	detHCName = { { "Alpide/MySensitiveDetectorColl" } };
-	for(G4int i = 0; i < NofPads; i++){
-		detHCName.push_back("logicPad1_"+std::to_string(i)+"/MySensitiveDetectorColl");
-		detHCName.push_back("logicPad2_"+std::to_string(i)+"/MySensitiveDetectorColl");
-	}
-	detHCName.push_back("LowerGlue/MySensitiveDetectorColl");
-	detHCName.push_back("UpperGlue/MySensitiveDetectorColl");
-	detHCName.push_back("LowerKapton/MySensitiveDetectorColl");
-	detHCName.push_back("UpperKapton/MySensitiveDetectorColl");
-	detHCName.push_back("CopperLayer/MySensitiveDetectorColl");
-	for(G4int i = 0; i < NofPads; i++){
-			detHCName.push_back("logicSolderBall_"+std::to_string(i)+"/MySensitiveDetectorColl");
-	}
-	//detHCName.push_back("PCB_UpperLayer/MySensitiveDetectorColl");
-	//detHCName.push_back("PCB_MiddleLayer/MySensitiveDetectorColl");
-	//detHCName.push_back("PCB_LowerLayer/MySensitiveDetectorColl");
 	
-	PCBHCName.push_back("PCB/PCBSensitiveDetectorColl");
-
 }
 
 // ######## Start of Event -> call MySensitiveDetector::Initialize() and then MyEventAction::BeginOfEventAction()
@@ -76,29 +57,65 @@ void MyEventAction::BeginOfEventAction(const G4Event*){
 		}
 	}*/
 	
+		
+	detHCName.clear();
+	PCBHCName.clear();
+	
+	detHCName = { { "Alpide/MySensitiveDetectorColl" } };
+	if(StaticInfo::GetDetectorFlag("constructAlpidePads")) {
+		for(G4int i = 0; i < NofPads; i++){
+			detHCName.push_back("logicPad1_"+std::to_string(i)+"/MySensitiveDetectorColl");
+			detHCName.push_back("logicPad2_"+std::to_string(i)+"/MySensitiveDetectorColl");
+		}
+	}
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) detHCName.push_back("LowerGlue/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) detHCName.push_back("UpperGlue/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) detHCName.push_back("LowerKapton/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) detHCName.push_back("UpperKapton/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructCopperLayer")) detHCName.push_back("CopperLayer/MySensitiveDetectorColl");
+	if(StaticInfo::GetDetectorFlag("constructSolderBalls")) {
+		for(G4int i = 0; i < NofPads; i++){
+			detHCName.push_back("logicSolderBall_"+std::to_string(i)+"/MySensitiveDetectorColl");
+		}
+	}
+	if(StaticInfo::GetDetectorFlag("constructPCB")){ 
+		PCBHCName.push_back("PCB/PCBSensitiveDetectorColl");
+	}
+	
+	fHitCollID.clear();
+	fHitCollID.push_back(-1);
+	fPCBHitCollID.clear();
+	fPCBHitCollID.push_back(-1);
+	
 	
 	if (fHitCollID[0] < 0) {
 		auto sdManager = G4SDManager::GetSDMpointer();
 		auto analysisManager = G4AnalysisManager::Instance();
-
-		for (G4int iDet = 0; iDet < NofMySensitiveDetector; ++iDet) {
+		
+		//inizializzo fHitCollID
+		fHitCollID.clear();
+		
+		//riempio fHitCollID
+		for (G4int iDet = 0; iDet < detHCName.size(); ++iDet) {
 			// hit collections IDs
-			fHitCollID[iDet] = sdManager->GetCollectionID(detHCName[iDet]);
+			fHitCollID.push_back(sdManager->GetCollectionID(detHCName[iDet]));
 		}
-    
   	}
+  	
   	
   	if (fPCBHitCollID[0] < 0) {
 		auto sdManager = G4SDManager::GetSDMpointer();
 		auto analysisManager = G4AnalysisManager::Instance();
+		
+		//inizializzo fPCBHitCollID
+		fPCBHitCollID.clear();
 
-		for (G4int iDet = 0; iDet < NofPCBSensitiveDetector; ++iDet) {
+		for (G4int iDet = 0; iDet < PCBHCName.size(); ++iDet) {
 			// hit collections IDs
-			fPCBHitCollID[iDet] = sdManager->GetCollectionID(PCBHCName[iDet]);
+			fPCBHitCollID.push_back(sdManager->GetCollectionID(PCBHCName[iDet]));
 		}
     
   	}
-	
 	
 }
 
@@ -133,56 +150,50 @@ void MyEventAction::EndOfEventAction(const G4Event* anEvent){
 
 	// Get analysis manager
 	auto analysisManager = G4AnalysisManager::Instance();
+	
+	//chiudo la ntupla riempita in MySteppingAction
+	analysisManager->AddNtupleRow(2);
 
 	// MySensitiveDetector hits
-	array<G4int, NofMySensitiveDetector> totalDetHit;
-	totalDetHit.fill(0);
-	array<G4double, NofMySensitiveDetector> totalDetEdep;
-	totalDetEdep.fill(0.);
-
+	std::vector<G4int> totalDetHit;
+	std::vector<G4double> totalDetEdep;
 	//loop over all MAPS volumes (this loop excludes PCB)
-	for (G4int iDet = 0; iDet < NofMySensitiveDetector; ++iDet) {
+	for (G4int iDet = 0; iDet < detHCName.size(); ++iDet) {
 		auto hc = GetHC(anEvent, fHitCollID[iDet]);
+		
 		if (!hc) return;
-
-		totalDetHit[iDet] = 0;
-		totalDetEdep[iDet] = 0.;
+		totalDetHit.push_back(0);
+		totalDetEdep.push_back(0.);
 		for (unsigned long i = 0; i < hc->GetSize(); ++i) {
 			G4double edep = 0.;
 			// The EM and Had calorimeter hits are of different types
 			auto hit = static_cast<MySensitiveDetectorHit*>(hc->GetHit(i));
 			edep = hit->GetEdep();
-			//G4cout << "---EndOfEventAction---0---Edep: " << edep/MeV << " MeV" << G4endl;
+			//G4cout << "---EndOfEventAction---Edep: " << edep/MeV << " MeV" << G4endl;
 			if (edep > 0.) {
 				totalDetHit[iDet]++;
 				totalDetEdep[iDet] += edep;
 			}
-			fDetEdep[iDet][i] = edep;
 		}
 		// columns 2, 3
-		analysisManager->FillNtupleDColumn(0, iDet, totalDetEdep[iDet]);
+		if(totalDetEdep[iDet] != 0.) analysisManager->FillNtupleDColumn(0, iDet, totalDetEdep[iDet]);
 	}
 	analysisManager->AddNtupleRow(0);
 	
 	
 	//loop over all PCB volumes (this loop excludes MAPS)
-	for (G4int iDet = 0; iDet < NofPCBSensitiveDetector; ++iDet) {
+	for (G4int iDet = 0; iDet < PCBHCName.size(); ++iDet) {
 		auto hc = GetHC(anEvent, fPCBHitCollID[iDet]);
 		if (!hc) return;
 		
 		//totalDetHit[iDet] = fPCBedep;
 		//G4cout<<"---EndOfEvent()---iDet: "<<iDet<<" fPCBedep: "<<fPCBedep<<G4endl;
-		analysisManager->FillNtupleDColumn(1, iDet, fPCBedep);
+		if(fPCBedep != 0.) analysisManager->FillNtupleDColumn(1, iDet, fPCBedep);
 	}
-	analysisManager->AddNtupleRow(1);
-	
-	//NB: fEdep che salvo nella Ntupla è l'energia totale depositata dall'EVENTO.
-	//Se ho molti piani di detector e voglio sapere l'energia depositata in ogni piano devo cambiare la logica
-	//G4cout << "Energy deposition: " << fEdep/MeV << " MeV" << G4endl;
-	//G4AnalysisManager *analysisManager = G4AnalysisManager::Instance();
-	//analysisManager->FillNtupleDColumn(1, 0, fEdep);
-	//analysisManager->AddNtupleRow();
-	
+	if(PCBHCName.size() > 0) analysisManager->AddNtupleRow(1);
+
+
+	// print --------------------------------------------------------------------------------------------------------
 	if(!StaticInfo::GetDetectorFlag("verboseDetConstruction")) return;
 	
 	auto printModulo = G4RunManager::GetRunManager()->GetPrintProgress();

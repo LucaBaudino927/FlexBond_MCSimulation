@@ -51,7 +51,6 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
 	// Create a new hit and set it to the collection
 	auto hit = new MySensitiveDetectorHit(copyNo);	
 	hit->SetID(copyNo);
-	auto depth = touchable->GetHistory()->GetDepth();
 	auto transform = touchable->GetHistory()->GetTopTransform();
 	transform.Invert();
 	hit->SetRot(transform.NetRotation());
@@ -61,10 +60,7 @@ G4bool MySensitiveDetector::ProcessHits(G4Step* aStep, G4TouchableHistory* ROHis
 	
 	// add energy deposition
   	hit->AddEdep(edep);
-  	fHitsCollection->insert(hit);
-	
-  
-  
+  	fHitsCollection->insert(hit);  
 
 	
 	//-----------------------------------Precedente inserimento dei dati nelle ntuple: per ora non mi interessa

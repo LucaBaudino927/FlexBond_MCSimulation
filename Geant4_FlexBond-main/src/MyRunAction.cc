@@ -1,14 +1,14 @@
 #include "MyRunAction.hh"
 
 // ######## Costructor
-MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction) {
+MyRunAction::MyRunAction() {
 
 	//G4cout<<"---MyRunAction---"<<G4endl;
 	G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-	analysisManager->SetDefaultFileType("root");
-	analysisManager->SetVerboseLevel(1);
+	//analysisManager->SetDefaultFileType("root");
+	//analysisManager->SetVerboseLevel(1);
 	analysisManager->SetNtupleMerging(true);
-	analysisManager->SetNtupleDirectoryName("output");
+	//analysisManager->SetNtupleDirectoryName("output");
 	//analysisManager->SetHistoDirectoryName("output");
 	//analysisManager->SetFileName("output");
 	
@@ -19,11 +19,10 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 	 *	NofMySensitiveDetector = 6+(#pad*3) se ho alpide, colla, kapton, rame, pad dell'alpide e solder balls per ogni pad	   *
 	 *	NofMySensitiveDetector = 9+(#pad*3) se ho alpide, colla, kapton, rame, pad dell'alpide, solder balls per ogni pad e PCB	   *
 	 ***********************************************************************************************************************************/
-	if (fEventAction) {
+	/*
+	if(!StaticInfo::GetIsFirstRunMangerInitialization()){
 		analysisManager->CreateNtuple("MapsFoil", "Hits");
 		analysisManager->CreateNtupleDColumn("AlpideEnergy");  					// column Id = 0
-		//analysisManager->CreateNtupleDColumn("AlpidePad1Energy_0");  				// column Id: from 1 to 1 + (#pad - 1)*2
-		//analysisManager->CreateNtupleDColumn("AlpidePad2Energy_0");  				// column Id: from 2 to 2 + (#pad - 1)*2
 		for(G4int i = 0; i < NofPads; i++){
 			analysisManager->CreateNtupleDColumn("AlpidePad1Energy_"+std::to_string(i));  	// column Id: from 1 to 1 + (#pad - 1)*2
 			analysisManager->CreateNtupleDColumn("AlpidePad2Energy_"+std::to_string(i));  	// column Id: from 2 to 2 + (#pad - 1)*2
@@ -33,7 +32,6 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 		analysisManager->CreateNtupleDColumn("LowerKaptonEnergy");  				// column Id: from 5 to 5 + (#pad - 1)*2
 		analysisManager->CreateNtupleDColumn("UpperKaptonEnergy");  				// column Id: from 6 to 6 + (#pad - 1)*2
 		analysisManager->CreateNtupleDColumn("CopperEnergy");  					// column Id: from 7 to 7 + (#pad - 1)*2
-		//analysisManager->CreateNtupleDColumn("SolderBallEnergy_0");				// column Id: from 8 to 8 + (#pad - 1)*3
 		for(G4int i = 0; i < NofPads; i++){
 			analysisManager->CreateNtupleDColumn("SolderBallEnergy_"+std::to_string(i));	// column Id: from 8 to 8 + (#pad - 1)*3
 		}
@@ -44,8 +42,66 @@ MyRunAction::MyRunAction(MyEventAction* eventAction) : fEventAction(eventAction)
 		analysisManager->CreateNtupleDColumn("fPCBedep");
 		analysisManager->FinishNtuple(1);
 		
+		//Scattering angle in each volume of the maps foil
+		analysisManager->CreateNtuple("MapsFoil", "ScatteringAngles");
+		analysisManager->CreateNtupleDColumn("Alpide");
+		analysisManager->CreateNtupleDColumn("LowerGlue");
+		analysisManager->CreateNtupleDColumn("UpperGlue");
+		analysisManager->CreateNtupleDColumn("LowerKapton");
+		analysisManager->CreateNtupleDColumn("UpperKapton");
+		analysisManager->CreateNtupleDColumn("Copper");
+		analysisManager->FinishNtuple(2);
 	}
-
+	*/
+	
+	/*
+	G4cout << "---MyRunAction---StaticInfo::GetIsFirstRunMangerInitialization(): " << StaticInfo::GetIsFirstRunMangerInitialization() << G4endl;
+	
+	if(!StaticInfo::GetIsFirstRunMangerInitialization()){
+		G4cout << "---MyRunAction---0---" << G4endl;
+		analysisManager->CreateNtuple("MapsFoil", "Hits");
+		analysisManager->CreateNtupleDColumn("AlpideEnergy");  					// column Id = 0
+		for(G4int i = 0; i < NofPads; i++){
+			analysisManager->CreateNtupleDColumn("AlpidePad1Energy_"+std::to_string(i));  	// column Id: from 1 to 1 + (#pad - 1)*2
+			analysisManager->CreateNtupleDColumn("AlpidePad2Energy_"+std::to_string(i));  	// column Id: from 2 to 2 + (#pad - 1)*2
+		}
+		if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) {
+			analysisManager->CreateNtupleDColumn("LowerGlueEnergy");  				// column Id: from 3 to 3 + (#pad - 1)*2
+			analysisManager->CreateNtupleDColumn("UpperGlueEnergy");  				// column Id: from 4 to 4 + (#pad - 1)*2
+		}
+		if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) {
+			analysisManager->CreateNtupleDColumn("LowerKaptonEnergy");  				// column Id: from 5 to 5 + (#pad - 1)*2
+			analysisManager->CreateNtupleDColumn("UpperKaptonEnergy");  				// column Id: from 6 to 6 + (#pad - 1)*2
+		}
+		if(StaticInfo::GetDetectorFlag("constructCopperLayer")) {
+			analysisManager->CreateNtupleDColumn("CopperEnergy");  					// column Id: from 7 to 7 + (#pad - 1)*2
+		}
+		if(StaticInfo::GetDetectorFlag("constructSolderBalls")) {
+			for(G4int i = 0; i < NofPads; i++){
+				analysisManager->CreateNtupleDColumn("SolderBallEnergy_"+std::to_string(i));	// column Id: from 8 to 8 + (#pad - 1)*3
+			}
+		}
+		analysisManager->FinishNtuple(0);		
+		
+		//Energy deposition for each event
+		analysisManager->CreateNtuple("PCB", "PCB_Hits");
+		if(StaticInfo::GetDetectorFlag("constructPCB")) { 
+			analysisManager->CreateNtupleDColumn("fPCBedep");
+		}
+		analysisManager->FinishNtuple(1);
+		
+		//Scattering angle in each volume of the maps foil
+		analysisManager->CreateNtuple("MapsFoil", "ScatteringAngles");
+		analysisManager->CreateNtupleDColumn("Alpide");
+		if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) analysisManager->CreateNtupleDColumn("LowerGlue");
+		if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) analysisManager->CreateNtupleDColumn("UpperGlue");
+		if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) analysisManager->CreateNtupleDColumn("LowerKapton");
+		if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) analysisManager->CreateNtupleDColumn("UpperKapton");
+		if(StaticInfo::GetDetectorFlag("constructCopperLayer")) analysisManager->CreateNtupleDColumn("Copper");
+		analysisManager->FinishNtuple(2);
+	}
+	*/
+	
 	// Set ntuple output file
 	//analysisManager->SetNtupleFileName(0, "outputNtuple");
 	//analysisManager->SetNtupleFileName(1, "outputNtuple");
@@ -78,19 +134,87 @@ void MyRunAction::BeginOfRunAction(const G4Run* run){
 
 	G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 	
+	//----------------------------------------------------------------------------------------------------------------
+	// Ad ogni Run reinizializzo l'analisysManager in modo
+	// che, se reinizializzo la geometria e modifico il 
+	// numero di detector, posso modificare anche il numero di ntuple
+	analysisManager->Clear();
+	
+	//----------------------------------------------------------------------------------------------------------------
+	// Apro i file di output assegnando un nome in base al RunID.
+	// NB: Il main analysis file viene creato nel master e i file contenenti i dati vengono creati per ogni thread.
+	//     In generale il RunID del Master Thread è diverso dal RunID dei vari thread, quindi devo salvare il RunID
+	//     del master per fare in modo che i vari thread creino i loro file con lo stesso nome altrimenti non 
+	//     funziona il merging delle ntuple.
+	//     Es: Master thread con RunID = 0 crea output0.root, thread con RunID = X deve creare un output0_tX.root per funzionare correttamente
+	std::stringstream strRunID;
+	if(IsMaster()) {
+		StaticInfo::SetRunIdOnMasterThread(run->GetRunID());
+	}
+	strRunID << StaticInfo::GetRunIdOnMasterThread();
+	//G4cout<<"---MyRunAction---run->GetRunID(): "<<run->GetRunID()<<G4endl;
+	//G4cout<<"---MyRunAction---StaticInfo::GetRunIdOnMasterThread(): "<<StaticInfo::GetRunIdOnMasterThread()<<G4endl;
+	
+	analysisManager->SetFileName("output"+strRunID.str()+".root");
+	analysisManager->SetNtupleFileName("output"+strRunID.str()+".root");
+	
 	// Reset histograms from previous run
 	analysisManager->Reset();
-  
-	G4int runID = run->GetRunID();  
-	std::stringstream strRunID;
-	strRunID << runID;
+	
+	analysisManager->OpenFile("output"+strRunID.str()+".root");	
+	
+	//----------------------------------------------------------------------------------------------------------------
+	// Creo le ntuple in base alle flag di costruzione dei detector 
+	// inizializzate in MyDetectorConstruction (e prese dal file di configurazione)
+	analysisManager->CreateNtuple("MapsFoil_Hits", "Hits");
+	analysisManager->CreateNtupleDColumn("AlpideEnergy");  						// column Id = 0
+	if(StaticInfo::GetDetectorFlag("constructAlpidePads")) {
+		for(G4int i = 0; i < NofPads; i++){
+			analysisManager->CreateNtupleDColumn("AlpidePad1Energy_"+std::to_string(i));  	// column Id: from 1 to 1 + (#pad - 1)*2
+			analysisManager->CreateNtupleDColumn("AlpidePad2Energy_"+std::to_string(i));  	// column Id: from 2 to 2 + (#pad - 1)*2
+		}
+	}
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) {
+		analysisManager->CreateNtupleDColumn("LowerGlueEnergy");  				// column Id: from 3 to 3 + (#pad - 1)*2
+		analysisManager->CreateNtupleDColumn("UpperGlueEnergy");  				// column Id: from 4 to 4 + (#pad - 1)*2
+	}
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) {
+		analysisManager->CreateNtupleDColumn("LowerKaptonEnergy");  				// column Id: from 5 to 5 + (#pad - 1)*2
+		analysisManager->CreateNtupleDColumn("UpperKaptonEnergy");  				// column Id: from 6 to 6 + (#pad - 1)*2
+	}
+	if(StaticInfo::GetDetectorFlag("constructCopperLayer")) {
+		analysisManager->CreateNtupleDColumn("CopperEnergy");  					// column Id: from 7 to 7 + (#pad - 1)*2
+	}
+	if(StaticInfo::GetDetectorFlag("constructSolderBalls")) {
+		for(G4int i = 0; i < NofPads; i++){
+			analysisManager->CreateNtupleDColumn("SolderBallEnergy_"+std::to_string(i));	// column Id: from 8 to 8 + (#pad - 1)*3
+		}
+	}
+	analysisManager->FinishNtuple(0);
+	
+	//Energy deposition for each event
+	analysisManager->CreateNtuple("PCB", "PCB_Hits");
+	if(StaticInfo::GetDetectorFlag("constructPCB")) { 
+		analysisManager->CreateNtupleDColumn("fPCBedep");
+	}
+	analysisManager->FinishNtuple(1);
+	
+	//Scattering angle in each volume of the maps foil
+	analysisManager->CreateNtuple("MapsFoil_ScatteringAngles", "ScatteringAngles");
+	analysisManager->CreateNtupleDColumn("Alpide");
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) analysisManager->CreateNtupleDColumn("LowerGlue");
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) analysisManager->CreateNtupleDColumn("UpperGlue");
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) analysisManager->CreateNtupleDColumn("LowerKapton");
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer")) analysisManager->CreateNtupleDColumn("UpperKapton");
+	if(StaticInfo::GetDetectorFlag("constructCopperLayer")) analysisManager->CreateNtupleDColumn("Copper");
+	analysisManager->FinishNtuple(2);
 	
 	// Set ntuple output file
-	analysisManager->SetNtupleFileName(0, "output"+strRunID.str()+".root");
-	analysisManager->SetNtupleFileName(1, "output"+strRunID.str()+".root");
+	//analysisManager->SetNtupleFileName(0, "output"+strRunID.str()+".root");
+	//analysisManager->SetNtupleFileName(1, "output"+strRunID.str()+".root");
+	//analysisManager->SetNtupleFileName(2, "output"+strRunID.str()+".root");
 	
-	analysisManager->OpenFile("output"+strRunID.str()+".root");
-	//analysisManager->OpenFile();
+	
 
 }
 

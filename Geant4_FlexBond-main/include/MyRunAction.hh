@@ -9,25 +9,21 @@
 #include "G4Threading.hh"
 
 #include "Constants.hh"
-#include "MyEventAction.hh"
 #include "StaticInfo.hh"
 
 class G4Run;
+
 
 class MyRunAction : public G4UserRunAction
 {  
   
 public:
     
-        MyRunAction(MyEventAction* eventAction);
+        MyRunAction();
         ~MyRunAction() override = default;
         
         virtual void BeginOfRunAction(const G4Run*);
         virtual void EndOfRunAction(const G4Run*);
-        
-private:
-
-	MyEventAction* fEventAction = nullptr;
 
 };
 

@@ -1,6 +1,9 @@
+/control/verbose 0
+/run/verbose 0
+/vis/verbose errors
+
 #reset geometry after the first initialization
 /run/printProgress 0
-/run/reinitializeGeometry
 
 #
 # Defaults:
@@ -15,11 +18,12 @@
 #
 #	add new geometries here
 #
+/detector/constructAlpidePads false
 /detector/constructEpoxyGlueLayer true
 /detector/constructKaptonLayer true
 /detector/constructCopperLayer true
 /detector/constructSolderBalls false
-/detector/constructPCB false
+/detector/constructPCB true
 /detector/alpideXDimension 30. #mm
 /detector/alpideYDimension 15. #mm
 /detector/alpideThickness 50. #um
@@ -29,7 +33,8 @@
 /detector/copperThickness 5. #um
 
 # Initialize kernel
-/run/printProgress 0
+/run/reinitializeGeometry
+/run/geometryModified
 /run/initialize
 
 #
@@ -57,5 +62,5 @@
 /vis/scene/add/scale 30 mm
 #############################################################
 
-/run/beamOn 30
+#/run/beamOn 30
 
