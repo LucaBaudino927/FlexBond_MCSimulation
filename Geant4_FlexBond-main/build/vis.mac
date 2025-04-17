@@ -1,8 +1,9 @@
-/control/verbose 1
+/control/verbose 0
 /control/saveHistory
 
 /detector/verboseDetConstruction false
 /detector/mapsFoil true
+/detector/constructAlpidePads true
 /detector/constructEpoxyGlueLayer true
 /detector/constructKaptonLayer true
 /detector/constructCopperLayer true

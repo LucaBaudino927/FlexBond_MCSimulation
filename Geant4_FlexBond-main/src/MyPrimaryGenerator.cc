@@ -6,15 +6,15 @@ MyPrimaryGenerator::MyPrimaryGenerator(){
 	fParticleGun = new G4ParticleGun(nofParticles); 
 	G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
 	
-	fPositron = particleTable->FindParticle("e+");
 	fElectron = particleTable->FindParticle("e-");
+	fPositron = particleTable->FindParticle("e+");
 	fKaon = particleTable->FindParticle("kaon+");
 	fNeutron = particleTable->FindParticle("neutron");
 	fProton = particleTable->FindParticle("proton");
 
 	fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 	fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
-	fParticleGun->SetParticleMomentum(fMomentum);// set 0 for radioactive decay. 500 for cherenkov
+	//fParticleGun->SetParticleMomentum(fMomentum);
 
 	// default particle: electron, p = 10 MeV along Z
 	auto electronMass = fElectron->GetPDGMass();
@@ -42,10 +42,10 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 		auto i = (int)(5. * G4UniformRand());
 		switch (i) {
 			case 0:
-				particle = fPositron;
+				particle = fElectron;
 				break;
 			case 1:
-				particle = fElectron;
+				particle = fPositron;
 				break;
 			case 2:
 				particle = fKaon;
@@ -57,17 +57,23 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 				particle = fProton;
 				break;
 		}
-		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 		fParticleGun->SetParticleDefinition(particle);
+		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 		auto pp = fMomentum + (G4UniformRand() - 0.5) * fSigmaMomentum;
+		//fParticleGun->SetParticleMomentum(pp);
 		auto mass = particle->GetPDGMass();
 		auto ekin = std::sqrt(pp * pp + mass * mass) - mass;
 		fParticleGun->SetParticleEnergy(ekin);
 		auto angle = (G4UniformRand() - 0.5) * fSigmaAngle;
 		fParticleGun->SetParticleMomentumDirection(G4ThreeVector(std::sin(angle), 0., std::cos(angle)));
 	} else {
-		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 		particle = fParticleGun->GetParticleDefinition();
+		fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
+		//fParticleGun->SetParticleMomentum(fMomentum);
+		auto Mass = particle->GetPDGMass();
+		auto KinEnergy = std::sqrt(fMomentum * fMomentum + Mass * Mass) - Mass;
+		fParticleGun->SetParticleEnergy(KinEnergy);	
+		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 	}
 
         fParticleGun->GeneratePrimaryVertex(anEvent);
@@ -108,7 +114,7 @@ void MyPrimaryGenerator::DefineCommands()
 	
 	// beamPosition command
 	auto& beamPositionCmd = fMessenger->DeclarePropertyWithUnit("beamPosition", "mm", Y_BeamPosition, "Y coordinate of the beam in mm");
-	beamPositionCmd.SetParameterName("bm", true);
+	beamPositionCmd.SetParameterName("bp", true);
 	//beamPositionCmd.SetRange("bm>=0.");
 	beamPositionCmd.SetDefaultValue("-7.4");
   

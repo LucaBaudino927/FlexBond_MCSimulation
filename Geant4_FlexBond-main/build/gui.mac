@@ -16,6 +16,7 @@
 /gui/addButton run run1 "/control/execute run1.mac"
 /gui/addButton run run2 "/control/execute run2.mac"
 /gui/addButton run multipleRuns "/control/execute det.mac"
+/gui/addButton run beamOn1000 "/run/beamOn 1000"
 #
 # Generator menu :
 /gui/addMenu generator Generator
