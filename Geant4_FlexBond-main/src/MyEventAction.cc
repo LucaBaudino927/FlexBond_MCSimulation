@@ -151,8 +151,9 @@ void MyEventAction::EndOfEventAction(const G4Event* anEvent){
 	// Get analysis manager
 	auto analysisManager = G4AnalysisManager::Instance();
 	
-	//chiudo la ntupla riempita in MySteppingAction
+	//chiudo le ntuple riempite in MySteppingAction
 	analysisManager->AddNtupleRow(2);
+	analysisManager->AddNtupleRow(3);
 
 	// MySensitiveDetector hits
 	std::vector<G4int> totalDetHit;

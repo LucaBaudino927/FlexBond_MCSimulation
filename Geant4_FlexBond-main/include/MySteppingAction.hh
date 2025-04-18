@@ -21,9 +21,9 @@ public:
 private:
 
 	MyEventAction *fEventAction;
-	
 	G4ThreeVector fFirstMomDirectionInVolume;
 	G4ThreeVector fLastMomDirectionInVolume;
+	G4int fTrackID;
     
 };
 

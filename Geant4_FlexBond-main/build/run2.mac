@@ -27,7 +27,7 @@
 /detector/alpidePadRadius 150. #um
 /detector/glueThickness 25. #um
 /detector/kaptonThickness 50. #um
-/detector/copperThickness 5000. #um
+/detector/copperThickness 5. #um
 
 # Initialize kernel
 /run/reinitializeGeometry

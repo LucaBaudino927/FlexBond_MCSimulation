@@ -6,8 +6,9 @@
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
 #include "G4MTRunManager.hh"
-#include "QGSP_BERT.hh"//for hadronic processes
-#include "FTFP_BERT.hh"
+#include "FTFP_BERT.hh"//Standard Physics List for collider use and energy > 1 GeV
+//#include "QGSP_BERT.hh"//old library replaced by FTFP_BERT
+#include "QBBC.hh"//Physics List for energy < 1 GeV. It is identical to FTFP_BERT for higher energy
 #include "G4GDMLReadStructure.hh"
 
 // User defined
@@ -40,8 +41,8 @@ int main(int argc, char** argv){
         //First: construction -> creates detectors
         runManager->SetUserInitialization(new MyDetectorConstruction(gdmlFileNames));
         //Second: physics
-        G4VModularPhysicsList *physicsList = new FTFP_BERT();
-	physicsList->SetVerboseLevel(1);
+        G4VModularPhysicsList *physicsList = new QBBC();
+	physicsList->SetVerboseLevel(0);
 	runManager->SetUserInitialization(physicsList);
         //Third: action -> 1. generator, 2. event, 3. run, 4. stepping 
         runManager->SetUserInitialization(new MyActionInitialization);
