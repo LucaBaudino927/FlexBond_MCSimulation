@@ -6,21 +6,21 @@ MyPrimaryGenerator::MyPrimaryGenerator(){
 	fParticleGun = new G4ParticleGun(nofParticles); 
 	G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
 	
+	fProton = particleTable->FindParticle("proton");
 	fElectron = particleTable->FindParticle("e-");
 	fPositron = particleTable->FindParticle("e+");
 	fKaon = particleTable->FindParticle("kaon+");
 	fNeutron = particleTable->FindParticle("neutron");
-	fProton = particleTable->FindParticle("proton");
 
 	fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 	fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
 	//fParticleGun->SetParticleMomentum(fMomentum);
 
-	// default particle: electron, p = 10 MeV along Z
-	auto electronMass = fElectron->GetPDGMass();
-	auto electronKinEnergy = std::sqrt(fMomentum * fMomentum + electronMass * electronMass) - electronMass;
-	fParticleGun->SetParticleEnergy(electronKinEnergy);
-	fParticleGun->SetParticleDefinition(fElectron);
+	// default particle: proton, p = 10 GeV, Ekin = 9 GeV (it is a MIP proton with this energy -> dE/dx = 2 MeV/gcm^-2)
+	auto protonMass = fProton->GetPDGMass();
+	auto protonKinEnergy = std::sqrt(fMomentum * fMomentum + protonMass * protonMass) - protonMass;
+	fParticleGun->SetParticleEnergy(protonKinEnergy);
+	fParticleGun->SetParticleDefinition(fProton);
 
 	// define commands for this class
 	DefineCommands();
@@ -42,7 +42,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 		auto i = (int)(5. * G4UniformRand());
 		switch (i) {
 			case 0:
-				particle = fElectron;
+				particle = fProton;
 				break;
 			case 1:
 				particle = fPositron;
@@ -54,7 +54,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 				particle = fNeutron;
 				break;
 			default:
-				particle = fProton;
+				particle = fElectron;
 				break;
 		}
 		fParticleGun->SetParticleDefinition(particle);
@@ -72,6 +72,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 		//fParticleGun->SetParticleMomentum(fMomentum);
 		auto Mass = particle->GetPDGMass();
 		auto KinEnergy = std::sqrt(fMomentum * fMomentum + Mass * Mass) - Mass;
+		//G4cout<<"---GeneratePrimaries()---fMomentum = "<<fMomentum/GeV<<" GeV, KinEnergy = "<<KinEnergy/GeV<<" GeV"<<G4endl;
 		fParticleGun->SetParticleEnergy(KinEnergy);	
 		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 	}
@@ -95,7 +96,7 @@ void MyPrimaryGenerator::DefineCommands()
 	randomCmd.SetDefaultValue("false");
 	
 	// momentum command
-	auto& momentumCmd = fMessenger->DeclarePropertyWithUnit("momentum", "MeV", fMomentum, "Mean momentum of primaries in MeV");
+	auto& momentumCmd = fMessenger->DeclarePropertyWithUnit("momentum", "GeV", fMomentum, "Mean momentum of primaries in MeV");
 	momentumCmd.SetParameterName("p", true);
 	momentumCmd.SetRange("p>=0.");
 	momentumCmd.SetDefaultValue("10.");

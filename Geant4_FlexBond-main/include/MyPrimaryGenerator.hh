@@ -45,7 +45,7 @@ private:
 	G4ParticleDefinition* fKaon = nullptr;
 	G4ParticleDefinition* fNeutron = nullptr;
 	G4ParticleDefinition* fProton = nullptr;
-	G4double fMomentum = 10.*MeV;
+	G4double fMomentum = 10.*GeV;
 	G4double Y_BeamPosition = -7.4*mm;
 	G4double fSigmaMomentum = 1.*MeV;
 	G4double fSigmaAngle = 1.*deg;
