@@ -10,6 +10,7 @@
 #include "G4GenericMessenger.hh"
 #include "Randomize.hh"
 #include "G4ThreeVector.hh"
+#include "StaticInfo.hh"
 
 using namespace CLHEP;
 

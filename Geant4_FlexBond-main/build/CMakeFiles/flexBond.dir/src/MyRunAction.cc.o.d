@@ -334,4 +334,8 @@ CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/Constants.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UImanager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommandStatus.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VStateDependent.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/icomsdefs.hh

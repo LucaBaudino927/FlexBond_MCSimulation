@@ -76,7 +76,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event* anEvent){
 		fParticleGun->SetParticleEnergy(KinEnergy);	
 		fParticleGun->SetParticlePosition(G4ThreeVector(0., Y_BeamPosition, -2.*cm));
 	}
-
+	
         fParticleGun->GeneratePrimaryVertex(anEvent);
         
 }

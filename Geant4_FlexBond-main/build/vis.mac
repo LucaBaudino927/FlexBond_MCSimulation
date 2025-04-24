@@ -3,11 +3,11 @@
 
 /detector/verboseDetConstruction false
 /detector/mapsFoil true
-/detector/constructAlpidePads true
+/detector/constructAlpidePads false
 /detector/constructEpoxyGlueLayer true
 /detector/constructKaptonLayer true
 /detector/constructCopperLayer true
-/detector/constructSolderBalls true
+/detector/constructSolderBalls false
 /detector/constructPCB true
 /detector/alpideXDimension 30. #mm
 /detector/alpideYDimension 15. #mm
