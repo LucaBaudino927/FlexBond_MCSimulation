@@ -3403,6 +3403,10 @@ CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o: ../src/MyActionInitiali
   ../include/MyRunAction.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UImanager.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommandStatus.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VStateDependent.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/icomsdefs.hh \
   ../include/MySteppingAction.hh \
   /usr/include/c++/11/math.h \
   /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserSteppingAction.hh \
@@ -5440,7 +5444,8 @@ CMakeFiles/flexBond.dir/src/MyPrimaryGenerator.cc.o: ../src/MyPrimaryGenerator.c
   /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
   /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Random/RandStudentT.h \
   /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
-  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+  ../include/StaticInfo.hh
 
 CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: ../src/MyRunAction.cc \
   /usr/include/stdc-predef.h \
@@ -5833,7 +5838,11 @@ CMakeFiles/flexBond.dir/src/MyRunAction.cc.o: ../src/MyRunAction.cc \
   ../include/Constants.hh \
   /home/luca/geant4-v11.3.0-install/include/Geant4/globals.hh \
   ../include/StaticInfo.hh \
-  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UImanager.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommandStatus.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/G4VStateDependent.hh \
+  /home/luca/geant4-v11.3.0-install/include/Geant4/icomsdefs.hh
 
 CMakeFiles/flexBond.dir/src/MySensitiveDetector.cc.o: ../src/MySensitiveDetector.cc \
   /usr/include/stdc-predef.h \

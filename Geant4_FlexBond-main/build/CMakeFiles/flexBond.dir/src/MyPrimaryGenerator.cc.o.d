@@ -339,4 +339,5 @@ CMakeFiles/flexBond.dir/src/MyPrimaryGenerator.cc.o: \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Random/RandPoissonQ.icc \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Random/RandStudentT.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/CLHEP/Random/RandStudentT.icc \
- /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+ /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/StaticInfo.hh

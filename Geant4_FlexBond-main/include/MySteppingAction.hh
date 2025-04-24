@@ -24,6 +24,7 @@ private:
 	G4ThreeVector fFirstMomDirectionInVolume;
 	G4ThreeVector fLastMomDirectionInVolume;
 	G4int fTrackID;
+	G4double fDeltaEnergyStep;
     
 };
 

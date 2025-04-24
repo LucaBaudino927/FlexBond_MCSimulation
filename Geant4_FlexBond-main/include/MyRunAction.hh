@@ -10,6 +10,7 @@
 
 #include "Constants.hh"
 #include "StaticInfo.hh"
+#include "G4UImanager.hh"
 
 class G4Run;
 

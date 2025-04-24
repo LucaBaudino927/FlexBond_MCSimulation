@@ -6,7 +6,7 @@ MyRunAction::MyRunAction() {
 	//G4cout<<"---MyRunAction---"<<G4endl;
 	G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 	//analysisManager->SetDefaultFileType("root");
-	//analysisManager->SetVerboseLevel(1);
+	analysisManager->SetVerboseLevel(1);
 	analysisManager->SetNtupleMerging(true);
 	//analysisManager->SetNtupleDirectoryName("output");
 	//analysisManager->SetHistoDirectoryName("output");
@@ -17,7 +17,7 @@ MyRunAction::MyRunAction() {
 
 // ######## Begin of the run
 void MyRunAction::BeginOfRunAction(const G4Run* run){
-
+	
 	G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 	
 	//----------------------------------------------------------------------------------------------------------------
@@ -37,9 +37,10 @@ void MyRunAction::BeginOfRunAction(const G4Run* run){
 	if(IsMaster()) {
 		StaticInfo::SetRunIdOnMasterThread(run->GetRunID());
 	}
-	strRunID << StaticInfo::GetRunIdOnMasterThread();
 	//G4cout<<"---MyRunAction---run->GetRunID(): "<<run->GetRunID()<<G4endl;
 	//G4cout<<"---MyRunAction---StaticInfo::GetRunIdOnMasterThread(): "<<StaticInfo::GetRunIdOnMasterThread()<<G4endl;
+        
+        strRunID << StaticInfo::GetRunIdOnMasterThread();
 	
 	analysisManager->SetFileName("output"+strRunID.str()+".root");
 	analysisManager->SetNtupleFileName("output"+strRunID.str()+".root");
@@ -106,6 +107,17 @@ void MyRunAction::BeginOfRunAction(const G4Run* run){
 	if(StaticInfo::GetDetectorFlag("constructCopperLayer"))    analysisManager->CreateNtupleDColumn("Copper");
 	if(StaticInfo::GetDetectorFlag("constructPCB")) 	   analysisManager->CreateNtupleDColumn("PCB");
 	analysisManager->FinishNtuple(3);
+	
+	//Energy Distribution of particles entrying in a volume for a fixed particle (proton)
+	analysisManager->CreateNtuple("DeltaE in volume", "DeltaE in volume");
+	analysisManager->CreateNtupleDColumn("Alpide");
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) analysisManager->CreateNtupleDColumn("LowerGlue");
+	if(StaticInfo::GetDetectorFlag("constructEpoxyGlueLayer")) analysisManager->CreateNtupleDColumn("UpperGlue");
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer"))    analysisManager->CreateNtupleDColumn("LowerKapton");
+	if(StaticInfo::GetDetectorFlag("constructKaptonLayer"))    analysisManager->CreateNtupleDColumn("UpperKapton");
+	if(StaticInfo::GetDetectorFlag("constructCopperLayer"))    analysisManager->CreateNtupleDColumn("Copper");
+	if(StaticInfo::GetDetectorFlag("constructPCB")) 	   analysisManager->CreateNtupleDColumn("PCB");
+	analysisManager->FinishNtuple(4);
 	
 	// Set ntuple output file
 	//analysisManager->SetNtupleFileName(0, "output"+strRunID.str()+".root");

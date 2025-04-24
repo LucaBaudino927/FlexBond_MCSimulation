@@ -18,11 +18,11 @@
 #
 #	add new geometries here
 #
-/detector/constructAlpidePads false
+/detector/constructAlpidePads true
 /detector/constructEpoxyGlueLayer true
 /detector/constructKaptonLayer true
 /detector/constructCopperLayer true
-/detector/constructSolderBalls false
+/detector/constructSolderBalls true
 /detector/constructPCB true
 /detector/alpideXDimension 30. #mm
 /detector/alpideYDimension 15. #mm

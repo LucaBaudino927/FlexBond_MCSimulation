@@ -605,6 +605,10 @@ CMakeFiles/flexBond.dir/src/MyActionInitialization.cc.o: \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MyRunAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UImanager.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4UIcommandStatus.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/G4VStateDependent.hh \
+ /home/luca/geant4-v11.3.0-install/include/Geant4/icomsdefs.hh \
  /home/luca/geant4_workdir/FlexBond/Geant4_FlexBond-main/include/MySteppingAction.hh \
  /usr/include/c++/11/math.h \
  /home/luca/geant4-v11.3.0-install/include/Geant4/G4UserSteppingAction.hh \
